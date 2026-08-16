@@ -13,7 +13,10 @@ module.exports = {
       displayName: 'domain',
       preset: 'ts-jest',
       testEnvironment: 'node',
-      roots: ['<rootDir>/src/domain'],
+      // src/services and src/data are equally free of React Native imports —
+      // services depend on repository interfaces, and tests supply the
+      // in-memory implementations — so the whole session flow runs here too.
+      roots: ['<rootDir>/src/domain', '<rootDir>/src/services', '<rootDir>/src/data'],
       testMatch: ['**/*.test.ts'],
       moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',

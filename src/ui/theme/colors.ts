@@ -44,3 +44,9 @@ export const Colors = {
 
 export type ColorScheme = keyof typeof Colors;
 export type ColorToken = keyof typeof Colors.light;
+
+/**
+ * A resolved palette. Structural rather than `typeof Colors.light`, which would
+ * pin the literal light-mode hex values and reject the dark palette.
+ */
+export type Theme = { readonly [K in ColorToken]: string };
