@@ -169,6 +169,7 @@ function tryYear(tokens: string[], i: number): Parsed | null {
  * Rewrites every number phrase in a token list to its digit form.
  * Non-numeric tokens pass through untouched.
  */
+// (kept adjacent to the parser so the two stay in step)
 export function canonicalizeNumbers(tokens: string[]): string[] {
   const out: string[] = [];
   let i = 0;

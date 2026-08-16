@@ -49,6 +49,21 @@ export const VOICE_FILLERS = new Set([
 ]);
 
 /**
+ * Words that carry no answer content, ignored when checking whether an input
+ * introduced material the accepted answer does not have.
+ *
+ * This is what lets "I think it is the US Constitution" match while
+ * "defend the US Constitution" — which is a different question's answer — does
+ * not: "defend" is real content, "think" is not.
+ */
+export const LEAD_INS = new Set([
+  'i', 'we', 'you', 'my', 'me', 'think', 'thought', 'guess', 'believe', 'know',
+  'answer', 'answers', 'say', 'says', 'said', 'would', 'maybe', 'probably',
+  'just', 'really', 'well', 'um', 'uh', 'like', 'okay', 'ok', 'so', 'yeah',
+  'called', 'named', 'thing', 'one',
+]);
+
+/**
  * Singular words that merely end in "s". Stripping these changes their meaning.
  *
  * Ordinary plurals are NOT listed: normalization runs over the canonical answer
