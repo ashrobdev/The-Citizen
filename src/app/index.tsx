@@ -127,6 +127,9 @@ export default function Today(): React.ReactElement {
         <Link href="/progress" style={[styles.secondary, { borderColor: theme.border }]}>
           <Text style={[styles.secondaryText, { color: theme.accent }]}>Progress</Text>
         </Link>
+        <Link href="/settings" style={[styles.secondary, { borderColor: theme.border }]}>
+          <Text style={[styles.secondaryText, { color: theme.accent }]}>Settings</Text>
+        </Link>
       </View>
 
       <Text style={[styles.hint, { color: theme.textSecondary }]}>

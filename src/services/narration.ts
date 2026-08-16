@@ -117,8 +117,13 @@ export async function stopNarration(): Promise<void> {
   }
 }
 
-/** Test seam — voices are cached because enumerating them is not free. */
-export function resetVoiceCacheForTests(): void {
+/**
+ * Forces the next speak to re-pick a voice.
+ *
+ * Voices are cached because enumerating them is not free, but a user who
+ * installs a better voice in iOS Settings expects the app to notice without
+ * being restarted. Settings calls this before re-checking.
+ */
+export function refreshVoiceSelection(): void {
   cachedVoice = undefined;
-  audioConfigured = false;
 }
