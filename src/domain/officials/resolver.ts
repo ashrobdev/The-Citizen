@@ -103,9 +103,13 @@ export function resolveDynamicQuestion(
 
     case 'senator': {
       if (!jurisdiction) return attest();
-      if (jurisdiction.senators.length === 0) return attest(jurisdiction.senatorNote);
+      // A seat can be present but vacant, which yields an entry with no name.
+      // Counting entries rather than names produced a question with zero
+      // accepted answers, so every response graded wrong.
+      const known = jurisdiction.senators.filter((s) => !isUnknown(s));
+      if (known.length === 0) return attest(jurisdiction.senatorNote);
       // Either senator is a correct answer to "name one of your senators".
-      return { selfAttest: false, answers: toAnswers(question.id, jurisdiction.senators) };
+      return { selfAttest: false, answers: toAnswers(question.id, known) };
     }
 
     case 'representative': {

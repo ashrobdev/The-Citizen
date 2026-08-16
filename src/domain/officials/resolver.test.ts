@@ -117,6 +117,24 @@ describe('resolving dynamic questions', () => {
     expect(r.answers.length).toBeGreaterThan(40);
   });
 
+  it('grades the governor, Speaker and Chief Justice from the shipped data', () => {
+    // These were self-attested until Wikidata supplied them. If this breaks,
+    // the sourcing has regressed and 3 of the 128 questions silently stopped
+    // being graded.
+    for (const id of [30, 57, 61]) {
+      const r = resolveDynamicQuestion(getQuestion(id), officials, CA);
+      expect({ id, selfAttest: r.selfAttest }).toEqual({ id, selfAttest: false });
+      expect(r.answers.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('accepts a governor by surname alone', () => {
+    const r = resolveDynamicQuestion(getQuestion(61), officials, CA);
+    const surname = officials.jurisdictions.CA?.governor?.answers.at(-1);
+    expect(surname).toBeDefined();
+    if (surname) expect(gradeSingle(surname, r.answers).verdict).toBe('correct');
+  });
+
   it('grades the President from the live dataset', () => {
     const r = resolveDynamicQuestion(getQuestion(38), officials, CA);
     expect(r.selfAttest).toBe(false);
@@ -126,15 +144,40 @@ describe('resolving dynamic questions', () => {
 });
 
 describe('falls back to self-attest rather than guessing', () => {
-  it('when a federal role has not been filled in', () => {
-    // Speaker and Chief Justice are intentionally unfilled: no maintained
-    // dataset covers them and inventing a name would mislead someone.
-    expect(resolveDynamicQuestion(getQuestion(30), officials, CA).selfAttest).toBe(true);
-    expect(resolveDynamicQuestion(getQuestion(57), officials, CA).selfAttest).toBe(true);
+  /**
+   * These assert BEHAVIOUR on an empty entry, not the current contents of the
+   * shipped file. An earlier version checked that the Speaker was unfilled,
+   * which quietly became a false assertion the moment the data was sourced.
+   */
+  const withEmpty = (mutate: (d: OfficialsData) => void): OfficialsData => {
+    const copy = JSON.parse(JSON.stringify(officials)) as OfficialsData;
+    mutate(copy);
+    return copy;
+  };
+
+  it('when a federal role has no name', () => {
+    const blank = withEmpty((d) => {
+      d.federal.speakerOfTheHouse = { answers: [] };
+      d.federal.chiefJustice = { answers: [] };
+    });
+    expect(resolveDynamicQuestion(getQuestion(30), blank, CA).selfAttest).toBe(true);
+    expect(resolveDynamicQuestion(getQuestion(57), blank, CA).selfAttest).toBe(true);
   });
 
-  it('when the governor is not filled in', () => {
-    expect(resolveDynamicQuestion(getQuestion(61), officials, CA).selfAttest).toBe(true);
+  it('when a governor has no name', () => {
+    const blank = withEmpty((d) => {
+      const ca = d.jurisdictions.CA;
+      if (ca) ca.governor = { answers: [] };
+    });
+    expect(resolveDynamicQuestion(getQuestion(61), blank, CA).selfAttest).toBe(true);
+  });
+
+  it('when a senator seat is marked vacant', () => {
+    const blank = withEmpty((d) => {
+      const ca = d.jurisdictions.CA;
+      if (ca) ca.senators = [{ answers: [], vacant: true }];
+    });
+    expect(resolveDynamicQuestion(getQuestion(23), blank, CA).selfAttest).toBe(true);
   });
 
   it('when the user has not said where they live', () => {

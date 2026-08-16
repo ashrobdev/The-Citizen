@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "dataVersion": "2026-08-16",
-  "generatedAt": "2026-08-16T19:02:34.827Z",
+  "generatedAt": "2026-08-16T20:27:45.022Z",
   "sources": [
     {
       "name": "unitedstates/congress-legislators (legislators-current)",
@@ -19,6 +19,11 @@
     },
     {
       "name": "data/static/jurisdictions.json (capitals)"
+    },
+    {
+      "name": "Wikidata (governors, Speaker, Chief Justice)",
+      "url": "https://query.wikidata.org/",
+      "retrievedAt": "2026-08-16"
     }
   ],
   "federal": {
@@ -36,10 +41,16 @@
       ]
     },
     "speakerOfTheHouse": {
-      "answers": []
+      "answers": [
+        "Mike Johnson",
+        "Johnson"
+      ]
     },
     "chiefJustice": {
-      "answers": []
+      "answers": [
+        "John Roberts",
+        "Roberts"
+      ]
     }
   },
   "jurisdictions": {
@@ -52,7 +63,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Kay Ivey",
+          "Ivey"
+        ]
       },
       "senators": [
         {
@@ -127,7 +141,11 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Mike J. Dunleavy",
+          "Dunleavy",
+          "Mike Dunleavy"
+        ]
       },
       "senators": [
         {
@@ -162,7 +180,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Katie Hobbs",
+          "Hobbs"
+        ]
       },
       "senators": [
         {
@@ -248,7 +269,11 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Sarah Huckabee Sanders",
+          "Sanders",
+          "Sarah Sanders"
+        ]
       },
       "senators": [
         {
@@ -303,7 +328,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Gavin Newsom",
+          "Newsom"
+        ]
       },
       "senators": [
         {
@@ -654,7 +682,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Jared Polis",
+          "Polis"
+        ]
       },
       "senators": [
         {
@@ -732,7 +763,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Ned Lamont",
+          "Lamont"
+        ]
       },
       "senators": [
         {
@@ -794,7 +828,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Matt Meyer",
+          "Meyer"
+        ]
       },
       "senators": [
         {
@@ -829,7 +866,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Ron DeSantis",
+          "DeSantis"
+        ]
       },
       "senators": [
         {
@@ -1036,7 +1076,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Brian Kemp",
+          "Kemp"
+        ]
       },
       "senators": [
         {
@@ -1155,7 +1198,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Josh Green",
+          "Green"
+        ]
       },
       "senators": [
         {
@@ -1197,7 +1243,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Brad Little",
+          "Little"
+        ]
       },
       "senators": [
         {
@@ -1241,7 +1290,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "JB Pritzker",
+          "Pritzker"
+        ]
       },
       "senators": [
         {
@@ -1384,7 +1436,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Eric Holcomb",
+          "Holcomb"
+        ]
       },
       "senators": [
         {
@@ -1471,7 +1526,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Kim Reynolds",
+          "Reynolds"
+        ]
       },
       "senators": [
         {
@@ -1525,7 +1583,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Laura Kelly",
+          "Kelly"
+        ]
       },
       "senators": [
         {
@@ -1577,7 +1638,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Andy Beshear",
+          "Beshear"
+        ]
       },
       "senators": [
         {
@@ -1643,7 +1707,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Jeff Landry",
+          "Landry"
+        ]
       },
       "senators": [
         {
@@ -1708,7 +1775,11 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Janet T. Mills",
+          "Mills",
+          "Janet Mills"
+        ]
       },
       "senators": [
         {
@@ -1751,7 +1822,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Wes Moore",
+          "Moore"
+        ]
       },
       "senators": [
         {
@@ -1830,7 +1904,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Maura Healey",
+          "Healey"
+        ]
       },
       "senators": [
         {
@@ -1920,7 +1997,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Gretchen Whitmer",
+          "Whitmer"
+        ]
       },
       "senators": [
         {
@@ -2031,7 +2111,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Tim Walz",
+          "Walz"
+        ]
       },
       "senators": [
         {
@@ -2107,7 +2190,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Tate Reeves",
+          "Reeves"
+        ]
       },
       "senators": [
         {
@@ -2161,7 +2247,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Mike Kehoe",
+          "Kehoe"
+        ]
       },
       "senators": [
         {
@@ -2239,7 +2328,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Greg Gianforte",
+          "Gianforte"
+        ]
       },
       "senators": [
         {
@@ -2280,7 +2372,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Jim Pillen",
+          "Pillen"
+        ]
       },
       "senators": [
         {
@@ -2326,7 +2421,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Joe Lombardo",
+          "Lombardo"
+        ]
       },
       "senators": [
         {
@@ -2379,7 +2477,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Chris Sununu",
+          "Sununu"
+        ]
       },
       "senators": [
         {
@@ -2421,7 +2522,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Mikie Sherrill",
+          "Sherrill"
+        ]
       },
       "senators": [
         {
@@ -2527,7 +2631,11 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Michelle Lujan Grisham",
+          "Grisham",
+          "Michelle Grisham"
+        ]
       },
       "senators": [
         {
@@ -2576,7 +2684,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Kathy Hochul",
+          "Hochul"
+        ]
       },
       "senators": [
         {
@@ -2776,7 +2887,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Josh Stein",
+          "Stein"
+        ]
       },
       "senators": [
         {
@@ -2895,7 +3009,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Doug Burgum",
+          "Burgum"
+        ]
       },
       "senators": [
         {
@@ -2929,7 +3046,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Mike DeWine",
+          "DeWine"
+        ]
       },
       "senators": [
         {
@@ -3055,7 +3175,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Kevin Stitt",
+          "Stitt"
+        ]
       },
       "senators": [
         {
@@ -3115,7 +3238,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Tina Kotek",
+          "Kotek"
+        ]
       },
       "senators": [
         {
@@ -3181,7 +3307,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Josh Shapiro",
+          "Shapiro"
+        ]
       },
       "senators": [
         {
@@ -3318,7 +3447,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Daniel McKee",
+          "McKee"
+        ]
       },
       "senators": [
         {
@@ -3359,7 +3491,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Henry McMaster",
+          "McMaster"
+        ]
       },
       "senators": [
         {
@@ -3433,7 +3568,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Larry Rhoden",
+          "Rhoden"
+        ]
       },
       "senators": [
         {
@@ -3467,7 +3605,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Bill Lee",
+          "Lee"
+        ]
       },
       "senators": [
         {
@@ -3552,7 +3693,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Greg Abbott",
+          "Abbott"
+        ]
       },
       "senators": [
         {
@@ -3818,7 +3962,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Spencer Cox",
+          "Cox"
+        ]
       },
       "senators": [
         {
@@ -3873,7 +4020,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Phil Scott",
+          "Scott"
+        ]
       },
       "senators": [
         {
@@ -3908,7 +4058,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Abigail Spanberger",
+          "Spanberger"
+        ]
       },
       "senators": [
         {
@@ -4014,7 +4167,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Bob Ferguson",
+          "Ferguson"
+        ]
       },
       "senators": [
         {
@@ -4103,7 +4259,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Patrick Morrisey",
+          "Morrisey"
+        ]
       },
       "senators": [
         {
@@ -4147,7 +4306,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Tony Evers",
+          "Evers"
+        ]
       },
       "senators": [
         {
@@ -4224,7 +4386,10 @@
         ]
       },
       "governor": {
-        "answers": []
+        "answers": [
+          "Mark Gordon",
+          "Gordon"
+        ]
       },
       "senators": [
         {

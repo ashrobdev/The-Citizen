@@ -5,8 +5,11 @@
  *
  * Senators, representatives, the President and the Vice President come from
  * unitedstates/congress-legislators, which is actively maintained. The Speaker,
- * the Chief Justice and the governors are not in any such dataset and are read
- * from data/manual/officeholders.yaml.
+ * the Chief Justice and the 50 governors are not in that dataset and are taken
+ * from Wikidata instead — see scripts/lib/wikidata.ts for the caveats.
+ *
+ * data/manual/officeholders.yaml still wins over both. It exists so a wrong or
+ * missing automated value can be corrected by hand without waiting on anyone.
  *
  * Anything unknown is emitted as an empty entry, which makes the app ask the
  * user rather than grade them against a guess. That asymmetry is deliberate:
@@ -18,6 +21,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parse as parseYaml } from 'yaml';
+
+import { fetchFederalRoles, fetchGovernors, nameVariants as personVariants } from './lib/wikidata';
 
 import {
   OFFICIALS_SCHEMA_VERSION,
@@ -94,9 +99,19 @@ async function build(): Promise<OfficialsData> {
   const today = new Date();
   const todayIso = today.toISOString().slice(0, 10);
 
-  const [legislators, executives] = await Promise.all([
+  // Wikidata failures must not sink the whole build: senators and reps are the
+  // bulk of the value and come from elsewhere.
+  const [legislators, executives, governors, federalRoles] = await Promise.all([
     fetchYaml<Person[]>(LEGISLATORS_URL),
     fetchYaml<Person[]>(EXECUTIVE_URL),
+    fetchGovernors().catch((e: unknown) => {
+      console.warn(`  ! governors unavailable: ${String(e)}`);
+      return new Map<string, string>();
+    }),
+    fetchFederalRoles().catch((e: unknown) => {
+      console.warn(`  ! federal roles unavailable: ${String(e)}`);
+      return { speakerOfTheHouse: undefined, chiefJustice: undefined };
+    }),
   ]);
 
   const manual = parseYaml(fs.readFileSync(MANUAL, 'utf8')) as {
@@ -120,8 +135,20 @@ async function build(): Promise<OfficialsData> {
   const federal = {
     president: president ? entry(nameVariants(president.name)) : EMPTY,
     vicePresident: vicePresident ? entry(nameVariants(vicePresident.name)) : EMPTY,
-    speakerOfTheHouse: entry(manual.federal?.speakerOfTheHouse?.answers ?? []),
-    chiefJustice: entry(manual.federal?.chiefJustice?.answers ?? []),
+    speakerOfTheHouse: entry(
+      manual.federal?.speakerOfTheHouse?.answers?.length
+        ? manual.federal.speakerOfTheHouse.answers
+        : federalRoles.speakerOfTheHouse
+          ? personVariants(federalRoles.speakerOfTheHouse)
+          : [],
+    ),
+    chiefJustice: entry(
+      manual.federal?.chiefJustice?.answers?.length
+        ? manual.federal.chiefJustice.answers
+        : federalRoles.chiefJustice
+          ? personVariants(federalRoles.chiefJustice)
+          : [],
+    ),
   };
 
   // ---- Jurisdictions ----------------------------------------------------
@@ -133,7 +160,16 @@ async function build(): Promise<OfficialsData> {
     capital: string | null,
     type: Jurisdiction['type'],
   ): void => {
-    const governorNames = manual.governors?.[code] ?? [];
+    // Hand-maintained value wins; otherwise Wikidata, matched on the
+    // jurisdiction's name rather than its code, which is what Wikidata returns.
+    const manualGovernor = manual.governors?.[code] ?? [];
+    const wikidataGovernor = governors.get(name);
+    const governorNames =
+      manualGovernor.length > 0
+        ? manualGovernor
+        : wikidataGovernor !== undefined
+          ? personVariants(wikidataGovernor)
+          : [];
     const j: Jurisdiction = {
       name,
       type,
@@ -225,6 +261,7 @@ async function build(): Promise<OfficialsData> {
     { name: 'unitedstates/congress-legislators (executive)', url: EXECUTIVE_URL, retrievedAt: todayIso },
     { name: 'data/manual/officeholders.yaml', reviewedOn: manual.reviewedOn ?? 'never' },
     { name: 'data/static/jurisdictions.json (capitals)' },
+    { name: 'Wikidata (governors, Speaker, Chief Justice)', url: 'https://query.wikidata.org/', retrievedAt: todayIso },
   ];
 
   const data: OfficialsData = {

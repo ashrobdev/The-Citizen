@@ -1,37 +1,40 @@
-# Officeholders that no maintained machine-readable dataset covers.
+# Manual OVERRIDES for officeholders.
 #
-# Senators, representatives, the President and the Vice President are pulled
-# automatically from unitedstates/congress-legislators by
-# scripts/build-officials.ts. The roles below are not in that dataset and must
-# be filled in by hand.
+# Everything here is now sourced automatically:
+#   - senators, representatives, President, Vice President
+#       -> unitedstates/congress-legislators
+#   - 50 governors, Speaker of the House, Chief Justice
+#       -> Wikidata (see scripts/lib/wikidata.ts)
 #
-# LEAVE AN ENTRY EMPTY IF YOU ARE NOT CERTAIN. An empty entry makes the app ask
-# the user "did you get it right?" and point them at uscis.gov, which is honest.
-# A wrong name is far worse: it silently tells someone the wrong answer while
-# they prepare for an interview.
+# This file exists to CORRECT those sources, not to supply them. An entry here
+# wins over the automated value, so it is the escape hatch for when Wikidata is
+# wrong, stale, or vandalised — which it can be, since anyone may edit it.
 #
-# `reviewedOn` is checked by CI. If it falls more than 120 days behind, the
-# build warns — that cadence is what catches elections and appointments.
+# LEAVE AN ENTRY EMPTY UNLESS YOU ARE CORRECTING SOMETHING. An empty entry with
+# no automated value makes the app ask "did you get it right?" and point at
+# uscis.gov, which is honest. A wrong name is far worse: it silently tells
+# someone the wrong answer while they prepare for an interview.
 #
-# Verify every value against uscis.gov/citizenship/testupdates, which is the
-# authority USCIS itself directs applicants to.
+# Verify against uscis.gov/citizenship/testupdates, which is the authority
+# USCIS itself directs applicants to.
 
 reviewedOn: '2026-08-16'
 
 federal:
   # Q30 — "What is the name of the Speaker of the House of Representatives now?"
+  # Sourced from Wikidata. Fill in only to override.
   speakerOfTheHouse:
     answers: []
 
   # Q57 — "Who is the Chief Justice of the United States now?"
+  # Sourced from Wikidata. Fill in only to override.
   chiefJustice:
     answers: []
 
 # Q61 — "Who is the governor of your state now?"
 #
-# Keyed by USPS code. Add entries as `XX: ['Full Name', 'Surname']`.
-# The build script accepts partial coverage: any state missing here is asked as
-# a self-attested question rather than graded against a guess.
+# All 50 come from Wikidata. Add an entry ONLY to override one, keyed by USPS
+# code: `XX: ['Full Name', 'Surname']`.
 #
 # D.C. is intentionally absent — it has no governor, and the app answers that
 # from data/static/jurisdictions.json.
