@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "The Citizen",
+    "slug": "the-citizen",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "thecitizen",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.ashrob.thecitizen"
+    },
+    "android": {
+      "package": "dev.ashrob.thecitizen",
+      "adaptiveIcon": {
+        "backgroundColor": "#10233F",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": ["expo-router"]
+  }
+}
