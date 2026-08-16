@@ -199,15 +199,19 @@ describe('variant invariants', () => {
     }
   });
 
-  it('every required token appears in the shortest variant', () => {
+  it('every required token appears in at least one variant', () => {
+    // Not "in the shortest variant": an alternative-name parenthetical can be
+    // shorter than the base answer ("1929" for "The Great Crash (1929)") while
+    // the required tokens describe the base. What matters is that containment
+    // is satisfiable at all.
     for (const q of QUESTIONS) {
       for (const a of q.answers) {
-        const shortest = [...a.variants].sort((x, y) => x.length - y.length)[0] ?? '';
         for (const t of a.requiredTokens) {
-          expect({ id: a.id, t, shortest }).toEqual({
+          const covered = a.variants.some((v) => v.split(' ').includes(t));
+          expect({ id: a.id, token: t, covered }).toEqual({
             id: a.id,
-            t,
-            shortest: expect.stringContaining(t),
+            token: t,
+            covered: true,
           });
         }
       }

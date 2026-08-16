@@ -1,19 +1,45 @@
 {
   "_comment": [
-    "Hand-curated extra answers for questions whose USCIS bracketed note declares",
-    "further acceptable answers in prose.",
+    "Hand-curated extra answers. Two reasons an entry appears here:",
     "",
-    "The import script REFUSES to machine-parse an 'Also acceptable are ...' note",
-    "and fails the build unless the question appears here. Mis-reading such a note",
-    "would silently reject answers USCIS accepts, and that failure would be",
-    "invisible -- it looks like the user simply got it wrong.",
+    "1. A USCIS bracketed note declares further acceptable answers in prose.",
+    "   The import script REFUSES to machine-parse an 'Also acceptable are ...'",
+    "   note and fails the build unless the question appears here. Mis-reading",
+    "   such a note would silently reject answers USCIS accepts, and that failure",
+    "   would be invisible -- it looks like the user simply got it wrong.",
     "",
-    "Each entry records the exact note it was derived from, so a reviewer can",
-    "check the transcription without opening the PDF."
+    "2. A one-word alternative name inside parentheses. The importer only treats",
+    "   a parenthetical as a standalone answer when it is a multi-word phrase or",
+    "   a number, because single bare words are almost always modifiers -- the",
+    "   '(congressional)' in 'Citizens in their (congressional) district' must not",
+    "   become an answer. The handful of genuine one-word alternatives are listed",
+    "   here instead, where a reviewer can see them.",
+    "",
+    "Each entry records what it was derived from."
   ],
+
+  "48": {
+    "note": "USCIS prints 'Secretary of War (Defense)'. The department is commonly called Defense and an officer accepts either name.",
+    "extraAnswers": ["Secretary of Defense"]
+  },
+
+  "59": {
+    "note": "USCIS prints 'Provide protection (police)'. Answering just 'police' names the state power.",
+    "extraAnswers": ["Police"]
+  },
+
+  "118": {
+    "note": "USCIS prints 'Integrated circuit (IC)'. IC is the ordinary abbreviation.",
+    "extraAnswers": ["IC"]
+  },
 
   "120": {
     "note": "Also acceptable are New Jersey, near New York City, and on the Hudson (River).",
     "extraAnswers": ["New Jersey", "Near New York City", "On the Hudson (River)"]
+  },
+
+  "126": {
+    "note": "Eight of the eleven national holidays are printed ending in 'Day'. People routinely name them without it, and Independence Day is most often called the Fourth of July. An officer accepts these.",
+    "extraAnswers": ["Christmas", "Thanksgiving", "The Fourth of July", "July 4th"]
   }
 }

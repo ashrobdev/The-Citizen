@@ -816,6 +816,7 @@
           "display": "(U.S. or national) legislature",
           "variants": [
             "legislature",
+            "us or national",
             "us or national legislature"
           ],
           "requiredTokens": [
@@ -1081,6 +1082,7 @@
           "id": "28:the-great-compromise-connecticut-compromise",
           "display": "The Great Compromise (Connecticut Compromise)",
           "variants": [
+            "connecticut compromise",
             "the great compromise",
             "the great compromise connecticut compromise"
           ],
@@ -1935,6 +1937,17 @@
             "trade",
             "representative"
           ]
+        },
+        {
+          "id": "48:secretary-of-defense",
+          "display": "Secretary of Defense",
+          "variants": [
+            "secretary of defense"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "defense"
+          ]
         }
       ],
       "seniorExempt": false,
@@ -2356,6 +2369,7 @@
           "id": "59:provide-safety-fire-departments",
           "display": "Provide safety (fire departments)",
           "variants": [
+            "fire department",
             "provide safety",
             "provide safety fire department"
           ],
@@ -2387,6 +2401,16 @@
             "zoning",
             "land",
             "use"
+          ]
+        },
+        {
+          "id": "59:police",
+          "display": "Police",
+          "variants": [
+            "police"
+          ],
+          "requiredTokens": [
+            "police"
           ]
         }
       ],
@@ -2459,6 +2483,8 @@
           "id": "63:citizens-eighteen-18-and-older-can-vote",
           "display": "Citizens eighteen (18) and older (can vote).",
           "variants": [
+            "18",
+            "can vote",
             "citizen 18 18 and older",
             "citizen 18 18 and older can vote",
             "citizen 18 and older",
@@ -2474,6 +2500,7 @@
           "id": "63:you-don-t-have-to-pay-a-poll-tax-to-vote",
           "display": "You don’t have to pay (a poll tax) to vote.",
           "variants": [
+            "a poll tax",
             "you don t have to pay a poll tax to vote",
             "you don t have to pay to vote"
           ],
@@ -2491,7 +2518,8 @@
           "display": "Any citizen can vote. (Women and men can vote.)",
           "variants": [
             "any citizen can vote",
-            "any citizen can vote women and men can vote"
+            "any citizen can vote women and men can vote",
+            "women and men can vote"
           ],
           "requiredTokens": [
             "any",
@@ -2505,7 +2533,8 @@
           "display": "A male citizen of any race (can vote).",
           "variants": [
             "a male citizen of any race",
-            "a male citizen of any race can vote"
+            "a male citizen of any race can vote",
+            "can vote"
           ],
           "requiredTokens": [
             "male",
@@ -2736,6 +2765,7 @@
           "id": "67:serve-help-do-important-work-for-the-nation-if-n",
           "display": "Serve (help, do important work for) the nation (if needed)",
           "variants": [
+            "help do important work for",
             "serve help do important work for the nation",
             "serve help do important work for the nation if needed",
             "serve the nation",
@@ -3060,6 +3090,7 @@
           "id": "71:required-by-the-u-s-constitution-16th-amendment",
           "display": "Required by the (U.S.) Constitution (16th Amendment)",
           "variants": [
+            "16 amendment",
             "required by the constitution",
             "required by the constitution 16 amendment",
             "required by the us constitution",
@@ -3348,6 +3379,7 @@
           "id": "77:british-soldiers-stayed-in-americans-houses-boar",
           "display": "British soldiers stayed in Americans’ houses (boarding, quartering)",
           "variants": [
+            "boarding quartering",
             "british soldier stayed in american house",
             "british soldier stayed in american house boarding quartering"
           ],
@@ -3390,7 +3422,8 @@
           "display": "Boston Tea Party (Tea Act)",
           "variants": [
             "boston tea party",
-            "boston tea party tea act"
+            "boston tea party tea act",
+            "tea act"
           ],
           "requiredTokens": [
             "boston",
@@ -3529,6 +3562,7 @@
           "id": "80:washington-crossing-the-delaware-battle-of-trent",
           "display": "Washington Crossing the Delaware (Battle of Trenton)",
           "variants": [
+            "battle of trenton",
             "washington crossing the delaware",
             "washington crossing the delaware battle of trenton"
           ],
@@ -3567,6 +3601,7 @@
           "variants": [
             "battle of yorktown",
             "battle of yorktown british surrender at yorktown",
+            "british surrender at yorktown",
             "yorktown",
             "yorktown british surrender at yorktown"
           ],
@@ -4015,7 +4050,8 @@
           "display": "Doubled the size of the United States (Louisiana Purchase)",
           "variants": [
             "doubled the size of the us",
-            "doubled the size of the us louisiana purchase"
+            "doubled the size of the us louisiana purchase",
+            "louisiana purchase"
           ],
           "requiredTokens": [
             "doubled",
@@ -4430,6 +4466,7 @@
           "id": "94:freed-the-slaves-emancipation-proclamation",
           "display": "Freed the slaves (Emancipation Proclamation)",
           "variants": [
+            "emancipation proclamation",
             "freed the slave",
             "freed the slave emancipation proclamation"
           ],
@@ -4834,6 +4871,7 @@
           "id": "101:to-support-the-allied-powers-england-france-ital",
           "display": "To support the Allied Powers (England, France, Italy, and Russia)",
           "variants": [
+            "england france italy and russia",
             "to support the allied power",
             "to support the allied power england france italy and russia"
           ],
@@ -4847,6 +4885,7 @@
           "id": "101:to-oppose-the-central-powers-germany-austria-hun",
           "display": "To oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)",
           "variants": [
+            "germany austria hungary the ottoman empire and bulgaria",
             "to oppose the central power",
             "to oppose the central power germany austria hungary the ottoman empire and bulgaria"
           ],
@@ -4945,6 +4984,7 @@
           "id": "104:the-great-crash-1929",
           "display": "The Great Crash (1929)",
           "variants": [
+            "1929",
             "the great crash",
             "the great crash 1929"
           ],
@@ -5030,6 +5070,7 @@
           "id": "106:to-support-the-allied-powers-england-france-and-",
           "display": "To support the Allied Powers (England, France, and Russia)",
           "variants": [
+            "england france and russia",
             "to support the allied power",
             "to support the allied power england france and russia"
           ],
@@ -5043,6 +5084,7 @@
           "id": "106:to-oppose-the-axis-powers-germany-italy-and-japa",
           "display": "To oppose the Axis Powers (Germany, Italy, and Japan)",
           "variants": [
+            "germany italy and japan",
             "to oppose the axis power",
             "to oppose the axis power germany italy and japan"
           ],
@@ -5108,6 +5150,7 @@
           "id": "107:signed-the-federal-aid-highway-act-of-1956-creat",
           "display": "Signed the Federal-Aid Highway Act of 1956 (Created the Interstate System)",
           "variants": [
+            "created the interstate system",
             "signed the federal aid highway act of 1956",
             "signed the federal aid highway act of 1956 created the interstate system"
           ],
@@ -5772,7 +5815,8 @@
           "display": "Automobile (cars, internal combustion engine)",
           "variants": [
             "automobile",
-            "automobile car internal combustion engine"
+            "automobile car internal combustion engine",
+            "car internal combustion engine"
           ],
           "requiredTokens": [
             "automobile"
@@ -5830,6 +5874,16 @@
           "requiredTokens": [
             "integrated",
             "circuit"
+          ]
+        },
+        {
+          "id": "118:ic",
+          "display": "IC",
+          "variants": [
+            "ic"
+          ],
+          "requiredTokens": [
+            "ic"
           ]
         }
       ],
@@ -6156,7 +6210,8 @@
           "display": "Presidents Day (Washington’s Birthday)",
           "variants": [
             "president day",
-            "president day washington birthday"
+            "president day washington birthday",
+            "washington birthday"
           ],
           "requiredTokens": [
             "president",
@@ -6248,6 +6303,48 @@
           "requiredTokens": [
             "christmas",
             "day"
+          ]
+        },
+        {
+          "id": "126:christmas",
+          "display": "Christmas",
+          "variants": [
+            "christmas"
+          ],
+          "requiredTokens": [
+            "christmas"
+          ]
+        },
+        {
+          "id": "126:thanksgiving",
+          "display": "Thanksgiving",
+          "variants": [
+            "thanksgiving"
+          ],
+          "requiredTokens": [
+            "thanksgiving"
+          ]
+        },
+        {
+          "id": "126:the-fourth-of-july",
+          "display": "The Fourth of July",
+          "variants": [
+            "the 4 of july"
+          ],
+          "requiredTokens": [
+            "4",
+            "july"
+          ]
+        },
+        {
+          "id": "126:july-4th",
+          "display": "July 4th",
+          "variants": [
+            "july 4"
+          ],
+          "requiredTokens": [
+            "july",
+            "4"
           ]
         }
       ],

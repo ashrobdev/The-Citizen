@@ -109,11 +109,60 @@ function expandParentheticals(input: string): string[] {
 }
 
 /**
+ * Words that mark a parenthetical as a MODIFIER of what precedes it rather than
+ * an alternative name for it. "(of the United States)" qualifies "President";
+ * "(Defense)" renames "Secretary of War".
+ */
+const MODIFIER_OPENERS = new Set([
+  'of', 'for', 'if', 'in', 'on', 'under', 'from', 'at', 'to', 'with', 'by',
+  'about', 'during', 'before', 'after', 'as', 'and', 'or', 'when', 'while',
+  'because', 'so', 'that', 'than', 'until',
+]);
+
+/**
+ * The alternative-name reading: USCIS uses a trailing parenthetical both to
+ * qualify an answer and to give it a second name. "Secretary of War (Defense)"
+ * means "Secretary of Defense" is acceptable, and "Freed the slaves
+ * (Emancipation Proclamation)" means naming the proclamation is acceptable.
+ *
+ * A parenthetical opening with a preposition is a modifier and yields nothing
+ * on its own — "of the United States" is not an answer to anything.
+ */
+function standaloneParentheticals(s: string): string[] {
+  const out: string[] = [];
+  for (const m of s.matchAll(/\(([^)]*)\)/g)) {
+    const inner = (m[1] ?? '').trim();
+    if (inner.length === 0) continue;
+
+    const n = normalize(inner);
+    const first = n.text.split(' ')[0];
+    if (first === undefined || first.length === 0) continue;
+    if (MODIFIER_OPENERS.has(first)) continue;
+
+    // Require a multi-word phrase or a number. A single bare word is almost
+    // always a modifier rather than a name — "(congressional)" in "Citizens in
+    // their (congressional) district" and "(American)" in "The (American)
+    // Revolutionary War" would otherwise become answers in their own right,
+    // and "congressional" would then be accepted for "What part of the federal
+    // government writes laws?".
+    //
+    // The genuine one-word alternatives are few enough to name explicitly in
+    // data/manual/answer-overrides.json, where they can be reviewed.
+    const isNumber = /^\d+$/.test(n.text);
+    if (n.tokens.length < 2 && !isNumber) continue;
+
+    out.push(inner);
+  }
+  return out;
+}
+
+/**
  * Build-time variant generation. Returns normalized, deduped, non-empty forms.
  */
 export function buildVariants(display: string): string[] {
   const { matchable } = extractNote(display);
-  const raw = expandParentheticals(matchable);
+  const collapsed = collapseRestatements(matchable);
+  const raw = [...expandParentheticals(matchable), ...standaloneParentheticals(collapsed)];
 
   const seen = new Set<string>();
   for (const form of raw) {
@@ -156,6 +205,5 @@ export function buildRequiredTokens(display: string): string[] {
     if (f.length < shortest.length) shortest = f;
   }
 
-  const deduped = [...new Set(shortest)].filter((t) => !STOPWORDS.has(t));
-  return deduped;
+  return [...new Set(shortest)].filter((t) => !STOPWORDS.has(t));
 }
