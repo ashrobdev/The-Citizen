@@ -23,7 +23,32 @@ import type { Repositories, SessionRecord, UserProfile } from '../data/repositor
  * moves data between them and the repositories.
  */
 
-/** The officials dataset shipped with the app. */
+/** The officials dataset shipped with the app. Always available, works offline. */
+export const BUNDLED = officialsJson as unknown as OfficialsData;
+
+/**
+ * The dataset actually in use.
+ *
+ * A module-level mutable ref rather than a parameter threaded through every
+ * call site. The alternative — passing officials into `resolveQuestion` from
+ * each screen — spreads a concern no screen cares about across the whole UI.
+ *
+ * AppProvider calls `setActiveOfficials` once the updater has resolved, so a
+ * refresh actually reaches the questions. Before that this is the bundled copy,
+ * which is correct rather than empty.
+ */
+let active: OfficialsData = officialsJson as unknown as OfficialsData;
+
+export function setActiveOfficials(data: OfficialsData): void {
+  active = data;
+}
+
+/** Read-only view of the dataset currently in use. */
+export function activeOfficials(): OfficialsData {
+  return active;
+}
+
+/** @deprecated Prefer `activeOfficials()`; this is the bundled copy only. */
 export const OFFICIALS = officialsJson as unknown as OfficialsData;
 
 /**
@@ -49,7 +74,7 @@ export function resolveQuestion(
         ? { stateCode: profile.stateCode }
         : { stateCode: profile.stateCode, district: profile.district };
 
-  return resolveDynamicQuestion(question, OFFICIALS, location);
+  return resolveDynamicQuestion(question, active, location);
 }
 
 export interface GradedAnswer {
@@ -284,9 +309,9 @@ export class SessionService {
     await this.repos.profile.save(profile);
   }
 
-  /** Date the shipped officials data was generated, for the disclosure line. */
+  /** Date the officials data in use was generated, for the disclosure line. */
   officialsDataVersion(): string {
-    return OFFICIALS.dataVersion;
+    return active.dataVersion;
   }
 
   async focusAnswersFor(questionId: QuestionId): Promise<string[]> {

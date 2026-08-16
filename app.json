@@ -27,7 +27,13 @@
     "plugins": [
       "expo-router",
       "expo-sqlite",
-      "expo-audio"
+      "expo-audio",
+      [
+        "expo-notifications",
+        {
+          "color": "#B22234"
+        }
+      ]
     ]
   }
 }

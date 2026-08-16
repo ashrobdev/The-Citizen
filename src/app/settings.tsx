@@ -14,13 +14,15 @@ import {
 import type { UserProfile } from '../data/repositories';
 import { OFFICIALS } from '../services/sessionService';
 import { bestEnglishVoice, refreshVoiceSelection, speakQuestion } from '../services/narration';
-import { useSessionService } from '../ui/AppProvider';
+import { useNotifications, useSessionService } from '../ui/AppProvider';
+import { ReminderSettings } from '../ui/components/ReminderSettings';
 import { Colors, type Theme } from '../ui/theme/colors';
 
 const SAMPLE = 'What is the supreme law of the land?';
 
 export default function Settings(): React.ReactElement {
   const service = useSessionService();
+  const notifications = useNotifications();
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
 
@@ -111,14 +113,18 @@ export default function Settings(): React.ReactElement {
         </Text>
       </Section>
 
+      <Section title="Reminders" theme={theme}>
+        <ReminderSettings notifications={notifications} theme={theme} />
+      </Section>
+
       <Section title="Officials data" theme={theme}>
         <Text style={[styles.value, { color: theme.text }]}>
           As of {OFFICIALS.dataVersion}
         </Text>
         <Text style={[styles.hint, { color: theme.textSecondary }]}>
           Senators, representatives, the President and the Vice President come from a
-          maintained public dataset. The Speaker, the Chief Justice and state governors are
-          not included, so those questions ask you to mark yourself.{'\n\n'}
+          maintained public dataset; governors, the Speaker and the Chief Justice come from
+          Wikidata. Every change is reviewed by a human before it reaches the app.{'\n\n'}
           Officeholders change. USCIS is the authority — always confirm before your interview.
         </Text>
         <Pressable

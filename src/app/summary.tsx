@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import type { StreakState } from '../domain/scheduling/streak';
-import { useSessionService } from '../ui/AppProvider';
+import { useNotifications, useSessionService } from '../ui/AppProvider';
 import { Mascot } from '../ui/components/Mascot';
+import { ReminderPrompt } from '../ui/components/ReminderPrompt';
 import { Stripes } from '../ui/components/Stripes';
 import { Colors } from '../ui/theme/colors';
 
 export default function Summary(): React.ReactElement {
   const service = useSessionService();
+  const notifications = useNotifications();
   const router = useRouter();
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
@@ -40,7 +42,7 @@ export default function Summary(): React.ReactElement {
     <View style={[styles.container, { backgroundColor: theme.background }]}>
       <Stack.Screen options={{ title: 'Done', headerBackVisible: false }} />
 
-      <Mascot size="large" />
+      <Mascot pose="cheering" size="large" />
       <Stripes width={110} />
       <Text style={[styles.title, { color: theme.text }]}>Day complete</Text>
       <Text style={[styles.streak, { color: theme.accentAlt }]}>{streak.current}</Text>
@@ -59,6 +61,12 @@ export default function Summary(): React.ReactElement {
           ★ You’re holding a streak freeze — one missed day won’t break it.
         </Text>
       ) : null}
+
+      <ReminderPrompt
+        notifications={notifications}
+        theme={theme}
+        onResolved={() => undefined}
+      />
 
       <Pressable
         onPress={() => router.replace('/')}

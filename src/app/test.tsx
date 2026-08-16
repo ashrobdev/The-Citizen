@@ -272,7 +272,7 @@ function Intro({ theme, onBegin }: { theme: Theme; onBegin: () => void }): React
   return (
     <View style={[styles.centre, { backgroundColor: theme.background }]}>
       <Stack.Screen options={{ title: 'Final Test' }} />
-      <Mascot size="medium" />
+      <Mascot pose="pointing" size="medium" />
       <Stripes width={100} />
       <Text style={[styles.introTitle, { color: theme.text }]}>Final Test</Text>
       <Text style={[styles.introBody, { color: theme.textSecondary }]}>
@@ -317,7 +317,7 @@ function Result({
 
       {passed ? (
         <>
-          <Mascot size="large" />
+          <Mascot pose="cheering" size="large" />
           <Stripes width={130} />
           <Text style={[styles.resultTitle, { color: theme.success }]}>You passed</Text>
           <Text style={[styles.resultBody, { color: theme.text }]}>
@@ -326,6 +326,7 @@ function Result({
         </>
       ) : (
         <>
+          <Mascot pose="encouraging" size="medium" />
           <Text style={[styles.resultTitle, { color: theme.text }]}>Not this time</Text>
           <Text style={[styles.resultBody, { color: theme.textSecondary }]}>
             {correct} correct. You need {FINAL_TEST_PASS_MARK}. These are the ones to review —

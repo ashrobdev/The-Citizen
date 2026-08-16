@@ -76,7 +76,7 @@ export default function Onboarding(): React.ReactElement {
       <View style={[styles.container, { backgroundColor: theme.background }]}>
         <Stack.Screen options={{ title: 'Welcome', headerBackVisible: false }} />
         <View style={styles.intro}>
-          <Mascot size="medium" />
+          <Mascot pose="greeting" size="medium" />
           <Stripes width={90} />
           <Text style={[styles.title, { color: theme.text }]}>Where do you live?</Text>
           <Text style={[styles.body, { color: theme.textSecondary }]}>
