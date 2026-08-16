@@ -1,7 +1,7 @@
-import * as Speech from 'expo-speech';
 import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
+import { speakQuestion, stopNarration } from '../../services/narration';
 import type { Theme } from '../theme/colors';
 
 /**
@@ -25,24 +25,19 @@ export function SpeakButton({
   // otherwise the previous question keeps talking over the next one.
   useEffect(() => {
     return () => {
-      void Speech.stop();
+      void stopNarration();
     };
   }, [text]);
 
   const toggle = (): void => {
     if (speaking) {
-      void Speech.stop();
+      void stopNarration();
       setSpeaking(false);
       return;
     }
     setSpeaking(true);
-    Speech.speak(text, {
-      language: 'en-US',
-      // Slightly under normal pace: the audience is largely non-native English
-      // speakers, and officers tend to speak deliberately.
-      rate: 0.92,
+    void speakQuestion(text, {
       onDone: () => setSpeaking(false),
-      onStopped: () => setSpeaking(false),
       onError: () => setSpeaking(false),
     });
   };
