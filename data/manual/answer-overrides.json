@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "Hand-curated extra answers for questions whose USCIS bracketed note declares",
+    "further acceptable answers in prose.",
+    "",
+    "The import script REFUSES to machine-parse an 'Also acceptable are ...' note",
+    "and fails the build unless the question appears here. Mis-reading such a note",
+    "would silently reject answers USCIS accepts, and that failure would be",
+    "invisible -- it looks like the user simply got it wrong.",
+    "",
+    "Each entry records the exact note it was derived from, so a reviewer can",
+    "check the transcription without opening the PDF."
+  ],
+
+  "120": {
+    "note": "Also acceptable are New Jersey, near New York City, and on the Hudson (River).",
+    "extraAnswers": ["New Jersey", "Near New York City", "On the Hudson (River)"]
+  }
+}

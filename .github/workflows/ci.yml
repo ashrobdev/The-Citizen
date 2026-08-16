@@ -22,6 +22,11 @@ jobs:
 
       - run: npm ci
 
+      # Regenerates the question bank and fails if the committed output differs,
+      # so assets/data/questions.json can never drift from its USCIS source.
+      - name: Question bank is reproducible
+        run: npm run check:questions
+
       - name: Typecheck
         run: npm run typecheck
 

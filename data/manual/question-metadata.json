@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "Editorial judgments the source text cannot express. Hand-maintained.",
+    "",
+    "requiredCount: how many DISTINCT answers the user must supply. Not derivable",
+    "from the prompt wording -- Q16 says 'three branches' and Q19 says 'two parts',",
+    "but each has a single compound answer bullet listing them, so both are 1.",
+    "Only these seven questions ask for more than one bullet from a list.",
+    "",
+    "dynamic: questions whose answer changes with elections or appointments, or",
+    "depends on where the user lives. Their answers are resolved at runtime from",
+    "the officials dataset, so the bank ships them with an empty answers array."
+  ],
+
+  "requiredCount": {
+    "10": 2,
+    "48": 2,
+    "65": 3,
+    "67": 2,
+    "69": 2,
+    "81": 5,
+    "126": 3
+  },
+
+  "dynamic": {
+    "23": { "kind": "dynamic_state", "role": "senator" },
+    "29": { "kind": "dynamic_district", "role": "representative" },
+    "30": { "kind": "dynamic_federal", "role": "speaker" },
+    "38": { "kind": "dynamic_federal", "role": "president" },
+    "39": { "kind": "dynamic_federal", "role": "vicePresident" },
+    "57": { "kind": "dynamic_federal", "role": "chiefJustice" },
+    "61": { "kind": "dynamic_state", "role": "governor" },
+    "62": { "kind": "dynamic_state", "role": "capital" }
+  }
+}

@@ -37,6 +37,7 @@
     "fast-check": "^4.9.0",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.6",
+    "tsx": "^4.23.12",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -47,6 +48,8 @@
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build:questions": "tsx scripts/import-uscis.ts",
+    "check:questions": "tsx scripts/import-uscis.ts && git diff --exit-code -- assets/data/questions.json"
   }
 }

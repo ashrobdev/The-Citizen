@@ -1,0 +1,6328 @@
+{
+  "source": "USCIS M-1778 (09/25) — 128 Civics Questions and Answers (2025 version)",
+  "generatedAt": "2026-08-16",
+  "questions": [
+    {
+      "id": 1,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What is the form of government of the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "1:republic",
+          "display": "Republic",
+          "variants": [
+            "republic"
+          ],
+          "requiredTokens": [
+            "republic"
+          ]
+        },
+        {
+          "id": "1:constitution-based-federal-republic",
+          "display": "Constitution-based federal republic",
+          "variants": [
+            "constitution based federal republic"
+          ],
+          "requiredTokens": [
+            "constitution",
+            "based",
+            "federal",
+            "republic"
+          ]
+        },
+        {
+          "id": "1:representative-democracy",
+          "display": "Representative democracy",
+          "variants": [
+            "representative democracy"
+          ],
+          "requiredTokens": [
+            "representative",
+            "democracy"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Republic\nConstitution-based federal republic\nRepresentative democracy"
+    },
+    {
+      "id": 2,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What is the supreme law of the land?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "2:u-s-constitution",
+          "display": "(U.S.) Constitution",
+          "variants": [
+            "constitution",
+            "us constitution"
+          ],
+          "requiredTokens": [
+            "constitution"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "(U.S.) Constitution"
+    },
+    {
+      "id": 3,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "Name one thing the U.S. Constitution does.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "3:forms-the-government",
+          "display": "Forms the government",
+          "variants": [
+            "form the government"
+          ],
+          "requiredTokens": [
+            "form",
+            "government"
+          ]
+        },
+        {
+          "id": "3:defines-powers-of-government",
+          "display": "Defines powers of government",
+          "variants": [
+            "define power of government"
+          ],
+          "requiredTokens": [
+            "define",
+            "power",
+            "government"
+          ]
+        },
+        {
+          "id": "3:defines-the-parts-of-government",
+          "display": "Defines the parts of government",
+          "variants": [
+            "define the part of government"
+          ],
+          "requiredTokens": [
+            "define",
+            "part",
+            "government"
+          ]
+        },
+        {
+          "id": "3:protects-the-rights-of-the-people",
+          "display": "Protects the rights of the people",
+          "variants": [
+            "protect the right of the people"
+          ],
+          "requiredTokens": [
+            "protect",
+            "right",
+            "people"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Forms the government\nDefines powers of government\nDefines the parts of government\nProtects the rights of the people"
+    },
+    {
+      "id": 4,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "The U.S. Constitution starts with the words “We the People.” What does “We the People” mean?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "4:self-government",
+          "display": "Self-government",
+          "variants": [
+            "self government"
+          ],
+          "requiredTokens": [
+            "self",
+            "government"
+          ]
+        },
+        {
+          "id": "4:popular-sovereignty",
+          "display": "Popular sovereignty",
+          "variants": [
+            "popular sovereignty"
+          ],
+          "requiredTokens": [
+            "popular",
+            "sovereignty"
+          ]
+        },
+        {
+          "id": "4:consent-of-the-governed",
+          "display": "Consent of the governed",
+          "variants": [
+            "consent of the governed"
+          ],
+          "requiredTokens": [
+            "consent",
+            "governed"
+          ]
+        },
+        {
+          "id": "4:people-should-govern-themselves",
+          "display": "People should govern themselves",
+          "variants": [
+            "people should govern themselve"
+          ],
+          "requiredTokens": [
+            "people",
+            "should",
+            "govern",
+            "themselve"
+          ]
+        },
+        {
+          "id": "4:example-of-social-contract",
+          "display": "(Example of) social contract",
+          "variants": [
+            "example of social contract",
+            "social contract"
+          ],
+          "requiredTokens": [
+            "social",
+            "contract"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Self-government\nPopular sovereignty\nConsent of the governed\nPeople should govern themselves\n(Example of) social contract"
+    },
+    {
+      "id": 5,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "How are changes made to the U.S. Constitution?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "5:amendments",
+          "display": "Amendments",
+          "variants": [
+            "amendment"
+          ],
+          "requiredTokens": [
+            "amendment"
+          ]
+        },
+        {
+          "id": "5:the-amendment-process",
+          "display": "The amendment process",
+          "variants": [
+            "the amendment process"
+          ],
+          "requiredTokens": [
+            "amendment",
+            "process"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Amendments\nThe amendment process"
+    },
+    {
+      "id": 6,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What does the Bill of Rights protect?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "6:the-basic-rights-of-americans",
+          "display": "(The basic) rights of Americans",
+          "variants": [
+            "right of american",
+            "the basic right of american"
+          ],
+          "requiredTokens": [
+            "right",
+            "american"
+          ]
+        },
+        {
+          "id": "6:the-basic-rights-of-people-living-in-the-united-",
+          "display": "(The basic) rights of people living in the United States",
+          "variants": [
+            "right of people living in the us",
+            "the basic right of people living in the us"
+          ],
+          "requiredTokens": [
+            "right",
+            "people",
+            "living",
+            "us"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(The basic) rights of Americans\n(The basic) rights of people living in the United States"
+    },
+    {
+      "id": 7,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "How many amendments does the U.S. Constitution have?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "7:twenty-seven-27",
+          "display": "Twenty-seven (27)",
+          "variants": [
+            "27"
+          ],
+          "requiredTokens": [
+            "27"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Twenty-seven (27)"
+    },
+    {
+      "id": 8,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "Why is the Declaration of Independence important?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "8:it-says-america-is-free-from-british-control",
+          "display": "It says America is free from British control.",
+          "variants": [
+            "it say us is free from british control"
+          ],
+          "requiredTokens": [
+            "say",
+            "us",
+            "free",
+            "british",
+            "control"
+          ]
+        },
+        {
+          "id": "8:it-says-all-people-are-created-equal",
+          "display": "It says all people are created equal.",
+          "variants": [
+            "it say all people are created equal"
+          ],
+          "requiredTokens": [
+            "say",
+            "all",
+            "people",
+            "created",
+            "equal"
+          ]
+        },
+        {
+          "id": "8:it-identifies-inherent-rights",
+          "display": "It identifies inherent rights.",
+          "variants": [
+            "it identify inherent right"
+          ],
+          "requiredTokens": [
+            "identify",
+            "inherent",
+            "right"
+          ]
+        },
+        {
+          "id": "8:it-identifies-individual-freedoms",
+          "display": "It identifies individual freedoms.",
+          "variants": [
+            "it identify individual freedom"
+          ],
+          "requiredTokens": [
+            "identify",
+            "individual",
+            "freedom"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "It says America is free from British control.\nIt says all people are created equal.\nIt identifies inherent rights.\nIt identifies individual freedoms."
+    },
+    {
+      "id": 9,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What founding document said the American colonies were free from Britain?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "9:declaration-of-independence",
+          "display": "Declaration of Independence",
+          "variants": [
+            "declaration of independence"
+          ],
+          "requiredTokens": [
+            "declaration",
+            "independence"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Declaration of Independence"
+    },
+    {
+      "id": 10,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.",
+      "kind": "static",
+      "requiredCount": 2,
+      "answers": [
+        {
+          "id": "10:equality",
+          "display": "Equality",
+          "variants": [
+            "equality"
+          ],
+          "requiredTokens": [
+            "equality"
+          ]
+        },
+        {
+          "id": "10:liberty",
+          "display": "Liberty",
+          "variants": [
+            "liberty"
+          ],
+          "requiredTokens": [
+            "liberty"
+          ]
+        },
+        {
+          "id": "10:social-contract",
+          "display": "Social contract",
+          "variants": [
+            "social contract"
+          ],
+          "requiredTokens": [
+            "social",
+            "contract"
+          ]
+        },
+        {
+          "id": "10:natural-rights",
+          "display": "Natural rights",
+          "variants": [
+            "natural right"
+          ],
+          "requiredTokens": [
+            "natural",
+            "right"
+          ]
+        },
+        {
+          "id": "10:limited-government",
+          "display": "Limited government",
+          "variants": [
+            "limited government"
+          ],
+          "requiredTokens": [
+            "limited",
+            "government"
+          ]
+        },
+        {
+          "id": "10:self-government",
+          "display": "Self-government",
+          "variants": [
+            "self government"
+          ],
+          "requiredTokens": [
+            "self",
+            "government"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Equality\nLiberty\nSocial contract\nNatural rights\nLimited government\nSelf-government"
+    },
+    {
+      "id": 11,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "The words “Life, Liberty, and the pursuit of Happiness” are in what founding document?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "11:declaration-of-independence",
+          "display": "Declaration of Independence",
+          "variants": [
+            "declaration of independence"
+          ],
+          "requiredTokens": [
+            "declaration",
+            "independence"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Declaration of Independence"
+    },
+    {
+      "id": 12,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What is the economic system of the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "12:capitalism",
+          "display": "Capitalism",
+          "variants": [
+            "capitalism"
+          ],
+          "requiredTokens": [
+            "capitalism"
+          ]
+        },
+        {
+          "id": "12:free-market-economy",
+          "display": "Free market economy",
+          "variants": [
+            "free market economy"
+          ],
+          "requiredTokens": [
+            "free",
+            "market",
+            "economy"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Capitalism\nFree market economy"
+    },
+    {
+      "id": 13,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "What is the rule of law?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "13:everyone-must-follow-the-law",
+          "display": "Everyone must follow the law.",
+          "variants": [
+            "everyone must follow the law"
+          ],
+          "requiredTokens": [
+            "everyone",
+            "must",
+            "follow",
+            "law"
+          ]
+        },
+        {
+          "id": "13:leaders-must-obey-the-law",
+          "display": "Leaders must obey the law.",
+          "variants": [
+            "leader must obey the law"
+          ],
+          "requiredTokens": [
+            "leader",
+            "must",
+            "obey",
+            "law"
+          ]
+        },
+        {
+          "id": "13:government-must-obey-the-law",
+          "display": "Government must obey the law.",
+          "variants": [
+            "government must obey the law"
+          ],
+          "requiredTokens": [
+            "government",
+            "must",
+            "obey",
+            "law"
+          ]
+        },
+        {
+          "id": "13:no-one-is-above-the-law",
+          "display": "No one is above the law.",
+          "variants": [
+            "no 1 is above the law"
+          ],
+          "requiredTokens": [
+            "no",
+            "1",
+            "above",
+            "law"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Everyone must follow the law.\nLeaders must obey the law.\nGovernment must obey the law.\nNo one is above the law."
+    },
+    {
+      "id": 14,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "Many documents influenced the U.S. Constitution. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "14:declaration-of-independence",
+          "display": "Declaration of Independence",
+          "variants": [
+            "declaration of independence"
+          ],
+          "requiredTokens": [
+            "declaration",
+            "independence"
+          ]
+        },
+        {
+          "id": "14:articles-of-confederation",
+          "display": "Articles of Confederation",
+          "variants": [
+            "article of confederation"
+          ],
+          "requiredTokens": [
+            "article",
+            "confederation"
+          ]
+        },
+        {
+          "id": "14:federalist-papers",
+          "display": "Federalist Papers",
+          "variants": [
+            "federalist paper"
+          ],
+          "requiredTokens": [
+            "federalist",
+            "paper"
+          ]
+        },
+        {
+          "id": "14:anti-federalist-papers",
+          "display": "Anti-Federalist Papers",
+          "variants": [
+            "anti federalist paper"
+          ],
+          "requiredTokens": [
+            "anti",
+            "federalist",
+            "paper"
+          ]
+        },
+        {
+          "id": "14:virginia-declaration-of-rights",
+          "display": "Virginia Declaration of Rights",
+          "variants": [
+            "virginia declaration of right"
+          ],
+          "requiredTokens": [
+            "virginia",
+            "declaration",
+            "right"
+          ]
+        },
+        {
+          "id": "14:fundamental-orders-of-connecticut",
+          "display": "Fundamental Orders of Connecticut",
+          "variants": [
+            "fundamental order of connecticut"
+          ],
+          "requiredTokens": [
+            "fundamental",
+            "order",
+            "connecticut"
+          ]
+        },
+        {
+          "id": "14:mayflower-compact",
+          "display": "Mayflower Compact",
+          "variants": [
+            "mayflower compact"
+          ],
+          "requiredTokens": [
+            "mayflower",
+            "compact"
+          ]
+        },
+        {
+          "id": "14:iroquois-great-law-of-peace",
+          "display": "Iroquois Great Law of Peace",
+          "variants": [
+            "iroquois great law of peace"
+          ],
+          "requiredTokens": [
+            "iroquois",
+            "great",
+            "law",
+            "peace"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Declaration of Independence\nArticles of Confederation\nFederalist Papers\nAnti-Federalist Papers\nVirginia Declaration of Rights\nFundamental Orders of Connecticut\nMayflower Compact\nIroquois Great Law of Peace"
+    },
+    {
+      "id": 15,
+      "section": "government",
+      "subsection": "Principles of American Government",
+      "prompt": "There are three branches of government. Why?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "15:so-one-part-does-not-become-too-powerful",
+          "display": "So one part does not become too powerful",
+          "variants": [
+            "so 1 part doe not become too powerful"
+          ],
+          "requiredTokens": [
+            "so",
+            "1",
+            "part",
+            "doe",
+            "not",
+            "become",
+            "too",
+            "powerful"
+          ]
+        },
+        {
+          "id": "15:checks-and-balances",
+          "display": "Checks and balances",
+          "variants": [
+            "check and balance"
+          ],
+          "requiredTokens": [
+            "check",
+            "balance"
+          ]
+        },
+        {
+          "id": "15:separation-of-powers",
+          "display": "Separation of powers",
+          "variants": [
+            "separation of power"
+          ],
+          "requiredTokens": [
+            "separation",
+            "power"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "So one part does not become too powerful\nChecks and balances\nSeparation of powers"
+    },
+    {
+      "id": 16,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name the three branches of government.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "16:legislative-executive-and-judicial",
+          "display": "Legislative, executive, and judicial",
+          "variants": [
+            "legislative executive and judicial"
+          ],
+          "requiredTokens": [
+            "legislative",
+            "executive",
+            "judicial"
+          ]
+        },
+        {
+          "id": "16:congress-president-and-the-courts",
+          "display": "Congress, president, and the courts",
+          "variants": [
+            "congress president and the court"
+          ],
+          "requiredTokens": [
+            "congress",
+            "president",
+            "court"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Legislative, executive, and judicial\nCongress, president, and the courts"
+    },
+    {
+      "id": 17,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "The President of the United States is in charge of which branch of government?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "17:executive-branch",
+          "display": "Executive branch",
+          "variants": [
+            "executive branch"
+          ],
+          "requiredTokens": [
+            "executive",
+            "branch"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Executive branch"
+    },
+    {
+      "id": 18,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What part of the federal government writes laws?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "18:u-s-congress",
+          "display": "(U.S.) Congress",
+          "variants": [
+            "congress",
+            "us congress"
+          ],
+          "requiredTokens": [
+            "congress"
+          ]
+        },
+        {
+          "id": "18:u-s-or-national-legislature",
+          "display": "(U.S. or national) legislature",
+          "variants": [
+            "legislature",
+            "us or national legislature"
+          ],
+          "requiredTokens": [
+            "legislature"
+          ]
+        },
+        {
+          "id": "18:legislative-branch",
+          "display": "Legislative branch",
+          "variants": [
+            "legislative branch"
+          ],
+          "requiredTokens": [
+            "legislative",
+            "branch"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(U.S.) Congress\n(U.S. or national) legislature\nLegislative branch"
+    },
+    {
+      "id": 19,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What are the two parts of the U.S. Congress?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "19:senate-and-house-of-representatives",
+          "display": "Senate and House (of Representatives)",
+          "variants": [
+            "senate and house",
+            "senate and house of representative"
+          ],
+          "requiredTokens": [
+            "senate",
+            "house"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Senate and House (of Representatives)"
+    },
+    {
+      "id": 20,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name one power of the U.S. Congress.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "20:writes-laws",
+          "display": "Writes laws",
+          "variants": [
+            "write law"
+          ],
+          "requiredTokens": [
+            "write",
+            "law"
+          ]
+        },
+        {
+          "id": "20:declares-war",
+          "display": "Declares war",
+          "variants": [
+            "declare war"
+          ],
+          "requiredTokens": [
+            "declare",
+            "war"
+          ]
+        },
+        {
+          "id": "20:makes-the-federal-budget",
+          "display": "Makes the federal budget",
+          "variants": [
+            "make the federal budget"
+          ],
+          "requiredTokens": [
+            "make",
+            "federal",
+            "budget"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Writes laws\nDeclares war\nMakes the federal budget"
+    },
+    {
+      "id": 21,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How many U.S. senators are there?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "21:one-hundred-100",
+          "display": "One hundred (100)",
+          "variants": [
+            "100"
+          ],
+          "requiredTokens": [
+            "100"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "One hundred (100)"
+    },
+    {
+      "id": 22,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How long is a term for a U.S. senator?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "22:six-6-years",
+          "display": "Six (6) years",
+          "variants": [
+            "6 year"
+          ],
+          "requiredTokens": [
+            "6",
+            "year"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Six (6) years"
+    },
+    {
+      "id": 23,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who is one of your state’s U.S. senators now?",
+      "kind": "dynamic_state",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": false,
+      "sourceRaw": "Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. senators.]",
+      "dynamicRole": "senator"
+    },
+    {
+      "id": 24,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How many voting members are in the House of Representatives?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "24:four-hundred-thirty-five-435",
+          "display": "Four hundred thirty-five (435)",
+          "variants": [
+            "435"
+          ],
+          "requiredTokens": [
+            "435"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Four hundred thirty-five (435)"
+    },
+    {
+      "id": 25,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How long is a term for a member of the House of Representatives?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "25:two-2-years",
+          "display": "Two (2) years",
+          "variants": [
+            "2 year"
+          ],
+          "requiredTokens": [
+            "2",
+            "year"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Two (2) years"
+    },
+    {
+      "id": 26,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Why do U.S. representatives serve shorter terms than U.S. senators?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "26:to-more-closely-follow-public-opinion",
+          "display": "To more closely follow public opinion",
+          "variants": [
+            "to more closely follow public opinion"
+          ],
+          "requiredTokens": [
+            "more",
+            "closely",
+            "follow",
+            "public",
+            "opinion"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "To more closely follow public opinion"
+    },
+    {
+      "id": 27,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How many senators does each state have?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "27:two-2",
+          "display": "Two (2)",
+          "variants": [
+            "2"
+          ],
+          "requiredTokens": [
+            "2"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Two (2)"
+    },
+    {
+      "id": 28,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Why does each state have two senators?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "28:equal-representation-for-small-states",
+          "display": "Equal representation (for small states)",
+          "variants": [
+            "equal representation",
+            "equal representation for small state"
+          ],
+          "requiredTokens": [
+            "equal",
+            "representation"
+          ]
+        },
+        {
+          "id": "28:the-great-compromise-connecticut-compromise",
+          "display": "The Great Compromise (Connecticut Compromise)",
+          "variants": [
+            "the great compromise",
+            "the great compromise connecticut compromise"
+          ],
+          "requiredTokens": [
+            "great",
+            "compromise"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Equal representation (for small states)\nThe Great Compromise (Connecticut Compromise)"
+    },
+    {
+      "id": 29,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name your U.S. representative.",
+      "kind": "dynamic_district",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": false,
+      "sourceRaw": "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) representatives in Congress.]",
+      "dynamicRole": "representative"
+    },
+    {
+      "id": 30,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the name of the Speaker of the House of Representatives now?",
+      "kind": "dynamic_federal",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": true,
+      "sourceRaw": "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives.",
+      "dynamicRole": "speaker"
+    },
+    {
+      "id": 31,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who does a U.S. senator represent?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "31:citizens-of-their-state",
+          "display": "Citizens of their state",
+          "variants": [
+            "citizen of their state"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "their",
+            "state"
+          ]
+        },
+        {
+          "id": "31:people-of-their-state",
+          "display": "People of their state",
+          "variants": [
+            "people of their state"
+          ],
+          "requiredTokens": [
+            "people",
+            "their",
+            "state"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens of their state\nPeople of their state"
+    },
+    {
+      "id": 32,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who elects U.S. senators?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "32:citizens-from-their-state",
+          "display": "Citizens from their state",
+          "variants": [
+            "citizen from their state"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "their",
+            "state"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens from their state"
+    },
+    {
+      "id": 33,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who does a member of the House of Representatives represent?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "33:citizens-in-their-congressional-district",
+          "display": "Citizens in their (congressional) district",
+          "variants": [
+            "citizen in their congressional district",
+            "citizen in their district"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "their",
+            "district"
+          ]
+        },
+        {
+          "id": "33:citizens-in-their-district",
+          "display": "Citizens in their district",
+          "variants": [
+            "citizen in their district"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "their",
+            "district"
+          ]
+        },
+        {
+          "id": "33:people-from-their-congressional-district",
+          "display": "People from their (congressional) district",
+          "variants": [
+            "people from their congressional district",
+            "people from their district"
+          ],
+          "requiredTokens": [
+            "people",
+            "their",
+            "district"
+          ]
+        },
+        {
+          "id": "33:people-in-their-district",
+          "display": "People in their district",
+          "variants": [
+            "people in their district"
+          ],
+          "requiredTokens": [
+            "people",
+            "their",
+            "district"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens in their (congressional) district\nCitizens in their district\nPeople from their (congressional) district\nPeople in their district"
+    },
+    {
+      "id": 34,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who elects members of the House of Representatives?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "34:citizens-from-their-congressional-district",
+          "display": "Citizens from their (congressional) district",
+          "variants": [
+            "citizen from their congressional district",
+            "citizen from their district"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "their",
+            "district"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens from their (congressional) district"
+    },
+    {
+      "id": 35,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Some states have more representatives than other states. Why?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "35:because-of-the-state-s-population",
+          "display": "(Because of) the state’s population",
+          "variants": [
+            "because of the state population",
+            "the state population"
+          ],
+          "requiredTokens": [
+            "state",
+            "population"
+          ]
+        },
+        {
+          "id": "35:because-they-have-more-people",
+          "display": "(Because) they have more people",
+          "variants": [
+            "because they have more people",
+            "they have more people"
+          ],
+          "requiredTokens": [
+            "they",
+            "have",
+            "more",
+            "people"
+          ]
+        },
+        {
+          "id": "35:because-some-states-have-more-people",
+          "display": "(Because) some states have more people",
+          "variants": [
+            "because some state have more people",
+            "some state have more people"
+          ],
+          "requiredTokens": [
+            "some",
+            "state",
+            "have",
+            "more",
+            "people"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Because of) the state’s population\n(Because) they have more people\n(Because) some states have more people"
+    },
+    {
+      "id": 36,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "The President of the United States is elected for how many years?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "36:four-4-years",
+          "display": "Four (4) years",
+          "variants": [
+            "4 year"
+          ],
+          "requiredTokens": [
+            "4",
+            "year"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Four (4) years"
+    },
+    {
+      "id": 37,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "The President of the United States can serve only two terms. Why?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "37:because-of-the-22nd-amendment",
+          "display": "(Because of) the 22nd Amendment",
+          "variants": [
+            "because of the 22 amendment",
+            "the 22 amendment"
+          ],
+          "requiredTokens": [
+            "22",
+            "amendment"
+          ]
+        },
+        {
+          "id": "37:to-keep-the-president-from-becoming-too-powerful",
+          "display": "To keep the president from becoming too powerful",
+          "variants": [
+            "to keep the president from becoming too powerful"
+          ],
+          "requiredTokens": [
+            "keep",
+            "president",
+            "becoming",
+            "too",
+            "powerful"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Because of) the 22nd Amendment\nTo keep the president from becoming too powerful"
+    },
+    {
+      "id": 38,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the name of the President of the United States now?",
+      "kind": "dynamic_federal",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": true,
+      "sourceRaw": "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States.",
+      "dynamicRole": "president"
+    },
+    {
+      "id": 39,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the name of the Vice President of the United States now?",
+      "kind": "dynamic_federal",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": true,
+      "sourceRaw": "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States.",
+      "dynamicRole": "vicePresident"
+    },
+    {
+      "id": 40,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "If the president can no longer serve, who becomes president?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "40:the-vice-president-of-the-united-states",
+          "display": "The Vice President (of the United States)",
+          "variants": [
+            "the vice president",
+            "the vice president of the us"
+          ],
+          "requiredTokens": [
+            "vice",
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The Vice President (of the United States)"
+    },
+    {
+      "id": 41,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name one power of the president.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "41:signs-bills-into-law",
+          "display": "Signs bills into law",
+          "variants": [
+            "sign bill into law"
+          ],
+          "requiredTokens": [
+            "sign",
+            "bill",
+            "into",
+            "law"
+          ]
+        },
+        {
+          "id": "41:vetoes-bills",
+          "display": "Vetoes bills",
+          "variants": [
+            "veto bill"
+          ],
+          "requiredTokens": [
+            "veto",
+            "bill"
+          ]
+        },
+        {
+          "id": "41:enforces-laws",
+          "display": "Enforces laws",
+          "variants": [
+            "enforce law"
+          ],
+          "requiredTokens": [
+            "enforce",
+            "law"
+          ]
+        },
+        {
+          "id": "41:commander-in-chief-of-the-military",
+          "display": "Commander in Chief (of the military)",
+          "variants": [
+            "commander in chief",
+            "commander in chief of the military"
+          ],
+          "requiredTokens": [
+            "commander",
+            "chief"
+          ]
+        },
+        {
+          "id": "41:chief-diplomat",
+          "display": "Chief diplomat",
+          "variants": [
+            "chief diplomat"
+          ],
+          "requiredTokens": [
+            "chief",
+            "diplomat"
+          ]
+        },
+        {
+          "id": "41:appoints-federal-judges",
+          "display": "Appoints federal judges",
+          "variants": [
+            "appoint federal judge"
+          ],
+          "requiredTokens": [
+            "appoint",
+            "federal",
+            "judge"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Signs bills into law\nVetoes bills\nEnforces laws\nCommander in Chief (of the military)\nChief diplomat\nAppoints federal judges"
+    },
+    {
+      "id": 42,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who is Commander in Chief of the U.S. military?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "42:the-president-of-the-united-states",
+          "display": "The President (of the United States)",
+          "variants": [
+            "the president",
+            "the president of the us"
+          ],
+          "requiredTokens": [
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The President (of the United States)"
+    },
+    {
+      "id": 43,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who signs bills to become laws?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "43:the-president-of-the-united-states",
+          "display": "The President (of the United States)",
+          "variants": [
+            "the president",
+            "the president of the us"
+          ],
+          "requiredTokens": [
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The President (of the United States)"
+    },
+    {
+      "id": 44,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who vetoes bills?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "44:the-president-of-the-united-states",
+          "display": "The President (of the United States)",
+          "variants": [
+            "the president",
+            "the president of the us"
+          ],
+          "requiredTokens": [
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "The President (of the United States)"
+    },
+    {
+      "id": 45,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who appoints federal judges?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "45:the-president-of-the-united-states",
+          "display": "The President (of the United States)",
+          "variants": [
+            "the president",
+            "the president of the us"
+          ],
+          "requiredTokens": [
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The President (of the United States)"
+    },
+    {
+      "id": 46,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "The executive branch has many parts. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "46:president-of-the-united-states",
+          "display": "President (of the United States)",
+          "variants": [
+            "president",
+            "president of the us"
+          ],
+          "requiredTokens": [
+            "president"
+          ]
+        },
+        {
+          "id": "46:cabinet",
+          "display": "Cabinet",
+          "variants": [
+            "cabinet"
+          ],
+          "requiredTokens": [
+            "cabinet"
+          ]
+        },
+        {
+          "id": "46:federal-departments-and-agencies",
+          "display": "Federal departments and agencies",
+          "variants": [
+            "federal department and agency"
+          ],
+          "requiredTokens": [
+            "federal",
+            "department",
+            "agency"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "President (of the United States)\nCabinet\nFederal departments and agencies"
+    },
+    {
+      "id": 47,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What does the President’s Cabinet do?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "47:advises-the-president-of-the-united-states",
+          "display": "Advises the President (of the United States)",
+          "variants": [
+            "advise the president",
+            "advise the president of the us"
+          ],
+          "requiredTokens": [
+            "advise",
+            "president"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Advises the President (of the United States)"
+    },
+    {
+      "id": 48,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What are two Cabinet-level positions?",
+      "kind": "static",
+      "requiredCount": 2,
+      "answers": [
+        {
+          "id": "48:attorney-general",
+          "display": "Attorney General",
+          "variants": [
+            "attorney general"
+          ],
+          "requiredTokens": [
+            "attorney",
+            "general"
+          ]
+        },
+        {
+          "id": "48:secretary-of-agriculture",
+          "display": "Secretary of Agriculture",
+          "variants": [
+            "secretary of agriculture"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "agriculture"
+          ]
+        },
+        {
+          "id": "48:secretary-of-commerce",
+          "display": "Secretary of Commerce",
+          "variants": [
+            "secretary of commerce"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "commerce"
+          ]
+        },
+        {
+          "id": "48:secretary-of-education",
+          "display": "Secretary of Education",
+          "variants": [
+            "secretary of education"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "education"
+          ]
+        },
+        {
+          "id": "48:secretary-of-energy",
+          "display": "Secretary of Energy",
+          "variants": [
+            "secretary of energy"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "energy"
+          ]
+        },
+        {
+          "id": "48:secretary-of-health-and-human-services",
+          "display": "Secretary of Health and Human Services",
+          "variants": [
+            "secretary of health and human service"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "health",
+            "human",
+            "service"
+          ]
+        },
+        {
+          "id": "48:secretary-of-homeland-security",
+          "display": "Secretary of Homeland Security",
+          "variants": [
+            "secretary of homeland security"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "homeland",
+            "security"
+          ]
+        },
+        {
+          "id": "48:secretary-of-housing-and-urban-development",
+          "display": "Secretary of Housing and Urban Development",
+          "variants": [
+            "secretary of housing and urban development"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "housing",
+            "urban",
+            "development"
+          ]
+        },
+        {
+          "id": "48:secretary-of-the-interior",
+          "display": "Secretary of the Interior",
+          "variants": [
+            "secretary of the interior"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "interior"
+          ]
+        },
+        {
+          "id": "48:secretary-of-labor",
+          "display": "Secretary of Labor",
+          "variants": [
+            "secretary of labor"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "labor"
+          ]
+        },
+        {
+          "id": "48:secretary-of-state",
+          "display": "Secretary of State",
+          "variants": [
+            "secretary of state"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "state"
+          ]
+        },
+        {
+          "id": "48:secretary-of-transportation",
+          "display": "Secretary of Transportation",
+          "variants": [
+            "secretary of transportation"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "transportation"
+          ]
+        },
+        {
+          "id": "48:secretary-of-the-treasury",
+          "display": "Secretary of the Treasury",
+          "variants": [
+            "secretary of the treasury"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "treasury"
+          ]
+        },
+        {
+          "id": "48:secretary-of-veterans-affairs",
+          "display": "Secretary of Veterans Affairs",
+          "variants": [
+            "secretary of veterans affair"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "veterans",
+            "affair"
+          ]
+        },
+        {
+          "id": "48:secretary-of-war-defense",
+          "display": "Secretary of War (Defense)",
+          "variants": [
+            "secretary of war",
+            "secretary of war defense"
+          ],
+          "requiredTokens": [
+            "secretary",
+            "war"
+          ]
+        },
+        {
+          "id": "48:vice-president",
+          "display": "Vice-President",
+          "variants": [
+            "vice president"
+          ],
+          "requiredTokens": [
+            "vice",
+            "president"
+          ]
+        },
+        {
+          "id": "48:administrator-of-the-environmental-protection-ag",
+          "display": "Administrator of the Environmental Protection Agency",
+          "variants": [
+            "administrator of the environmental protection agency"
+          ],
+          "requiredTokens": [
+            "administrator",
+            "environmental",
+            "protection",
+            "agency"
+          ]
+        },
+        {
+          "id": "48:administrator-of-the-small-business-administrati",
+          "display": "Administrator of the Small Business Administration",
+          "variants": [
+            "administrator of the small business administration"
+          ],
+          "requiredTokens": [
+            "administrator",
+            "small",
+            "business",
+            "administration"
+          ]
+        },
+        {
+          "id": "48:director-of-the-central-intelligence-agency",
+          "display": "Director of the Central Intelligence Agency",
+          "variants": [
+            "director of the central intelligence agency"
+          ],
+          "requiredTokens": [
+            "director",
+            "central",
+            "intelligence",
+            "agency"
+          ]
+        },
+        {
+          "id": "48:director-of-the-office-of-management-and-budget",
+          "display": "Director of the Office of Management and Budget",
+          "variants": [
+            "director of the office of management and budget"
+          ],
+          "requiredTokens": [
+            "director",
+            "office",
+            "management",
+            "budget"
+          ]
+        },
+        {
+          "id": "48:director-of-national-intelligence",
+          "display": "Director of National Intelligence",
+          "variants": [
+            "director of national intelligence"
+          ],
+          "requiredTokens": [
+            "director",
+            "national",
+            "intelligence"
+          ]
+        },
+        {
+          "id": "48:united-states-trade-representative",
+          "display": "United States Trade Representative",
+          "variants": [
+            "us trade representative"
+          ],
+          "requiredTokens": [
+            "us",
+            "trade",
+            "representative"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Attorney General\nSecretary of Agriculture\nSecretary of Commerce\nSecretary of Education\nSecretary of Energy\nSecretary of Health and Human Services\nSecretary of Homeland Security\nSecretary of Housing and Urban Development\nSecretary of the Interior\nSecretary of Labor\nSecretary of State\nSecretary of Transportation\nSecretary of the Treasury\nSecretary of Veterans Affairs\nSecretary of War (Defense)\nVice-President\nAdministrator of the Environmental Protection Agency\nAdministrator of the Small Business Administration\nDirector of the Central Intelligence Agency\nDirector of the Office of Management and Budget\nDirector of National Intelligence\nUnited States Trade Representative"
+    },
+    {
+      "id": 49,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Why is the Electoral College important?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "49:it-decides-who-is-elected-president",
+          "display": "It decides who is elected president.",
+          "variants": [
+            "it decide who is elected president"
+          ],
+          "requiredTokens": [
+            "decide",
+            "who",
+            "elected",
+            "president"
+          ]
+        },
+        {
+          "id": "49:it-provides-a-compromise-between-the-popular-ele",
+          "display": "It provides a compromise between the popular election of the president and congressional selection.",
+          "variants": [
+            "it provide a compromise between the popular election of the president and congressional selection"
+          ],
+          "requiredTokens": [
+            "provide",
+            "compromise",
+            "between",
+            "popular",
+            "election",
+            "president",
+            "congressional",
+            "selection"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "It decides who is elected president.\nIt provides a compromise between the popular election of the president and congressional selection."
+    },
+    {
+      "id": 50,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is one part of the judicial branch?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "50:supreme-court",
+          "display": "Supreme Court",
+          "variants": [
+            "supreme court"
+          ],
+          "requiredTokens": [
+            "supreme",
+            "court"
+          ]
+        },
+        {
+          "id": "50:federal-courts",
+          "display": "Federal Courts",
+          "variants": [
+            "federal court"
+          ],
+          "requiredTokens": [
+            "federal",
+            "court"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Supreme Court\nFederal Courts"
+    },
+    {
+      "id": 51,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What does the judicial branch do?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "51:reviews-laws",
+          "display": "Reviews laws",
+          "variants": [
+            "review law"
+          ],
+          "requiredTokens": [
+            "review",
+            "law"
+          ]
+        },
+        {
+          "id": "51:explains-laws",
+          "display": "Explains laws",
+          "variants": [
+            "explain law"
+          ],
+          "requiredTokens": [
+            "explain",
+            "law"
+          ]
+        },
+        {
+          "id": "51:resolves-disputes-disagreements-about-the-law",
+          "display": "Resolves disputes (disagreements) about the law",
+          "variants": [
+            "resolve dispute about the law",
+            "resolve dispute disagreement about the law"
+          ],
+          "requiredTokens": [
+            "resolve",
+            "dispute",
+            "about",
+            "law"
+          ]
+        },
+        {
+          "id": "51:decides-if-a-law-goes-against-the-u-s-constituti",
+          "display": "Decides if a law goes against the (U.S.) Constitution",
+          "variants": [
+            "decide if a law goe against the constitution",
+            "decide if a law goe against the us constitution"
+          ],
+          "requiredTokens": [
+            "decide",
+            "if",
+            "law",
+            "goe",
+            "against",
+            "constitution"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Reviews laws\nExplains laws\nResolves disputes (disagreements) about the law\nDecides if a law goes against the (U.S.) Constitution"
+    },
+    {
+      "id": 52,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the highest court in the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "52:supreme-court",
+          "display": "Supreme Court",
+          "variants": [
+            "supreme court"
+          ],
+          "requiredTokens": [
+            "supreme",
+            "court"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Supreme Court"
+    },
+    {
+      "id": 53,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How many seats are on the Supreme Court?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "53:nine-9",
+          "display": "Nine (9)",
+          "variants": [
+            "9"
+          ],
+          "requiredTokens": [
+            "9"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Nine (9)"
+    },
+    {
+      "id": 54,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How many Supreme Court justices are usually needed to decide a case?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "54:five-5",
+          "display": "Five (5)",
+          "variants": [
+            "5"
+          ],
+          "requiredTokens": [
+            "5"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Five (5)"
+    },
+    {
+      "id": 55,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "How long do Supreme Court justices serve?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "55:for-life",
+          "display": "(For) life",
+          "variants": [
+            "for life",
+            "life"
+          ],
+          "requiredTokens": [
+            "life"
+          ]
+        },
+        {
+          "id": "55:lifetime-appointment",
+          "display": "Lifetime appointment",
+          "variants": [
+            "lifetime appointment"
+          ],
+          "requiredTokens": [
+            "lifetime",
+            "appointment"
+          ]
+        },
+        {
+          "id": "55:until-retirement",
+          "display": "(Until) retirement",
+          "variants": [
+            "retirement",
+            "until retirement"
+          ],
+          "requiredTokens": [
+            "retirement"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(For) life\nLifetime appointment\n(Until) retirement"
+    },
+    {
+      "id": 56,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Supreme Court justices serve for life. Why?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "56:to-be-independent-of-politics",
+          "display": "To be independent (of politics)",
+          "variants": [
+            "to be independent",
+            "to be independent of politic"
+          ],
+          "requiredTokens": [
+            "independent"
+          ]
+        },
+        {
+          "id": "56:to-limit-outside-political-influence",
+          "display": "To limit outside (political) influence",
+          "variants": [
+            "to limit outside influence",
+            "to limit outside political influence"
+          ],
+          "requiredTokens": [
+            "limit",
+            "outside",
+            "influence"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "To be independent (of politics)\nTo limit outside (political) influence"
+    },
+    {
+      "id": 57,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who is the Chief Justice of the United States now?",
+      "kind": "dynamic_federal",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": false,
+      "sourceRaw": "Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States.",
+      "dynamicRole": "chiefJustice"
+    },
+    {
+      "id": 58,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name one power that is only for the federal government.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "58:print-paper-money",
+          "display": "Print paper money",
+          "variants": [
+            "print paper money"
+          ],
+          "requiredTokens": [
+            "print",
+            "paper",
+            "money"
+          ]
+        },
+        {
+          "id": "58:mint-coins",
+          "display": "Mint coins",
+          "variants": [
+            "mint coin"
+          ],
+          "requiredTokens": [
+            "mint",
+            "coin"
+          ]
+        },
+        {
+          "id": "58:declare-war",
+          "display": "Declare war",
+          "variants": [
+            "declare war"
+          ],
+          "requiredTokens": [
+            "declare",
+            "war"
+          ]
+        },
+        {
+          "id": "58:create-an-army",
+          "display": "Create an army",
+          "variants": [
+            "create an army"
+          ],
+          "requiredTokens": [
+            "create",
+            "army"
+          ]
+        },
+        {
+          "id": "58:make-treaties",
+          "display": "Make treaties",
+          "variants": [
+            "make treaty"
+          ],
+          "requiredTokens": [
+            "make",
+            "treaty"
+          ]
+        },
+        {
+          "id": "58:set-foreign-policy",
+          "display": "Set foreign policy",
+          "variants": [
+            "set foreign policy"
+          ],
+          "requiredTokens": [
+            "set",
+            "foreign",
+            "policy"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Print paper money\nMint coins\nDeclare war\nCreate an army\nMake treaties\nSet foreign policy"
+    },
+    {
+      "id": 59,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Name one power that is only for the states.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "59:provide-schooling-and-education",
+          "display": "Provide schooling and education",
+          "variants": [
+            "provide schooling and education"
+          ],
+          "requiredTokens": [
+            "provide",
+            "schooling",
+            "education"
+          ]
+        },
+        {
+          "id": "59:provide-protection-police",
+          "display": "Provide protection (police)",
+          "variants": [
+            "provide protection",
+            "provide protection police"
+          ],
+          "requiredTokens": [
+            "provide",
+            "protection"
+          ]
+        },
+        {
+          "id": "59:provide-safety-fire-departments",
+          "display": "Provide safety (fire departments)",
+          "variants": [
+            "provide safety",
+            "provide safety fire department"
+          ],
+          "requiredTokens": [
+            "provide",
+            "safety"
+          ]
+        },
+        {
+          "id": "59:give-a-driver-s-license",
+          "display": "Give a driver’s license",
+          "variants": [
+            "give a driver license"
+          ],
+          "requiredTokens": [
+            "give",
+            "driver",
+            "license"
+          ]
+        },
+        {
+          "id": "59:approve-zoning-and-land-use",
+          "display": "Approve zoning and land use",
+          "variants": [
+            "approve zoning and land use"
+          ],
+          "requiredTokens": [
+            "approve",
+            "zoning",
+            "land",
+            "use"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Provide schooling and education\nProvide protection (police)\nProvide safety (fire departments)\nGive a driver’s license\nApprove zoning and land use"
+    },
+    {
+      "id": 60,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the purpose of the 10th Amendment?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "60:it-states-that-the-powers-not-given-to-the-feder",
+          "display": "(It states that the) powers not given to the federal government belong to the states or to the people.",
+          "variants": [
+            "it state that the power not given to the federal government belong to the state or to the people",
+            "power not given to the federal government belong to the state or to the people"
+          ],
+          "requiredTokens": [
+            "power",
+            "not",
+            "given",
+            "federal",
+            "government",
+            "belong",
+            "state",
+            "people"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(It states that the) powers not given to the federal government belong to the states or to the people."
+    },
+    {
+      "id": 61,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "Who is the governor of your state now?",
+      "kind": "dynamic_state",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": true,
+      "sourceRaw": "Answers will vary. [District of Columbia residents should answer that D.C. does not have a governor.]",
+      "dynamicRole": "governor"
+    },
+    {
+      "id": 62,
+      "section": "government",
+      "subsection": "System of Government",
+      "prompt": "What is the capital of your state?",
+      "kind": "dynamic_state",
+      "requiredCount": 1,
+      "answers": [],
+      "seniorExempt": false,
+      "sourceRaw": "Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a capital. Residents of U.S. territories should name the capital of the territory.]",
+      "dynamicRole": "capital"
+    },
+    {
+      "id": 63,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "63:citizens-eighteen-18-and-older-can-vote",
+          "display": "Citizens eighteen (18) and older (can vote).",
+          "variants": [
+            "citizen 18 18 and older",
+            "citizen 18 18 and older can vote",
+            "citizen 18 and older",
+            "citizen 18 and older can vote"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "18",
+            "older"
+          ]
+        },
+        {
+          "id": "63:you-don-t-have-to-pay-a-poll-tax-to-vote",
+          "display": "You don’t have to pay (a poll tax) to vote.",
+          "variants": [
+            "you don t have to pay a poll tax to vote",
+            "you don t have to pay to vote"
+          ],
+          "requiredTokens": [
+            "you",
+            "don",
+            "t",
+            "have",
+            "pay",
+            "vote"
+          ]
+        },
+        {
+          "id": "63:any-citizen-can-vote-women-and-men-can-vote",
+          "display": "Any citizen can vote. (Women and men can vote.)",
+          "variants": [
+            "any citizen can vote",
+            "any citizen can vote women and men can vote"
+          ],
+          "requiredTokens": [
+            "any",
+            "citizen",
+            "can",
+            "vote"
+          ]
+        },
+        {
+          "id": "63:a-male-citizen-of-any-race-can-vote",
+          "display": "A male citizen of any race (can vote).",
+          "variants": [
+            "a male citizen of any race",
+            "a male citizen of any race can vote"
+          ],
+          "requiredTokens": [
+            "male",
+            "citizen",
+            "any",
+            "race"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens eighteen (18) and older (can vote).\nYou don’t have to pay (a poll tax) to vote.\nAny citizen can vote. (Women and men can vote.)\nA male citizen of any race (can vote)."
+    },
+    {
+      "id": 64,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "64:citizens",
+          "display": "Citizens",
+          "variants": [
+            "citizen"
+          ],
+          "requiredTokens": [
+            "citizen"
+          ]
+        },
+        {
+          "id": "64:citizens-of-the-united-states",
+          "display": "Citizens of the United States",
+          "variants": [
+            "citizen of the us"
+          ],
+          "requiredTokens": [
+            "citizen",
+            "us"
+          ]
+        },
+        {
+          "id": "64:u-s-citizens",
+          "display": "U.S. citizens",
+          "variants": [
+            "us citizen"
+          ],
+          "requiredTokens": [
+            "us",
+            "citizen"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Citizens\nCitizens of the United States\nU.S. citizens"
+    },
+    {
+      "id": 65,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "What are three rights of everyone living in the United States?",
+      "kind": "static",
+      "requiredCount": 3,
+      "answers": [
+        {
+          "id": "65:freedom-of-expression",
+          "display": "Freedom of expression",
+          "variants": [
+            "freedom of expression"
+          ],
+          "requiredTokens": [
+            "freedom",
+            "expression"
+          ]
+        },
+        {
+          "id": "65:freedom-of-speech",
+          "display": "Freedom of speech",
+          "variants": [
+            "freedom of speech"
+          ],
+          "requiredTokens": [
+            "freedom",
+            "speech"
+          ]
+        },
+        {
+          "id": "65:freedom-of-assembly",
+          "display": "Freedom of assembly",
+          "variants": [
+            "freedom of assembly"
+          ],
+          "requiredTokens": [
+            "freedom",
+            "assembly"
+          ]
+        },
+        {
+          "id": "65:freedom-to-petition-the-government",
+          "display": "Freedom to petition the government",
+          "variants": [
+            "freedom to petition the government"
+          ],
+          "requiredTokens": [
+            "freedom",
+            "petition",
+            "government"
+          ]
+        },
+        {
+          "id": "65:freedom-of-religion",
+          "display": "Freedom of religion",
+          "variants": [
+            "freedom of religion"
+          ],
+          "requiredTokens": [
+            "freedom",
+            "religion"
+          ]
+        },
+        {
+          "id": "65:the-right-to-bear-arms",
+          "display": "The right to bear arms",
+          "variants": [
+            "the right to bear arm"
+          ],
+          "requiredTokens": [
+            "right",
+            "bear",
+            "arm"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Freedom of expression\nFreedom of speech\nFreedom of assembly\nFreedom to petition the government\nFreedom of religion\nThe right to bear arms"
+    },
+    {
+      "id": 66,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "What do we show loyalty to when we say the Pledge of Allegiance?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "66:the-united-states",
+          "display": "The United States",
+          "variants": [
+            "the us"
+          ],
+          "requiredTokens": [
+            "us"
+          ]
+        },
+        {
+          "id": "66:the-flag",
+          "display": "The flag",
+          "variants": [
+            "the flag"
+          ],
+          "requiredTokens": [
+            "flag"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "The United States\nThe flag"
+    },
+    {
+      "id": 67,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "Name two promises that new citizens make in the Oath of Allegiance.",
+      "kind": "static",
+      "requiredCount": 2,
+      "answers": [
+        {
+          "id": "67:give-up-loyalty-to-other-countries",
+          "display": "Give up loyalty to other countries",
+          "variants": [
+            "give up loyalty to other country"
+          ],
+          "requiredTokens": [
+            "give",
+            "up",
+            "loyalty",
+            "other",
+            "country"
+          ]
+        },
+        {
+          "id": "67:defend-the-u-s-constitution",
+          "display": "Defend the (U.S.) Constitution",
+          "variants": [
+            "defend the constitution",
+            "defend the us constitution"
+          ],
+          "requiredTokens": [
+            "defend",
+            "constitution"
+          ]
+        },
+        {
+          "id": "67:obey-the-laws-of-the-united-states",
+          "display": "Obey the laws of the United States",
+          "variants": [
+            "obey the law of the us"
+          ],
+          "requiredTokens": [
+            "obey",
+            "law",
+            "us"
+          ]
+        },
+        {
+          "id": "67:serve-in-the-military-if-needed",
+          "display": "Serve in the military (if needed)",
+          "variants": [
+            "serve in the military",
+            "serve in the military if needed"
+          ],
+          "requiredTokens": [
+            "serve",
+            "military"
+          ]
+        },
+        {
+          "id": "67:serve-help-do-important-work-for-the-nation-if-n",
+          "display": "Serve (help, do important work for) the nation (if needed)",
+          "variants": [
+            "serve help do important work for the nation",
+            "serve help do important work for the nation if needed",
+            "serve the nation",
+            "serve the nation if needed"
+          ],
+          "requiredTokens": [
+            "serve",
+            "nation"
+          ]
+        },
+        {
+          "id": "67:be-loyal-to-the-united-states",
+          "display": "Be loyal to the United States",
+          "variants": [
+            "be loyal to the us"
+          ],
+          "requiredTokens": [
+            "loyal",
+            "us"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Give up loyalty to other countries\nDefend the (U.S.) Constitution\nObey the laws of the United States\nServe in the military (if needed)\nServe (help, do important work for) the nation (if needed)\nBe loyal to the United States"
+    },
+    {
+      "id": 68,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "How can people become United States citizens?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "68:be-born-in-the-united-states-under-the-condition",
+          "display": "Be born in the United States, under the conditions set by the 14th Amendment",
+          "variants": [
+            "be born in the us under the condition set by the 14 amendment"
+          ],
+          "requiredTokens": [
+            "born",
+            "us",
+            "under",
+            "condition",
+            "set",
+            "14",
+            "amendment"
+          ]
+        },
+        {
+          "id": "68:naturalize",
+          "display": "Naturalize",
+          "variants": [
+            "naturalize"
+          ],
+          "requiredTokens": [
+            "naturalize"
+          ]
+        },
+        {
+          "id": "68:derive-citizenship-under-conditions-set-by-congr",
+          "display": "Derive citizenship (under conditions set by Congress)",
+          "variants": [
+            "derive citizenship",
+            "derive citizenship under condition set by congress"
+          ],
+          "requiredTokens": [
+            "derive",
+            "citizenship"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Be born in the United States, under the conditions set by the 14th Amendment\nNaturalize\nDerive citizenship (under conditions set by Congress)"
+    },
+    {
+      "id": 69,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "What are two examples of civic participation in the United States?",
+      "kind": "static",
+      "requiredCount": 2,
+      "answers": [
+        {
+          "id": "69:vote",
+          "display": "Vote",
+          "variants": [
+            "vote"
+          ],
+          "requiredTokens": [
+            "vote"
+          ]
+        },
+        {
+          "id": "69:run-for-office",
+          "display": "Run for office",
+          "variants": [
+            "run for office"
+          ],
+          "requiredTokens": [
+            "run",
+            "office"
+          ]
+        },
+        {
+          "id": "69:join-a-political-party",
+          "display": "Join a political party",
+          "variants": [
+            "join a political party"
+          ],
+          "requiredTokens": [
+            "join",
+            "political",
+            "party"
+          ]
+        },
+        {
+          "id": "69:help-with-a-campaign",
+          "display": "Help with a campaign",
+          "variants": [
+            "help with a campaign"
+          ],
+          "requiredTokens": [
+            "help",
+            "campaign"
+          ]
+        },
+        {
+          "id": "69:join-a-civic-group",
+          "display": "Join a civic group",
+          "variants": [
+            "join a civic group"
+          ],
+          "requiredTokens": [
+            "join",
+            "civic",
+            "group"
+          ]
+        },
+        {
+          "id": "69:join-a-community-group",
+          "display": "Join a community group",
+          "variants": [
+            "join a community group"
+          ],
+          "requiredTokens": [
+            "join",
+            "community",
+            "group"
+          ]
+        },
+        {
+          "id": "69:give-an-elected-official-your-opinion-on-an-issu",
+          "display": "Give an elected official your opinion (on an issue)",
+          "variants": [
+            "give an elected official your opinion",
+            "give an elected official your opinion on an issue"
+          ],
+          "requiredTokens": [
+            "give",
+            "elected",
+            "official",
+            "your",
+            "opinion"
+          ]
+        },
+        {
+          "id": "69:contact-elected-officials",
+          "display": "Contact elected officials",
+          "variants": [
+            "contact elected official"
+          ],
+          "requiredTokens": [
+            "contact",
+            "elected",
+            "official"
+          ]
+        },
+        {
+          "id": "69:support-or-oppose-an-issue-or-policy",
+          "display": "Support or oppose an issue or policy",
+          "variants": [
+            "support or oppose an issue or policy"
+          ],
+          "requiredTokens": [
+            "support",
+            "oppose",
+            "issue",
+            "policy"
+          ]
+        },
+        {
+          "id": "69:write-to-a-newspaper",
+          "display": "Write to a newspaper",
+          "variants": [
+            "write to a newspaper"
+          ],
+          "requiredTokens": [
+            "write",
+            "newspaper"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Vote\nRun for office\nJoin a political party\nHelp with a campaign\nJoin a civic group\nJoin a community group\nGive an elected official your opinion (on an issue)\nContact elected officials\nSupport or oppose an issue or policy\nWrite to a newspaper"
+    },
+    {
+      "id": 70,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "What is one way Americans can serve their country?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "70:vote",
+          "display": "Vote",
+          "variants": [
+            "vote"
+          ],
+          "requiredTokens": [
+            "vote"
+          ]
+        },
+        {
+          "id": "70:pay-taxes",
+          "display": "Pay taxes",
+          "variants": [
+            "pay tax"
+          ],
+          "requiredTokens": [
+            "pay",
+            "tax"
+          ]
+        },
+        {
+          "id": "70:obey-the-law",
+          "display": "Obey the law",
+          "variants": [
+            "obey the law"
+          ],
+          "requiredTokens": [
+            "obey",
+            "law"
+          ]
+        },
+        {
+          "id": "70:serve-in-the-military",
+          "display": "Serve in the military",
+          "variants": [
+            "serve in the military"
+          ],
+          "requiredTokens": [
+            "serve",
+            "military"
+          ]
+        },
+        {
+          "id": "70:run-for-office",
+          "display": "Run for office",
+          "variants": [
+            "run for office"
+          ],
+          "requiredTokens": [
+            "run",
+            "office"
+          ]
+        },
+        {
+          "id": "70:work-for-local-state-or-federal-government",
+          "display": "Work for local, state, or federal government",
+          "variants": [
+            "work for local state or federal government"
+          ],
+          "requiredTokens": [
+            "work",
+            "local",
+            "state",
+            "federal",
+            "government"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Vote\nPay taxes\nObey the law\nServe in the military\nRun for office\nWork for local, state, or federal government"
+    },
+    {
+      "id": 71,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "Why is it important to pay federal taxes?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "71:required-by-law",
+          "display": "Required by law",
+          "variants": [
+            "required by law"
+          ],
+          "requiredTokens": [
+            "required",
+            "law"
+          ]
+        },
+        {
+          "id": "71:all-people-pay-to-fund-the-federal-government",
+          "display": "All people pay to fund the federal government",
+          "variants": [
+            "all people pay to fund the federal government"
+          ],
+          "requiredTokens": [
+            "all",
+            "people",
+            "pay",
+            "fund",
+            "federal",
+            "government"
+          ]
+        },
+        {
+          "id": "71:required-by-the-u-s-constitution-16th-amendment",
+          "display": "Required by the (U.S.) Constitution (16th Amendment)",
+          "variants": [
+            "required by the constitution",
+            "required by the constitution 16 amendment",
+            "required by the us constitution",
+            "required by the us constitution 16 amendment"
+          ],
+          "requiredTokens": [
+            "required",
+            "constitution"
+          ]
+        },
+        {
+          "id": "71:civic-duty",
+          "display": "Civic duty",
+          "variants": [
+            "civic duty"
+          ],
+          "requiredTokens": [
+            "civic",
+            "duty"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Required by law\nAll people pay to fund the federal government\nRequired by the (U.S.) Constitution (16th Amendment)\nCivic duty"
+    },
+    {
+      "id": 72,
+      "section": "government",
+      "subsection": "Rights and Responsibilities",
+      "prompt": "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "72:required-by-law",
+          "display": "Required by law",
+          "variants": [
+            "required by law"
+          ],
+          "requiredTokens": [
+            "required",
+            "law"
+          ]
+        },
+        {
+          "id": "72:civic-duty",
+          "display": "Civic duty",
+          "variants": [
+            "civic duty"
+          ],
+          "requiredTokens": [
+            "civic",
+            "duty"
+          ]
+        },
+        {
+          "id": "72:makes-the-draft-fair-if-needed",
+          "display": "Makes the draft fair, if needed",
+          "variants": [
+            "make the draft fair if needed"
+          ],
+          "requiredTokens": [
+            "make",
+            "draft",
+            "fair",
+            "if",
+            "needed"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Required by law\nCivic duty\nMakes the draft fair, if needed"
+    },
+    {
+      "id": 73,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "The colonists came to America for many reasons. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "73:freedom",
+          "display": "Freedom",
+          "variants": [
+            "freedom"
+          ],
+          "requiredTokens": [
+            "freedom"
+          ]
+        },
+        {
+          "id": "73:political-liberty",
+          "display": "Political liberty",
+          "variants": [
+            "political liberty"
+          ],
+          "requiredTokens": [
+            "political",
+            "liberty"
+          ]
+        },
+        {
+          "id": "73:religious-freedom",
+          "display": "Religious freedom",
+          "variants": [
+            "religious freedom"
+          ],
+          "requiredTokens": [
+            "religious",
+            "freedom"
+          ]
+        },
+        {
+          "id": "73:economic-opportunity",
+          "display": "Economic opportunity",
+          "variants": [
+            "economic opportunity"
+          ],
+          "requiredTokens": [
+            "economic",
+            "opportunity"
+          ]
+        },
+        {
+          "id": "73:escape-persecution",
+          "display": "Escape persecution",
+          "variants": [
+            "escape persecution"
+          ],
+          "requiredTokens": [
+            "escape",
+            "persecution"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Freedom\nPolitical liberty\nReligious freedom\nEconomic opportunity\nEscape persecution"
+    },
+    {
+      "id": 74,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Who lived in America before the Europeans arrived?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "74:american-indians",
+          "display": "American Indians",
+          "variants": [
+            "american indian"
+          ],
+          "requiredTokens": [
+            "american",
+            "indian"
+          ]
+        },
+        {
+          "id": "74:native-americans",
+          "display": "Native Americans",
+          "variants": [
+            "native american"
+          ],
+          "requiredTokens": [
+            "native",
+            "american"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "American Indians\nNative Americans"
+    },
+    {
+      "id": 75,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "What group of people was taken and sold as slaves?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "75:africans",
+          "display": "Africans",
+          "variants": [
+            "african"
+          ],
+          "requiredTokens": [
+            "african"
+          ]
+        },
+        {
+          "id": "75:people-from-africa",
+          "display": "People from Africa",
+          "variants": [
+            "people from africa"
+          ],
+          "requiredTokens": [
+            "people",
+            "africa"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Africans\nPeople from Africa"
+    },
+    {
+      "id": 76,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "What war did the Americans fight to win independence from Britain?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "76:american-revolution",
+          "display": "American Revolution",
+          "variants": [
+            "american revolution"
+          ],
+          "requiredTokens": [
+            "american",
+            "revolution"
+          ]
+        },
+        {
+          "id": "76:the-american-revolutionary-war",
+          "display": "The (American) Revolutionary War",
+          "variants": [
+            "the american revolutionary war",
+            "the revolutionary war"
+          ],
+          "requiredTokens": [
+            "revolutionary",
+            "war"
+          ]
+        },
+        {
+          "id": "76:war-for-american-independence",
+          "display": "War for (American) Independence",
+          "variants": [
+            "war for american independence",
+            "war for independence"
+          ],
+          "requiredTokens": [
+            "war",
+            "independence"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "American Revolution\nThe (American) Revolutionary War\nWar for (American) Independence"
+    },
+    {
+      "id": 77,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Name one reason why the Americans declared independence from Britain.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "77:high-taxes",
+          "display": "High taxes",
+          "variants": [
+            "high tax"
+          ],
+          "requiredTokens": [
+            "high",
+            "tax"
+          ]
+        },
+        {
+          "id": "77:taxation-without-representation",
+          "display": "Taxation without representation",
+          "variants": [
+            "taxation without representation"
+          ],
+          "requiredTokens": [
+            "taxation",
+            "without",
+            "representation"
+          ]
+        },
+        {
+          "id": "77:british-soldiers-stayed-in-americans-houses-boar",
+          "display": "British soldiers stayed in Americans’ houses (boarding, quartering)",
+          "variants": [
+            "british soldier stayed in american house",
+            "british soldier stayed in american house boarding quartering"
+          ],
+          "requiredTokens": [
+            "british",
+            "soldier",
+            "stayed",
+            "american",
+            "house"
+          ]
+        },
+        {
+          "id": "77:they-did-not-have-self-government",
+          "display": "They did not have self-government",
+          "variants": [
+            "they did not have self government"
+          ],
+          "requiredTokens": [
+            "they",
+            "did",
+            "not",
+            "have",
+            "self",
+            "government"
+          ]
+        },
+        {
+          "id": "77:boston-massacre",
+          "display": "Boston Massacre",
+          "variants": [
+            "boston massacre"
+          ],
+          "requiredTokens": [
+            "boston",
+            "massacre"
+          ]
+        },
+        {
+          "id": "77:boston-tea-party-tea-act",
+          "display": "Boston Tea Party (Tea Act)",
+          "variants": [
+            "boston tea party",
+            "boston tea party tea act"
+          ],
+          "requiredTokens": [
+            "boston",
+            "tea",
+            "party"
+          ]
+        },
+        {
+          "id": "77:stamp-act",
+          "display": "Stamp Act",
+          "variants": [
+            "stamp act"
+          ],
+          "requiredTokens": [
+            "stamp",
+            "act"
+          ]
+        },
+        {
+          "id": "77:sugar-act",
+          "display": "Sugar Act",
+          "variants": [
+            "sugar act"
+          ],
+          "requiredTokens": [
+            "sugar",
+            "act"
+          ]
+        },
+        {
+          "id": "77:townshend-acts",
+          "display": "Townshend Acts",
+          "variants": [
+            "townshend act"
+          ],
+          "requiredTokens": [
+            "townshend",
+            "act"
+          ]
+        },
+        {
+          "id": "77:intolerable-coercive-acts",
+          "display": "Intolerable (Coercive) Acts",
+          "variants": [
+            "intolerable act",
+            "intolerable coercive act"
+          ],
+          "requiredTokens": [
+            "intolerable",
+            "act"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "High taxes\nTaxation without representation\nBritish soldiers stayed in Americans’ houses (boarding, quartering)\nThey did not have self-government\nBoston Massacre\nBoston Tea Party (Tea Act)\nStamp Act\nSugar Act\nTownshend Acts\nIntolerable (Coercive) Acts"
+    },
+    {
+      "id": 78,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Who wrote the Declaration of Independence?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "78:thomas-jefferson",
+          "display": "(Thomas) Jefferson",
+          "variants": [
+            "jefferson",
+            "thomas jefferson"
+          ],
+          "requiredTokens": [
+            "jefferson"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "(Thomas) Jefferson"
+    },
+    {
+      "id": 79,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "When was the Declaration of Independence adopted?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "79:july-4-1776",
+          "display": "July 4, 1776",
+          "variants": [
+            "july 4 1776"
+          ],
+          "requiredTokens": [
+            "july",
+            "4",
+            "1776"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "July 4, 1776"
+    },
+    {
+      "id": 80,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "The American Revolution had many important events. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "80:battle-of-bunker-hill",
+          "display": "(Battle of) Bunker Hill",
+          "variants": [
+            "battle of bunker hill",
+            "bunker hill"
+          ],
+          "requiredTokens": [
+            "bunker",
+            "hill"
+          ]
+        },
+        {
+          "id": "80:declaration-of-independence",
+          "display": "Declaration of Independence",
+          "variants": [
+            "declaration of independence"
+          ],
+          "requiredTokens": [
+            "declaration",
+            "independence"
+          ]
+        },
+        {
+          "id": "80:washington-crossing-the-delaware-battle-of-trent",
+          "display": "Washington Crossing the Delaware (Battle of Trenton)",
+          "variants": [
+            "washington crossing the delaware",
+            "washington crossing the delaware battle of trenton"
+          ],
+          "requiredTokens": [
+            "washington",
+            "crossing",
+            "delaware"
+          ]
+        },
+        {
+          "id": "80:battle-of-saratoga",
+          "display": "(Battle of) Saratoga",
+          "variants": [
+            "battle of saratoga",
+            "saratoga"
+          ],
+          "requiredTokens": [
+            "saratoga"
+          ]
+        },
+        {
+          "id": "80:valley-forge-encampment",
+          "display": "Valley Forge (Encampment)",
+          "variants": [
+            "valley forge",
+            "valley forge encampment"
+          ],
+          "requiredTokens": [
+            "valley",
+            "forge"
+          ]
+        },
+        {
+          "id": "80:battle-of-yorktown-british-surrender-at-yorktown",
+          "display": "(Battle of) Yorktown (British surrender at Yorktown)",
+          "variants": [
+            "battle of yorktown",
+            "battle of yorktown british surrender at yorktown",
+            "yorktown",
+            "yorktown british surrender at yorktown"
+          ],
+          "requiredTokens": [
+            "yorktown"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Battle of) Bunker Hill\nDeclaration of Independence\nWashington Crossing the Delaware (Battle of Trenton)\n(Battle of) Saratoga\nValley Forge (Encampment)\n(Battle of) Yorktown (British surrender at Yorktown)"
+    },
+    {
+      "id": 81,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "There were 13 original states. Name five.",
+      "kind": "static",
+      "requiredCount": 5,
+      "answers": [
+        {
+          "id": "81:new-hampshire",
+          "display": "New Hampshire",
+          "variants": [
+            "new hampshire"
+          ],
+          "requiredTokens": [
+            "new",
+            "hampshire"
+          ]
+        },
+        {
+          "id": "81:massachusetts",
+          "display": "Massachusetts",
+          "variants": [
+            "massachusetts"
+          ],
+          "requiredTokens": [
+            "massachusetts"
+          ]
+        },
+        {
+          "id": "81:rhode-island",
+          "display": "Rhode Island",
+          "variants": [
+            "rhode island"
+          ],
+          "requiredTokens": [
+            "rhode",
+            "island"
+          ]
+        },
+        {
+          "id": "81:connecticut",
+          "display": "Connecticut",
+          "variants": [
+            "connecticut"
+          ],
+          "requiredTokens": [
+            "connecticut"
+          ]
+        },
+        {
+          "id": "81:new-york",
+          "display": "New York",
+          "variants": [
+            "new york"
+          ],
+          "requiredTokens": [
+            "new",
+            "york"
+          ]
+        },
+        {
+          "id": "81:new-jersey",
+          "display": "New Jersey",
+          "variants": [
+            "new jersey"
+          ],
+          "requiredTokens": [
+            "new",
+            "jersey"
+          ]
+        },
+        {
+          "id": "81:pennsylvania",
+          "display": "Pennsylvania",
+          "variants": [
+            "pennsylvania"
+          ],
+          "requiredTokens": [
+            "pennsylvania"
+          ]
+        },
+        {
+          "id": "81:delaware",
+          "display": "Delaware",
+          "variants": [
+            "delaware"
+          ],
+          "requiredTokens": [
+            "delaware"
+          ]
+        },
+        {
+          "id": "81:maryland",
+          "display": "Maryland",
+          "variants": [
+            "maryland"
+          ],
+          "requiredTokens": [
+            "maryland"
+          ]
+        },
+        {
+          "id": "81:virginia",
+          "display": "Virginia",
+          "variants": [
+            "virginia"
+          ],
+          "requiredTokens": [
+            "virginia"
+          ]
+        },
+        {
+          "id": "81:north-carolina",
+          "display": "North Carolina",
+          "variants": [
+            "north carolina"
+          ],
+          "requiredTokens": [
+            "north",
+            "carolina"
+          ]
+        },
+        {
+          "id": "81:south-carolina",
+          "display": "South Carolina",
+          "variants": [
+            "south carolina"
+          ],
+          "requiredTokens": [
+            "south",
+            "carolina"
+          ]
+        },
+        {
+          "id": "81:georgia",
+          "display": "Georgia",
+          "variants": [
+            "georgia"
+          ],
+          "requiredTokens": [
+            "georgia"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "New Hampshire\nMassachusetts\nRhode Island\nConnecticut\nNew York\nNew Jersey\nPennsylvania\nDelaware\nMaryland\nVirginia\nNorth Carolina\nSouth Carolina\nGeorgia"
+    },
+    {
+      "id": 82,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "What founding document was written in 1787?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "82:u-s-constitution",
+          "display": "(U.S.) Constitution",
+          "variants": [
+            "constitution",
+            "us constitution"
+          ],
+          "requiredTokens": [
+            "constitution"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(U.S.) Constitution"
+    },
+    {
+      "id": 83,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "83:james-madison",
+          "display": "(James) Madison",
+          "variants": [
+            "jame madison",
+            "madison"
+          ],
+          "requiredTokens": [
+            "madison"
+          ]
+        },
+        {
+          "id": "83:alexander-hamilton",
+          "display": "(Alexander) Hamilton",
+          "variants": [
+            "alexander hamilton",
+            "hamilton"
+          ],
+          "requiredTokens": [
+            "hamilton"
+          ]
+        },
+        {
+          "id": "83:john-jay",
+          "display": "(John) Jay",
+          "variants": [
+            "jay",
+            "john jay"
+          ],
+          "requiredTokens": [
+            "jay"
+          ]
+        },
+        {
+          "id": "83:publius",
+          "display": "Publius",
+          "variants": [
+            "publius"
+          ],
+          "requiredTokens": [
+            "publius"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(James) Madison\n(Alexander) Hamilton\n(John) Jay\nPublius"
+    },
+    {
+      "id": 84,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Why were the Federalist Papers important?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "84:they-helped-people-understand-the-u-s-constituti",
+          "display": "They helped people understand the (U.S.) Constitution.",
+          "variants": [
+            "they helped people understand the constitution",
+            "they helped people understand the us constitution"
+          ],
+          "requiredTokens": [
+            "they",
+            "helped",
+            "people",
+            "understand",
+            "constitution"
+          ]
+        },
+        {
+          "id": "84:they-supported-passing-the-u-s-constitution",
+          "display": "They supported passing the (U.S.) Constitution.",
+          "variants": [
+            "they supported passing the constitution",
+            "they supported passing the us constitution"
+          ],
+          "requiredTokens": [
+            "they",
+            "supported",
+            "passing",
+            "constitution"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "They helped people understand the (U.S.) Constitution.\nThey supported passing the (U.S.) Constitution."
+    },
+    {
+      "id": 85,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Benjamin Franklin is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "85:founded-the-first-free-public-libraries",
+          "display": "Founded the first free public libraries",
+          "variants": [
+            "founded the 1 free public library"
+          ],
+          "requiredTokens": [
+            "founded",
+            "1",
+            "free",
+            "public",
+            "library"
+          ]
+        },
+        {
+          "id": "85:first-postmaster-general-of-the-united-states",
+          "display": "First Postmaster General of the United States",
+          "variants": [
+            "1 postmaster general of the us"
+          ],
+          "requiredTokens": [
+            "1",
+            "postmaster",
+            "general",
+            "us"
+          ]
+        },
+        {
+          "id": "85:helped-write-the-declaration-of-independence",
+          "display": "Helped write the Declaration of Independence",
+          "variants": [
+            "helped write the declaration of independence"
+          ],
+          "requiredTokens": [
+            "helped",
+            "write",
+            "declaration",
+            "independence"
+          ]
+        },
+        {
+          "id": "85:inventor",
+          "display": "Inventor",
+          "variants": [
+            "inventor"
+          ],
+          "requiredTokens": [
+            "inventor"
+          ]
+        },
+        {
+          "id": "85:u-s-diplomat",
+          "display": "U.S. diplomat",
+          "variants": [
+            "us diplomat"
+          ],
+          "requiredTokens": [
+            "us",
+            "diplomat"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Founded the first free public libraries\nFirst Postmaster General of the United States\nHelped write the Declaration of Independence\nInventor\nU.S. diplomat"
+    },
+    {
+      "id": 86,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "George Washington is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "86:father-of-our-country",
+          "display": "“Father of Our Country”",
+          "variants": [
+            "father of our country"
+          ],
+          "requiredTokens": [
+            "father",
+            "our",
+            "country"
+          ]
+        },
+        {
+          "id": "86:first-president-of-the-united-states",
+          "display": "First president of the United States",
+          "variants": [
+            "1 president of the us"
+          ],
+          "requiredTokens": [
+            "1",
+            "president",
+            "us"
+          ]
+        },
+        {
+          "id": "86:general-of-the-continental-army",
+          "display": "General of the Continental Army",
+          "variants": [
+            "general of the continental army"
+          ],
+          "requiredTokens": [
+            "general",
+            "continental",
+            "army"
+          ]
+        },
+        {
+          "id": "86:president-of-the-constitutional-convention",
+          "display": "President of the Constitutional Convention",
+          "variants": [
+            "president of the constitutional convention"
+          ],
+          "requiredTokens": [
+            "president",
+            "constitutional",
+            "convention"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "“Father of Our Country”\nFirst president of the United States\nGeneral of the Continental Army\nPresident of the Constitutional Convention"
+    },
+    {
+      "id": 87,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Thomas Jefferson is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "87:writer-of-the-declaration-of-independence",
+          "display": "Writer of the Declaration of Independence",
+          "variants": [
+            "writer of the declaration of independence"
+          ],
+          "requiredTokens": [
+            "writer",
+            "declaration",
+            "independence"
+          ]
+        },
+        {
+          "id": "87:third-president-of-the-united-states",
+          "display": "Third president of the United States",
+          "variants": [
+            "3 president of the us"
+          ],
+          "requiredTokens": [
+            "3",
+            "president",
+            "us"
+          ]
+        },
+        {
+          "id": "87:doubled-the-size-of-the-united-states-louisiana-",
+          "display": "Doubled the size of the United States (Louisiana Purchase)",
+          "variants": [
+            "doubled the size of the us",
+            "doubled the size of the us louisiana purchase"
+          ],
+          "requiredTokens": [
+            "doubled",
+            "size",
+            "us"
+          ]
+        },
+        {
+          "id": "87:first-secretary-of-state",
+          "display": "First Secretary of State",
+          "variants": [
+            "1 secretary of state"
+          ],
+          "requiredTokens": [
+            "1",
+            "secretary",
+            "state"
+          ]
+        },
+        {
+          "id": "87:founded-the-university-of-virginia",
+          "display": "Founded the University of Virginia",
+          "variants": [
+            "founded the university of virginia"
+          ],
+          "requiredTokens": [
+            "founded",
+            "university",
+            "virginia"
+          ]
+        },
+        {
+          "id": "87:writer-of-the-virginia-statute-on-religious-free",
+          "display": "Writer of the Virginia Statute on Religious Freedom",
+          "variants": [
+            "writer of the virginia statute on religious freedom"
+          ],
+          "requiredTokens": [
+            "writer",
+            "virginia",
+            "statute",
+            "religious",
+            "freedom"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Writer of the Declaration of Independence\nThird president of the United States\nDoubled the size of the United States (Louisiana Purchase)\nFirst Secretary of State\nFounded the University of Virginia\nWriter of the Virginia Statute on Religious Freedom"
+    },
+    {
+      "id": 88,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "James Madison is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "88:father-of-the-constitution",
+          "display": "“Father of the Constitution”",
+          "variants": [
+            "father of the constitution"
+          ],
+          "requiredTokens": [
+            "father",
+            "constitution"
+          ]
+        },
+        {
+          "id": "88:fourth-president-of-the-united-states",
+          "display": "Fourth president of the United States",
+          "variants": [
+            "4 president of the us"
+          ],
+          "requiredTokens": [
+            "4",
+            "president",
+            "us"
+          ]
+        },
+        {
+          "id": "88:president-during-the-war-of-1812",
+          "display": "President during the War of 1812",
+          "variants": [
+            "president during the war of 1812"
+          ],
+          "requiredTokens": [
+            "president",
+            "during",
+            "war",
+            "1812"
+          ]
+        },
+        {
+          "id": "88:one-of-the-writers-of-the-federalist-papers",
+          "display": "One of the writers of the Federalist Papers",
+          "variants": [
+            "1 of the writer of the federalist paper"
+          ],
+          "requiredTokens": [
+            "1",
+            "writer",
+            "federalist",
+            "paper"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "“Father of the Constitution”\nFourth president of the United States\nPresident during the War of 1812\nOne of the writers of the Federalist Papers"
+    },
+    {
+      "id": 89,
+      "section": "history",
+      "subsection": "Colonial Period and Independence",
+      "prompt": "Alexander Hamilton is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "89:first-secretary-of-the-treasury",
+          "display": "First Secretary of the Treasury",
+          "variants": [
+            "1 secretary of the treasury"
+          ],
+          "requiredTokens": [
+            "1",
+            "secretary",
+            "treasury"
+          ]
+        },
+        {
+          "id": "89:one-of-the-writers-of-the-federalist-papers",
+          "display": "One of the writers of the Federalist Papers",
+          "variants": [
+            "1 of the writer of the federalist paper"
+          ],
+          "requiredTokens": [
+            "1",
+            "writer",
+            "federalist",
+            "paper"
+          ]
+        },
+        {
+          "id": "89:helped-establish-the-first-bank-of-the-united-st",
+          "display": "Helped establish the First Bank of the United States",
+          "variants": [
+            "helped establish the 1 bank of the us"
+          ],
+          "requiredTokens": [
+            "helped",
+            "establish",
+            "1",
+            "bank",
+            "us"
+          ]
+        },
+        {
+          "id": "89:aide-to-general-george-washington",
+          "display": "Aide to General George Washington",
+          "variants": [
+            "aide to general george washington"
+          ],
+          "requiredTokens": [
+            "aide",
+            "general",
+            "george",
+            "washington"
+          ]
+        },
+        {
+          "id": "89:member-of-the-continental-congress",
+          "display": "Member of the Continental Congress",
+          "variants": [
+            "member of the continental congress"
+          ],
+          "requiredTokens": [
+            "member",
+            "continental",
+            "congress"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "First Secretary of the Treasury\nOne of the writers of the Federalist Papers\nHelped establish the First Bank of the United States\nAide to General George Washington\nMember of the Continental Congress"
+    },
+    {
+      "id": 90,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "What territory did the United States buy from France in 1803?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "90:louisiana-territory",
+          "display": "Louisiana Territory",
+          "variants": [
+            "louisiana territory"
+          ],
+          "requiredTokens": [
+            "louisiana",
+            "territory"
+          ]
+        },
+        {
+          "id": "90:louisiana",
+          "display": "Louisiana",
+          "variants": [
+            "louisiana"
+          ],
+          "requiredTokens": [
+            "louisiana"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Louisiana Territory\nLouisiana"
+    },
+    {
+      "id": 91,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "Name one war fought by the United States in the 1800s.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "91:war-of-1812",
+          "display": "War of 1812",
+          "variants": [
+            "war of 1812"
+          ],
+          "requiredTokens": [
+            "war",
+            "1812"
+          ]
+        },
+        {
+          "id": "91:mexican-american-war",
+          "display": "Mexican-American War",
+          "variants": [
+            "mexican american war"
+          ],
+          "requiredTokens": [
+            "mexican",
+            "american",
+            "war"
+          ]
+        },
+        {
+          "id": "91:civil-war",
+          "display": "Civil War",
+          "variants": [
+            "civil war"
+          ],
+          "requiredTokens": [
+            "civil",
+            "war"
+          ]
+        },
+        {
+          "id": "91:spanish-american-war",
+          "display": "Spanish-American War",
+          "variants": [
+            "spanish american war"
+          ],
+          "requiredTokens": [
+            "spanish",
+            "american",
+            "war"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "War of 1812\nMexican-American War\nCivil War\nSpanish-American War"
+    },
+    {
+      "id": 92,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "Name the U.S. war between the North and the South.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "92:the-civil-war",
+          "display": "The Civil War",
+          "variants": [
+            "the civil war"
+          ],
+          "requiredTokens": [
+            "civil",
+            "war"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The Civil War"
+    },
+    {
+      "id": 93,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "The Civil War had many important events. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "93:battle-of-fort-sumter",
+          "display": "(Battle of) Fort Sumter",
+          "variants": [
+            "battle of fort sumter",
+            "fort sumter"
+          ],
+          "requiredTokens": [
+            "fort",
+            "sumter"
+          ]
+        },
+        {
+          "id": "93:emancipation-proclamation",
+          "display": "Emancipation Proclamation",
+          "variants": [
+            "emancipation proclamation"
+          ],
+          "requiredTokens": [
+            "emancipation",
+            "proclamation"
+          ]
+        },
+        {
+          "id": "93:battle-of-vicksburg",
+          "display": "(Battle of) Vicksburg",
+          "variants": [
+            "battle of vicksburg",
+            "vicksburg"
+          ],
+          "requiredTokens": [
+            "vicksburg"
+          ]
+        },
+        {
+          "id": "93:battle-of-gettysburg",
+          "display": "(Battle of) Gettysburg",
+          "variants": [
+            "battle of gettysburg",
+            "gettysburg"
+          ],
+          "requiredTokens": [
+            "gettysburg"
+          ]
+        },
+        {
+          "id": "93:sherman-s-march",
+          "display": "Sherman’s March",
+          "variants": [
+            "sherman march"
+          ],
+          "requiredTokens": [
+            "sherman",
+            "march"
+          ]
+        },
+        {
+          "id": "93:surrender-at-appomattox",
+          "display": "(Surrender at) Appomattox",
+          "variants": [
+            "appomattox",
+            "surrender at appomattox"
+          ],
+          "requiredTokens": [
+            "appomattox"
+          ]
+        },
+        {
+          "id": "93:battle-of-antietam-sharpsburg",
+          "display": "(Battle of) Antietam/Sharpsburg",
+          "variants": [
+            "antietam sharpsburg",
+            "battle of antietam sharpsburg"
+          ],
+          "requiredTokens": [
+            "antietam",
+            "sharpsburg"
+          ]
+        },
+        {
+          "id": "93:lincoln-was-assassinated",
+          "display": "Lincoln was assassinated.",
+          "variants": [
+            "lincoln was assassinated"
+          ],
+          "requiredTokens": [
+            "lincoln",
+            "assassinated"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Battle of) Fort Sumter\nEmancipation Proclamation\n(Battle of) Vicksburg\n(Battle of) Gettysburg\nSherman’s March\n(Surrender at) Appomattox\n(Battle of) Antietam/Sharpsburg\nLincoln was assassinated."
+    },
+    {
+      "id": 94,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "Abraham Lincoln is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "94:freed-the-slaves-emancipation-proclamation",
+          "display": "Freed the slaves (Emancipation Proclamation)",
+          "variants": [
+            "freed the slave",
+            "freed the slave emancipation proclamation"
+          ],
+          "requiredTokens": [
+            "freed",
+            "slave"
+          ]
+        },
+        {
+          "id": "94:saved-or-preserved-the-union",
+          "display": "Saved (or preserved) the Union",
+          "variants": [
+            "saved or preserved the union",
+            "saved the union"
+          ],
+          "requiredTokens": [
+            "saved",
+            "union"
+          ]
+        },
+        {
+          "id": "94:led-the-united-states-during-the-civil-war",
+          "display": "Led the United States during the Civil War",
+          "variants": [
+            "led the us during the civil war"
+          ],
+          "requiredTokens": [
+            "led",
+            "us",
+            "during",
+            "civil",
+            "war"
+          ]
+        },
+        {
+          "id": "94:16th-president-of-the-united-states",
+          "display": "16th president of the United States",
+          "variants": [
+            "16 president of the us"
+          ],
+          "requiredTokens": [
+            "16",
+            "president",
+            "us"
+          ]
+        },
+        {
+          "id": "94:delivered-the-gettysburg-address",
+          "display": "Delivered the Gettysburg Address",
+          "variants": [
+            "delivered the gettysburg address"
+          ],
+          "requiredTokens": [
+            "delivered",
+            "gettysburg",
+            "address"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Freed the slaves (Emancipation Proclamation)\nSaved (or preserved) the Union\nLed the United States during the Civil War\n16th president of the United States\nDelivered the Gettysburg Address"
+    },
+    {
+      "id": 95,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "What did the Emancipation Proclamation do?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "95:freed-the-slaves",
+          "display": "Freed the slaves",
+          "variants": [
+            "freed the slave"
+          ],
+          "requiredTokens": [
+            "freed",
+            "slave"
+          ]
+        },
+        {
+          "id": "95:freed-slaves-in-the-confederacy",
+          "display": "Freed slaves in the Confederacy",
+          "variants": [
+            "freed slave in the confederacy"
+          ],
+          "requiredTokens": [
+            "freed",
+            "slave",
+            "confederacy"
+          ]
+        },
+        {
+          "id": "95:freed-slaves-in-the-confederate-states",
+          "display": "Freed slaves in the Confederate states",
+          "variants": [
+            "freed slave in the confederate state"
+          ],
+          "requiredTokens": [
+            "freed",
+            "slave",
+            "confederate",
+            "state"
+          ]
+        },
+        {
+          "id": "95:freed-slaves-in-most-southern-states",
+          "display": "Freed slaves in most Southern states",
+          "variants": [
+            "freed slave in most southern state"
+          ],
+          "requiredTokens": [
+            "freed",
+            "slave",
+            "most",
+            "southern",
+            "state"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Freed the slaves\nFreed slaves in the Confederacy\nFreed slaves in the Confederate states\nFreed slaves in most Southern states"
+    },
+    {
+      "id": 96,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "What U.S. war ended slavery?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "96:the-civil-war",
+          "display": "The Civil War",
+          "variants": [
+            "the civil war"
+          ],
+          "requiredTokens": [
+            "civil",
+            "war"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The Civil War"
+    },
+    {
+      "id": 97,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "What amendment says all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "97:14th-amendment",
+          "display": "14th Amendment",
+          "variants": [
+            "14 amendment"
+          ],
+          "requiredTokens": [
+            "14",
+            "amendment"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "14th Amendment"
+    },
+    {
+      "id": 98,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "When did all men get the right to vote?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "98:after-the-civil-war",
+          "display": "After the Civil War",
+          "variants": [
+            "after the civil war"
+          ],
+          "requiredTokens": [
+            "after",
+            "civil",
+            "war"
+          ]
+        },
+        {
+          "id": "98:during-reconstruction",
+          "display": "During Reconstruction",
+          "variants": [
+            "during reconstruction"
+          ],
+          "requiredTokens": [
+            "during",
+            "reconstruction"
+          ]
+        },
+        {
+          "id": "98:with-the-15th-amendment",
+          "display": "(With the) 15th Amendment",
+          "variants": [
+            "15 amendment",
+            "with the 15 amendment"
+          ],
+          "requiredTokens": [
+            "15",
+            "amendment"
+          ]
+        },
+        {
+          "id": "98:1870",
+          "display": "1870",
+          "variants": [
+            "1870"
+          ],
+          "requiredTokens": [
+            "1870"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "After the Civil War\nDuring Reconstruction\n(With the) 15th Amendment\n1870"
+    },
+    {
+      "id": 99,
+      "section": "history",
+      "subsection": "1800s",
+      "prompt": "Name one leader of the women’s rights movement in the 1800s.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "99:susan-b-anthony",
+          "display": "Susan B. Anthony",
+          "variants": [
+            "susan b anthony"
+          ],
+          "requiredTokens": [
+            "susan",
+            "b",
+            "anthony"
+          ]
+        },
+        {
+          "id": "99:elizabeth-cady-stanton",
+          "display": "Elizabeth Cady Stanton",
+          "variants": [
+            "elizabeth cady stanton"
+          ],
+          "requiredTokens": [
+            "elizabeth",
+            "cady",
+            "stanton"
+          ]
+        },
+        {
+          "id": "99:sojourner-truth",
+          "display": "Sojourner Truth",
+          "variants": [
+            "sojourner truth"
+          ],
+          "requiredTokens": [
+            "sojourner",
+            "truth"
+          ]
+        },
+        {
+          "id": "99:harriet-tubman",
+          "display": "Harriet Tubman",
+          "variants": [
+            "harriet tubman"
+          ],
+          "requiredTokens": [
+            "harriet",
+            "tubman"
+          ]
+        },
+        {
+          "id": "99:lucretia-mott",
+          "display": "Lucretia Mott",
+          "variants": [
+            "lucretia mott"
+          ],
+          "requiredTokens": [
+            "lucretia",
+            "mott"
+          ]
+        },
+        {
+          "id": "99:lucy-stone",
+          "display": "Lucy Stone",
+          "variants": [
+            "lucy stone"
+          ],
+          "requiredTokens": [
+            "lucy",
+            "stone"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Susan B. Anthony\nElizabeth Cady Stanton\nSojourner Truth\nHarriet Tubman\nLucretia Mott\nLucy Stone"
+    },
+    {
+      "id": 100,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Name one war fought by the United States in the 1900s.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "100:world-war-i",
+          "display": "World War I",
+          "variants": [
+            "world war i"
+          ],
+          "requiredTokens": [
+            "world",
+            "war",
+            "i"
+          ]
+        },
+        {
+          "id": "100:world-war-ii",
+          "display": "World War II",
+          "variants": [
+            "world war ii"
+          ],
+          "requiredTokens": [
+            "world",
+            "war",
+            "ii"
+          ]
+        },
+        {
+          "id": "100:korean-war",
+          "display": "Korean War",
+          "variants": [
+            "korean war"
+          ],
+          "requiredTokens": [
+            "korean",
+            "war"
+          ]
+        },
+        {
+          "id": "100:vietnam-war",
+          "display": "Vietnam War",
+          "variants": [
+            "vietnam war"
+          ],
+          "requiredTokens": [
+            "vietnam",
+            "war"
+          ]
+        },
+        {
+          "id": "100:persian-gulf-war",
+          "display": "(Persian) Gulf War",
+          "variants": [
+            "gulf war",
+            "persian gulf war"
+          ],
+          "requiredTokens": [
+            "gulf",
+            "war"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "World War I\nWorld War II\nKorean War\nVietnam War\n(Persian) Gulf War"
+    },
+    {
+      "id": 101,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Why did the United States enter World War I?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "101:because-germany-attacked-u-s-civilian-ships",
+          "display": "Because Germany attacked U.S. (civilian) ships",
+          "variants": [
+            "because germany attacked us civilian ship",
+            "because germany attacked us ship"
+          ],
+          "requiredTokens": [
+            "because",
+            "germany",
+            "attacked",
+            "us",
+            "ship"
+          ]
+        },
+        {
+          "id": "101:to-support-the-allied-powers-england-france-ital",
+          "display": "To support the Allied Powers (England, France, Italy, and Russia)",
+          "variants": [
+            "to support the allied power",
+            "to support the allied power england france italy and russia"
+          ],
+          "requiredTokens": [
+            "support",
+            "allied",
+            "power"
+          ]
+        },
+        {
+          "id": "101:to-oppose-the-central-powers-germany-austria-hun",
+          "display": "To oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)",
+          "variants": [
+            "to oppose the central power",
+            "to oppose the central power germany austria hungary the ottoman empire and bulgaria"
+          ],
+          "requiredTokens": [
+            "oppose",
+            "central",
+            "power"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Because Germany attacked U.S. (civilian) ships\nTo support the Allied Powers (England, France, Italy, and Russia)\nTo oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)"
+    },
+    {
+      "id": 102,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "When did all women get the right to vote?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "102:1920",
+          "display": "1920",
+          "variants": [
+            "1920"
+          ],
+          "requiredTokens": [
+            "1920"
+          ]
+        },
+        {
+          "id": "102:after-world-war-i",
+          "display": "After World War I",
+          "variants": [
+            "after world war i"
+          ],
+          "requiredTokens": [
+            "after",
+            "world",
+            "war",
+            "i"
+          ]
+        },
+        {
+          "id": "102:with-the-19th-amendment",
+          "display": "(With the) 19th Amendment",
+          "variants": [
+            "19 amendment",
+            "with the 19 amendment"
+          ],
+          "requiredTokens": [
+            "19",
+            "amendment"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "1920\nAfter World War I\n(With the) 19th Amendment"
+    },
+    {
+      "id": 103,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "What was the Great Depression?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "103:longest-economic-recession-in-modern-history",
+          "display": "Longest economic recession in modern history",
+          "variants": [
+            "longest economic recession in modern history"
+          ],
+          "requiredTokens": [
+            "longest",
+            "economic",
+            "recession",
+            "modern",
+            "history"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Longest economic recession in modern history"
+    },
+    {
+      "id": 104,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "When did the Great Depression start?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "104:the-great-crash-1929",
+          "display": "The Great Crash (1929)",
+          "variants": [
+            "the great crash",
+            "the great crash 1929"
+          ],
+          "requiredTokens": [
+            "great",
+            "crash"
+          ]
+        },
+        {
+          "id": "104:stock-market-crash-of-1929",
+          "display": "Stock market crash of 1929",
+          "variants": [
+            "stock market crash of 1929"
+          ],
+          "requiredTokens": [
+            "stock",
+            "market",
+            "crash",
+            "1929"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The Great Crash (1929)\nStock market crash of 1929"
+    },
+    {
+      "id": 105,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Who was president during the Great Depression and World War II?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "105:franklin-roosevelt",
+          "display": "(Franklin) Roosevelt",
+          "variants": [
+            "franklin roosevelt",
+            "roosevelt"
+          ],
+          "requiredTokens": [
+            "roosevelt"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Franklin) Roosevelt"
+    },
+    {
+      "id": 106,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Why did the United States enter World War II?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "106:bombing-of-pearl-harbor",
+          "display": "(Bombing of) Pearl Harbor",
+          "variants": [
+            "bombing of pearl harbor",
+            "pearl harbor"
+          ],
+          "requiredTokens": [
+            "pearl",
+            "harbor"
+          ]
+        },
+        {
+          "id": "106:japanese-attacked-pearl-harbor",
+          "display": "Japanese attacked Pearl Harbor",
+          "variants": [
+            "japanese attacked pearl harbor"
+          ],
+          "requiredTokens": [
+            "japanese",
+            "attacked",
+            "pearl",
+            "harbor"
+          ]
+        },
+        {
+          "id": "106:to-support-the-allied-powers-england-france-and-",
+          "display": "To support the Allied Powers (England, France, and Russia)",
+          "variants": [
+            "to support the allied power",
+            "to support the allied power england france and russia"
+          ],
+          "requiredTokens": [
+            "support",
+            "allied",
+            "power"
+          ]
+        },
+        {
+          "id": "106:to-oppose-the-axis-powers-germany-italy-and-japa",
+          "display": "To oppose the Axis Powers (Germany, Italy, and Japan)",
+          "variants": [
+            "to oppose the axis power",
+            "to oppose the axis power germany italy and japan"
+          ],
+          "requiredTokens": [
+            "oppose",
+            "axis",
+            "power"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Bombing of) Pearl Harbor\nJapanese attacked Pearl Harbor\nTo support the Allied Powers (England, France, and Russia)\nTo oppose the Axis Powers (Germany, Italy, and Japan)"
+    },
+    {
+      "id": 107,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Dwight Eisenhower is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "107:general-during-world-war-ii",
+          "display": "General during World War II",
+          "variants": [
+            "general during world war ii"
+          ],
+          "requiredTokens": [
+            "general",
+            "during",
+            "world",
+            "war",
+            "ii"
+          ]
+        },
+        {
+          "id": "107:president-at-the-end-of-during-the-korean-war",
+          "display": "President at the end of (during) the Korean War",
+          "variants": [
+            "president at the end of during the korean war",
+            "president at the end of the korean war"
+          ],
+          "requiredTokens": [
+            "president",
+            "end",
+            "korean",
+            "war"
+          ]
+        },
+        {
+          "id": "107:34th-president-of-the-united-states",
+          "display": "34th president of the United States",
+          "variants": [
+            "34 president of the us"
+          ],
+          "requiredTokens": [
+            "34",
+            "president",
+            "us"
+          ]
+        },
+        {
+          "id": "107:signed-the-federal-aid-highway-act-of-1956-creat",
+          "display": "Signed the Federal-Aid Highway Act of 1956 (Created the Interstate System)",
+          "variants": [
+            "signed the federal aid highway act of 1956",
+            "signed the federal aid highway act of 1956 created the interstate system"
+          ],
+          "requiredTokens": [
+            "signed",
+            "federal",
+            "aid",
+            "highway",
+            "act",
+            "1956"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "General during World War II\nPresident at the end of (during) the Korean War\n34th president of the United States\nSigned the Federal-Aid Highway Act of 1956 (Created the Interstate System)"
+    },
+    {
+      "id": 108,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Who was the United States’ main rival during the Cold War?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "108:soviet-union",
+          "display": "Soviet Union",
+          "variants": [
+            "soviet union"
+          ],
+          "requiredTokens": [
+            "soviet",
+            "union"
+          ]
+        },
+        {
+          "id": "108:ussr",
+          "display": "USSR",
+          "variants": [
+            "ussr"
+          ],
+          "requiredTokens": [
+            "ussr"
+          ]
+        },
+        {
+          "id": "108:russia",
+          "display": "Russia",
+          "variants": [
+            "russia"
+          ],
+          "requiredTokens": [
+            "russia"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Soviet Union\nUSSR\nRussia"
+    },
+    {
+      "id": 109,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "During the Cold War, what was one main concern of the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "109:communism",
+          "display": "Communism",
+          "variants": [
+            "communism"
+          ],
+          "requiredTokens": [
+            "communism"
+          ]
+        },
+        {
+          "id": "109:nuclear-war",
+          "display": "Nuclear war",
+          "variants": [
+            "nuclear war"
+          ],
+          "requiredTokens": [
+            "nuclear",
+            "war"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Communism\nNuclear war"
+    },
+    {
+      "id": 110,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Why did the United States enter the Korean War?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "110:to-stop-the-spread-of-communism",
+          "display": "To stop the spread of communism",
+          "variants": [
+            "to stop the spread of communism"
+          ],
+          "requiredTokens": [
+            "stop",
+            "spread",
+            "communism"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "To stop the spread of communism"
+    },
+    {
+      "id": 111,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Why did the United States enter the Vietnam War?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "111:to-stop-the-spread-of-communism",
+          "display": "To stop the spread of communism",
+          "variants": [
+            "to stop the spread of communism"
+          ],
+          "requiredTokens": [
+            "stop",
+            "spread",
+            "communism"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "To stop the spread of communism"
+    },
+    {
+      "id": 112,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "What did the civil rights movement do?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "112:fought-to-end-racial-discrimination",
+          "display": "Fought to end racial discrimination",
+          "variants": [
+            "fought to end racial discrimination"
+          ],
+          "requiredTokens": [
+            "fought",
+            "end",
+            "racial",
+            "discrimination"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Fought to end racial discrimination"
+    },
+    {
+      "id": 113,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Martin Luther King, Jr. is famous for many things. Name one.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "113:fought-for-civil-rights",
+          "display": "Fought for civil rights",
+          "variants": [
+            "fought for civil right"
+          ],
+          "requiredTokens": [
+            "fought",
+            "civil",
+            "right"
+          ]
+        },
+        {
+          "id": "113:worked-for-equality-for-all-americans",
+          "display": "Worked for equality for all Americans",
+          "variants": [
+            "worked for equality for all american"
+          ],
+          "requiredTokens": [
+            "worked",
+            "equality",
+            "all",
+            "american"
+          ]
+        },
+        {
+          "id": "113:worked-to-ensure-that-people-would-not-be-judged",
+          "display": "Worked to ensure that people would “not be judged by the color of their skin, but by the content of their character”",
+          "variants": [
+            "worked to ensure that people would not be judged by the color of their skin but by the content of their character"
+          ],
+          "requiredTokens": [
+            "worked",
+            "ensure",
+            "people",
+            "would",
+            "not",
+            "judged",
+            "color",
+            "their",
+            "skin",
+            "but",
+            "content",
+            "character"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Fought for civil rights\nWorked for equality for all Americans\nWorked to ensure that people would “not be judged by the color of their skin, but by the content of their character”"
+    },
+    {
+      "id": 114,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Why did the United States enter the Persian Gulf War?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "114:to-force-the-iraqi-military-from-kuwait",
+          "display": "To force the Iraqi military from Kuwait",
+          "variants": [
+            "to force the iraqi military from kuwait"
+          ],
+          "requiredTokens": [
+            "force",
+            "iraqi",
+            "military",
+            "kuwait"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "To force the Iraqi military from Kuwait"
+    },
+    {
+      "id": 115,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "What major event happened on September 11, 2001 in the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "115:terrorists-attacked-the-united-states",
+          "display": "Terrorists attacked the United States",
+          "variants": [
+            "terrorist attacked the us"
+          ],
+          "requiredTokens": [
+            "terrorist",
+            "attacked",
+            "us"
+          ]
+        },
+        {
+          "id": "115:terrorists-took-over-two-planes-and-crashed-them",
+          "display": "Terrorists took over two planes and crashed them into the World Trade Center in New York City",
+          "variants": [
+            "terrorist took over 2 plane and crashed them into the world trade center in new york city"
+          ],
+          "requiredTokens": [
+            "terrorist",
+            "took",
+            "over",
+            "2",
+            "plane",
+            "crashed",
+            "them",
+            "into",
+            "world",
+            "trade",
+            "center",
+            "new",
+            "york",
+            "city"
+          ]
+        },
+        {
+          "id": "115:terrorists-took-over-a-plane-and-crashed-into-th",
+          "display": "Terrorists took over a plane and crashed into the Pentagon in Arlington, Virginia",
+          "variants": [
+            "terrorist took over a plane and crashed into the pentagon in arlington virginia"
+          ],
+          "requiredTokens": [
+            "terrorist",
+            "took",
+            "over",
+            "plane",
+            "crashed",
+            "into",
+            "pentagon",
+            "arlington",
+            "virginia"
+          ]
+        },
+        {
+          "id": "115:terrorists-took-over-a-plane-originally-aimed-at",
+          "display": "Terrorists took over a plane originally aimed at Washington, D.C., and crashed in a field in Pennsylvania",
+          "variants": [
+            "terrorist took over a plane originally aimed at dc and crashed in a field in pennsylvania"
+          ],
+          "requiredTokens": [
+            "terrorist",
+            "took",
+            "over",
+            "plane",
+            "originally",
+            "aimed",
+            "dc",
+            "crashed",
+            "field",
+            "pennsylvania"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "Terrorists attacked the United States\nTerrorists took over two planes and crashed them into the World Trade Center in New York City\nTerrorists took over a plane and crashed into the Pentagon in Arlington, Virginia\nTerrorists took over a plane originally aimed at Washington, D.C., and crashed in a field in Pennsylvania"
+    },
+    {
+      "id": 116,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Name one U.S. military conflict after the September 11, 2001 attacks.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "116:global-war-on-terror",
+          "display": "(Global) War on Terror",
+          "variants": [
+            "global war on terror",
+            "war on terror"
+          ],
+          "requiredTokens": [
+            "war",
+            "terror"
+          ]
+        },
+        {
+          "id": "116:war-in-afghanistan",
+          "display": "War in Afghanistan",
+          "variants": [
+            "war in afghanistan"
+          ],
+          "requiredTokens": [
+            "war",
+            "afghanistan"
+          ]
+        },
+        {
+          "id": "116:war-in-iraq",
+          "display": "War in Iraq",
+          "variants": [
+            "war in iraq"
+          ],
+          "requiredTokens": [
+            "war",
+            "iraq"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Global) War on Terror\nWar in Afghanistan\nWar in Iraq"
+    },
+    {
+      "id": 117,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Name one American Indian tribe in the United States.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "117:apache",
+          "display": "Apache",
+          "variants": [
+            "apache"
+          ],
+          "requiredTokens": [
+            "apache"
+          ]
+        },
+        {
+          "id": "117:blackfeet",
+          "display": "Blackfeet",
+          "variants": [
+            "blackfeet"
+          ],
+          "requiredTokens": [
+            "blackfeet"
+          ]
+        },
+        {
+          "id": "117:cayuga",
+          "display": "Cayuga",
+          "variants": [
+            "cayuga"
+          ],
+          "requiredTokens": [
+            "cayuga"
+          ]
+        },
+        {
+          "id": "117:cherokee",
+          "display": "Cherokee",
+          "variants": [
+            "cherokee"
+          ],
+          "requiredTokens": [
+            "cherokee"
+          ]
+        },
+        {
+          "id": "117:cheyenne",
+          "display": "Cheyenne",
+          "variants": [
+            "cheyenne"
+          ],
+          "requiredTokens": [
+            "cheyenne"
+          ]
+        },
+        {
+          "id": "117:chippewa",
+          "display": "Chippewa",
+          "variants": [
+            "chippewa"
+          ],
+          "requiredTokens": [
+            "chippewa"
+          ]
+        },
+        {
+          "id": "117:choctaw",
+          "display": "Choctaw",
+          "variants": [
+            "choctaw"
+          ],
+          "requiredTokens": [
+            "choctaw"
+          ]
+        },
+        {
+          "id": "117:creek",
+          "display": "Creek",
+          "variants": [
+            "creek"
+          ],
+          "requiredTokens": [
+            "creek"
+          ]
+        },
+        {
+          "id": "117:crow",
+          "display": "Crow",
+          "variants": [
+            "crow"
+          ],
+          "requiredTokens": [
+            "crow"
+          ]
+        },
+        {
+          "id": "117:hopi",
+          "display": "Hopi",
+          "variants": [
+            "hopi"
+          ],
+          "requiredTokens": [
+            "hopi"
+          ]
+        },
+        {
+          "id": "117:huron",
+          "display": "Huron",
+          "variants": [
+            "huron"
+          ],
+          "requiredTokens": [
+            "huron"
+          ]
+        },
+        {
+          "id": "117:inupiat",
+          "display": "Inupiat",
+          "variants": [
+            "inupiat"
+          ],
+          "requiredTokens": [
+            "inupiat"
+          ]
+        },
+        {
+          "id": "117:lakota",
+          "display": "Lakota",
+          "variants": [
+            "lakota"
+          ],
+          "requiredTokens": [
+            "lakota"
+          ]
+        },
+        {
+          "id": "117:mohawk",
+          "display": "Mohawk",
+          "variants": [
+            "mohawk"
+          ],
+          "requiredTokens": [
+            "mohawk"
+          ]
+        },
+        {
+          "id": "117:mohegan",
+          "display": "Mohegan",
+          "variants": [
+            "mohegan"
+          ],
+          "requiredTokens": [
+            "mohegan"
+          ]
+        },
+        {
+          "id": "117:navajo",
+          "display": "Navajo",
+          "variants": [
+            "navajo"
+          ],
+          "requiredTokens": [
+            "navajo"
+          ]
+        },
+        {
+          "id": "117:oneida",
+          "display": "Oneida",
+          "variants": [
+            "oneida"
+          ],
+          "requiredTokens": [
+            "oneida"
+          ]
+        },
+        {
+          "id": "117:onondaga",
+          "display": "Onondaga",
+          "variants": [
+            "onondaga"
+          ],
+          "requiredTokens": [
+            "onondaga"
+          ]
+        },
+        {
+          "id": "117:pueblo",
+          "display": "Pueblo",
+          "variants": [
+            "pueblo"
+          ],
+          "requiredTokens": [
+            "pueblo"
+          ]
+        },
+        {
+          "id": "117:seminole",
+          "display": "Seminole",
+          "variants": [
+            "seminole"
+          ],
+          "requiredTokens": [
+            "seminole"
+          ]
+        },
+        {
+          "id": "117:seneca",
+          "display": "Seneca",
+          "variants": [
+            "seneca"
+          ],
+          "requiredTokens": [
+            "seneca"
+          ]
+        },
+        {
+          "id": "117:shawnee",
+          "display": "Shawnee",
+          "variants": [
+            "shawnee"
+          ],
+          "requiredTokens": [
+            "shawnee"
+          ]
+        },
+        {
+          "id": "117:sioux",
+          "display": "Sioux",
+          "variants": [
+            "sioux"
+          ],
+          "requiredTokens": [
+            "sioux"
+          ]
+        },
+        {
+          "id": "117:teton",
+          "display": "Teton",
+          "variants": [
+            "teton"
+          ],
+          "requiredTokens": [
+            "teton"
+          ]
+        },
+        {
+          "id": "117:tuscarora",
+          "display": "Tuscarora",
+          "variants": [
+            "tuscarora"
+          ],
+          "requiredTokens": [
+            "tuscarora"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Apache\nBlackfeet\nCayuga\nCherokee\nCheyenne\nChippewa\nChoctaw\nCreek\nCrow\nHopi\nHuron\nInupiat\nLakota\nMohawk\nMohegan\nNavajo\nOneida\nOnondaga\nPueblo\nSeminole\nSeneca\nShawnee\nSioux\nTeton\nTuscarora"
+    },
+    {
+      "id": 118,
+      "section": "history",
+      "subsection": "Recent American History and Other Important Historical Information",
+      "prompt": "Name one example of an American innovation.",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "118:light-bulb",
+          "display": "Light bulb",
+          "variants": [
+            "light bulb"
+          ],
+          "requiredTokens": [
+            "light",
+            "bulb"
+          ]
+        },
+        {
+          "id": "118:automobile-cars-internal-combustion-engine",
+          "display": "Automobile (cars, internal combustion engine)",
+          "variants": [
+            "automobile",
+            "automobile car internal combustion engine"
+          ],
+          "requiredTokens": [
+            "automobile"
+          ]
+        },
+        {
+          "id": "118:skyscrapers",
+          "display": "Skyscrapers",
+          "variants": [
+            "skyscraper"
+          ],
+          "requiredTokens": [
+            "skyscraper"
+          ]
+        },
+        {
+          "id": "118:airplane",
+          "display": "Airplane",
+          "variants": [
+            "airplane"
+          ],
+          "requiredTokens": [
+            "airplane"
+          ]
+        },
+        {
+          "id": "118:assembly-line",
+          "display": "Assembly line",
+          "variants": [
+            "assembly line"
+          ],
+          "requiredTokens": [
+            "assembly",
+            "line"
+          ]
+        },
+        {
+          "id": "118:landing-on-the-moon",
+          "display": "Landing on the moon",
+          "variants": [
+            "landing on the moon"
+          ],
+          "requiredTokens": [
+            "landing",
+            "moon"
+          ]
+        },
+        {
+          "id": "118:integrated-circuit-ic",
+          "display": "Integrated circuit (IC)",
+          "variants": [
+            "integrated circuit",
+            "integrated circuit ic"
+          ],
+          "requiredTokens": [
+            "integrated",
+            "circuit"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Light bulb\nAutomobile (cars, internal combustion engine)\nSkyscrapers\nAirplane\nAssembly line\nLanding on the moon\nIntegrated circuit (IC)"
+    },
+    {
+      "id": 119,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "What is the capital of the United States?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "119:washington-d-c",
+          "display": "Washington, D.C.",
+          "variants": [
+            "dc"
+          ],
+          "requiredTokens": [
+            "dc"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Washington, D.C."
+    },
+    {
+      "id": 120,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "Where is the Statue of Liberty?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "120:new-york-harbor",
+          "display": "New York (Harbor)",
+          "variants": [
+            "new york",
+            "new york harbor"
+          ],
+          "requiredTokens": [
+            "new",
+            "york"
+          ]
+        },
+        {
+          "id": "120:liberty-island",
+          "display": "Liberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]",
+          "variants": [
+            "liberty island"
+          ],
+          "requiredTokens": [
+            "liberty",
+            "island"
+          ],
+          "note": "Also acceptable are New Jersey, near New York City, and on the Hudson (River)."
+        },
+        {
+          "id": "120:new-jersey",
+          "display": "New Jersey",
+          "variants": [
+            "new jersey"
+          ],
+          "requiredTokens": [
+            "new",
+            "jersey"
+          ]
+        },
+        {
+          "id": "120:near-new-york-city",
+          "display": "Near New York City",
+          "variants": [
+            "near new york city"
+          ],
+          "requiredTokens": [
+            "near",
+            "new",
+            "york",
+            "city"
+          ]
+        },
+        {
+          "id": "120:on-the-hudson-river",
+          "display": "On the Hudson (River)",
+          "variants": [
+            "on the hudson",
+            "on the hudson river"
+          ],
+          "requiredTokens": [
+            "hudson"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "New York (Harbor)\nLiberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]"
+    },
+    {
+      "id": 121,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "Why does the flag have 13 stripes?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "121:because-there-were-13-original-colonies",
+          "display": "(Because there were) 13 original colonies",
+          "variants": [
+            "13 original colony",
+            "because there were 13 original colony"
+          ],
+          "requiredTokens": [
+            "13",
+            "original",
+            "colony"
+          ]
+        },
+        {
+          "id": "121:because-the-stripes-represent-the-original-colon",
+          "display": "(Because the stripes) represent the original colonies",
+          "variants": [
+            "because the stripe represent the original colony",
+            "represent the original colony"
+          ],
+          "requiredTokens": [
+            "represent",
+            "original",
+            "colony"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "(Because there were) 13 original colonies\n(Because the stripes) represent the original colonies"
+    },
+    {
+      "id": 122,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "Why does the flag have 50 stars?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "122:because-there-is-one-star-for-each-state",
+          "display": "(Because there is) one star for each state",
+          "variants": [
+            "1 star for each state",
+            "because there is 1 star for each state"
+          ],
+          "requiredTokens": [
+            "1",
+            "star",
+            "each",
+            "state"
+          ]
+        },
+        {
+          "id": "122:because-each-star-represents-a-state",
+          "display": "(Because) each star represents a state",
+          "variants": [
+            "because each star represent a state",
+            "each star represent a state"
+          ],
+          "requiredTokens": [
+            "each",
+            "star",
+            "represent",
+            "state"
+          ]
+        },
+        {
+          "id": "122:because-there-are-50-states",
+          "display": "(Because there are) 50 states",
+          "variants": [
+            "50 state",
+            "because there are 50 state"
+          ],
+          "requiredTokens": [
+            "50",
+            "state"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "(Because there is) one star for each state\n(Because) each star represents a state\n(Because there are) 50 states"
+    },
+    {
+      "id": 123,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "What is the name of the national anthem?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "123:the-star-spangled-banner",
+          "display": "The Star-Spangled Banner",
+          "variants": [
+            "the star spangled banner"
+          ],
+          "requiredTokens": [
+            "star",
+            "spangled",
+            "banner"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "The Star-Spangled Banner"
+    },
+    {
+      "id": 124,
+      "section": "symbols",
+      "subsection": "Symbols",
+      "prompt": "The Nation’s first motto was “E Pluribus Unum.” What does that mean?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "124:out-of-many-one",
+          "display": "Out of many, one",
+          "variants": [
+            "out of many 1"
+          ],
+          "requiredTokens": [
+            "out",
+            "many",
+            "1"
+          ]
+        },
+        {
+          "id": "124:we-all-become-one",
+          "display": "We all become one",
+          "variants": [
+            "we all become 1"
+          ],
+          "requiredTokens": [
+            "we",
+            "all",
+            "become",
+            "1"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "Out of many, one\nWe all become one"
+    },
+    {
+      "id": 125,
+      "section": "symbols",
+      "subsection": "Holidays",
+      "prompt": "What is Independence Day?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "125:a-holiday-to-celebrate-u-s-independence-from-bri",
+          "display": "A holiday to celebrate U.S. independence (from Britain)",
+          "variants": [
+            "a holiday to celebrate us independence",
+            "a holiday to celebrate us independence from britain"
+          ],
+          "requiredTokens": [
+            "holiday",
+            "celebrate",
+            "us",
+            "independence"
+          ]
+        },
+        {
+          "id": "125:the-country-s-birthday",
+          "display": "The country’s birthday",
+          "variants": [
+            "the country birthday"
+          ],
+          "requiredTokens": [
+            "country",
+            "birthday"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "A holiday to celebrate U.S. independence (from Britain)\nThe country’s birthday"
+    },
+    {
+      "id": 126,
+      "section": "symbols",
+      "subsection": "Holidays",
+      "prompt": "Name three national U.S. holidays.",
+      "kind": "static",
+      "requiredCount": 3,
+      "answers": [
+        {
+          "id": "126:new-year-s-day",
+          "display": "New Year’s Day",
+          "variants": [
+            "new year day"
+          ],
+          "requiredTokens": [
+            "new",
+            "year",
+            "day"
+          ]
+        },
+        {
+          "id": "126:martin-luther-king-jr-day",
+          "display": "Martin Luther King, Jr. Day",
+          "variants": [
+            "martin luther king jr day"
+          ],
+          "requiredTokens": [
+            "martin",
+            "luther",
+            "king",
+            "jr",
+            "day"
+          ]
+        },
+        {
+          "id": "126:presidents-day-washington-s-birthday",
+          "display": "Presidents Day (Washington’s Birthday)",
+          "variants": [
+            "president day",
+            "president day washington birthday"
+          ],
+          "requiredTokens": [
+            "president",
+            "day"
+          ]
+        },
+        {
+          "id": "126:memorial-day",
+          "display": "Memorial Day",
+          "variants": [
+            "memorial day"
+          ],
+          "requiredTokens": [
+            "memorial",
+            "day"
+          ]
+        },
+        {
+          "id": "126:juneteenth",
+          "display": "Juneteenth",
+          "variants": [
+            "juneteenth"
+          ],
+          "requiredTokens": [
+            "juneteenth"
+          ]
+        },
+        {
+          "id": "126:independence-day",
+          "display": "Independence Day",
+          "variants": [
+            "independence day"
+          ],
+          "requiredTokens": [
+            "independence",
+            "day"
+          ]
+        },
+        {
+          "id": "126:labor-day",
+          "display": "Labor Day",
+          "variants": [
+            "labor day"
+          ],
+          "requiredTokens": [
+            "labor",
+            "day"
+          ]
+        },
+        {
+          "id": "126:columbus-day",
+          "display": "Columbus Day",
+          "variants": [
+            "columbus day"
+          ],
+          "requiredTokens": [
+            "columbus",
+            "day"
+          ]
+        },
+        {
+          "id": "126:veterans-day",
+          "display": "Veterans Day",
+          "variants": [
+            "veterans day"
+          ],
+          "requiredTokens": [
+            "veterans",
+            "day"
+          ]
+        },
+        {
+          "id": "126:thanksgiving-day",
+          "display": "Thanksgiving Day",
+          "variants": [
+            "thanksgiving day"
+          ],
+          "requiredTokens": [
+            "thanksgiving",
+            "day"
+          ]
+        },
+        {
+          "id": "126:christmas-day",
+          "display": "Christmas Day",
+          "variants": [
+            "christmas day"
+          ],
+          "requiredTokens": [
+            "christmas",
+            "day"
+          ]
+        }
+      ],
+      "seniorExempt": true,
+      "sourceRaw": "New Year’s Day\nMartin Luther King, Jr. Day\nPresidents Day (Washington’s Birthday)\nMemorial Day\nJuneteenth\nIndependence Day\nLabor Day\nColumbus Day\nVeterans Day\nThanksgiving Day\nChristmas Day"
+    },
+    {
+      "id": 127,
+      "section": "symbols",
+      "subsection": "Holidays",
+      "prompt": "What is Memorial Day?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "127:a-holiday-to-honor-soldiers-who-died-in-military",
+          "display": "A holiday to honor soldiers who died in military service",
+          "variants": [
+            "a holiday to honor soldier who died in military service"
+          ],
+          "requiredTokens": [
+            "holiday",
+            "honor",
+            "soldier",
+            "who",
+            "died",
+            "military",
+            "service"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "A holiday to honor soldiers who died in military service"
+    },
+    {
+      "id": 128,
+      "section": "symbols",
+      "subsection": "Holidays",
+      "prompt": "What is Veterans Day?",
+      "kind": "static",
+      "requiredCount": 1,
+      "answers": [
+        {
+          "id": "128:a-holiday-to-honor-people-in-the-u-s-military",
+          "display": "A holiday to honor people in the (U.S.) military",
+          "variants": [
+            "a holiday to honor people in the military",
+            "a holiday to honor people in the us military"
+          ],
+          "requiredTokens": [
+            "holiday",
+            "honor",
+            "people",
+            "military"
+          ]
+        },
+        {
+          "id": "128:a-holiday-to-honor-people-who-have-served-in-the",
+          "display": "A holiday to honor people who have served (in the U.S. military)",
+          "variants": [
+            "a holiday to honor people who have served",
+            "a holiday to honor people who have served in the us military"
+          ],
+          "requiredTokens": [
+            "holiday",
+            "honor",
+            "people",
+            "who",
+            "have",
+            "served"
+          ]
+        }
+      ],
+      "seniorExempt": false,
+      "sourceRaw": "A holiday to honor people in the (U.S.) military\nA holiday to honor people who have served (in the U.S. military)"
+    }
+  ]
+}
