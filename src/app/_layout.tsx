@@ -24,7 +24,12 @@ function Routes(): React.ReactElement {
         headerTintColor: theme.text,
         contentStyle: { backgroundColor: theme.background },
       }}
-    />
+    >
+      {/* The tab group supplies its own chrome; without this the stack shows
+          the group's directory name, "(tabs)", as a title. */}
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+    </Stack>
   );
 }
 

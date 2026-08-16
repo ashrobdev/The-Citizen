@@ -6,7 +6,9 @@ import type { StreakState } from '../domain/scheduling/streak';
 import { useNotifications, useSessionService } from '../ui/AppProvider';
 import { Mascot } from '../ui/components/Mascot';
 import { ReminderPrompt } from '../ui/components/ReminderPrompt';
+import { Confetti } from '../ui/components/Confetti';
 import { Stripes } from '../ui/components/Stripes';
+import { haptics } from '../ui/haptics';
 import { Colors } from '../ui/theme/colors';
 
 export default function Summary(): React.ReactElement {
@@ -16,12 +18,18 @@ export default function Summary(): React.ReactElement {
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
   const [streak, setStreak] = useState<StreakState | undefined>();
+  const [celebrate, setCelebrate] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       const s = await service.streak();
-      if (!cancelled) setStreak(s);
+      if (cancelled) return;
+      setStreak(s);
+      haptics.success();
+      // Confetti is reserved for milestones. Ninety identical bursts would make
+      // the app a toy; a burst at seven days still means something.
+      if (s.current > 0 && s.current % 7 === 0) setCelebrate(true);
     })();
     return () => {
       cancelled = true;
@@ -42,6 +50,7 @@ export default function Summary(): React.ReactElement {
     <View style={[styles.container, { backgroundColor: theme.background }]}>
       <Stack.Screen options={{ title: 'Done', headerBackVisible: false }} />
 
+      {celebrate ? <Confetti onDone={() => setCelebrate(false)} /> : null}
       <Mascot pose="cheering" size="large" />
       <Stripes width={110} />
       <Text style={[styles.title, { color: theme.text }]}>Day complete</Text>

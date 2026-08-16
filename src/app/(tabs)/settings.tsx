@@ -11,12 +11,12 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import type { UserProfile } from '../data/repositories';
-import { OFFICIALS } from '../services/sessionService';
-import { bestEnglishVoice, refreshVoiceSelection, speakQuestion } from '../services/narration';
-import { useNotifications, useSessionService } from '../ui/AppProvider';
-import { ReminderSettings } from '../ui/components/ReminderSettings';
-import { Colors, type Theme } from '../ui/theme/colors';
+import type { UserProfile } from '../../data/repositories';
+import { OFFICIALS } from '../../services/sessionService';
+import { bestEnglishVoice, refreshVoiceSelection, speakQuestion } from '../../services/narration';
+import { useNotifications, useSessionService } from '../../ui/AppProvider';
+import { ReminderSettings } from '../../ui/components/ReminderSettings';
+import { Colors, type Theme } from '../../ui/theme/colors';
 
 const SAMPLE = 'What is the supreme law of the land?';
 
