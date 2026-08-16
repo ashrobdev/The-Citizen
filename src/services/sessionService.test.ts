@@ -55,12 +55,17 @@ describe('gradeResponse', () => {
     expect(grade(62, 'Los Angeles').correct).toBe(false);
   });
 
-  it('self-attests where no officeholder is known, rather than marking wrong', () => {
-    // Speaker and Chief Justice are intentionally unfilled — inventing a name
-    // would mislead someone preparing for an interview.
+  it('grades the officeholder questions now that they are sourced', () => {
     for (const id of [30, 57, 61]) {
-      expect(grade(id, 'anything at all').selfAttested).toBe(true);
+      expect({ id, attested: grade(id, 'someone').selfAttested }).toEqual({ id, attested: false });
     }
+  });
+
+  it('still self-attests where an office genuinely does not exist', () => {
+    // D.C. has no governor. There is nothing to grade against, and saying so
+    // is the answer USCIS expects.
+    const dc = { stateCode: 'DC', programStartDay: '2026-08-16', voiceEnabled: false };
+    expect(grade(61, 'anyone', dc).selfAttested).toBe(true);
   });
 
   it('self-attests every dynamic question when the user has no profile', () => {
