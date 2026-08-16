@@ -126,7 +126,7 @@ export default function Progress(): React.ReactElement {
             <Text
               style={[
                 styles.cellText,
-                { color: p.strength === 'unseen' ? theme.textSecondary : '#FFFFFF' },
+                { color: p.strength === 'unseen' ? theme.textSecondary : theme.onAccent },
               ]}
             >
               {p.questionId}

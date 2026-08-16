@@ -82,7 +82,7 @@ export default function Summary(): React.ReactElement {
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Done</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Done</Text>
       </Pressable>
     </View>
   );
@@ -95,5 +95,5 @@ const styles = StyleSheet.create({
   unit: { fontSize: 16, marginTop: -8 },
   note: { fontSize: 13, textAlign: 'center', marginTop: 6 },
   button: { paddingVertical: 15, paddingHorizontal: 44, borderRadius: 14, marginTop: 22 },
-  buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  buttonText: { fontSize: 16, fontWeight: '700' },
 });

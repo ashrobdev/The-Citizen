@@ -245,7 +245,7 @@ function AnswerFields({
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Check</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Check</Text>
       </Pressable>
     </View>
   );
@@ -273,14 +273,14 @@ function SelfAttest({
           style={[styles.button, styles.flex, { backgroundColor: theme.success }]}
           accessibilityRole="button"
         >
-          <Text style={styles.buttonText}>✓ Yes</Text>
+          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✓ Yes</Text>
         </Pressable>
         <Pressable
           onPress={() => onAnswer(false)}
           style={[styles.button, styles.flex, { backgroundColor: theme.error }]}
           accessibilityRole="button"
         >
-          <Text style={styles.buttonText}>✕ No</Text>
+          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✕ No</Text>
         </Pressable>
       </View>
     </View>
@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
   block: { gap: 11, marginTop: 6 },
   input: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 13, fontSize: 17 },
   button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  buttonText: { fontSize: 16, fontWeight: '700' },
   row: { flexDirection: 'row', gap: 10 },
   flex: { flex: 1 },
   attestNote: { fontSize: 13, lineHeight: 19 },

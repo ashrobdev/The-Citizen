@@ -209,7 +209,7 @@ export default function FinalTest(): React.ReactElement {
               style={[styles.button, { backgroundColor: theme.accent }]}
               accessibilityRole="button"
             >
-              <Text style={styles.buttonText}>Answer</Text>
+              <Text style={[styles.buttonText, { color: theme.onAccent }]}>Answer</Text>
             </Pressable>
           </View>
         ) : null}
@@ -227,14 +227,14 @@ export default function FinalTest(): React.ReactElement {
                 style={[styles.button, styles.flex, { backgroundColor: theme.success }]}
                 accessibilityRole="button"
               >
-                <Text style={styles.buttonText}>✓ Yes</Text>
+                <Text style={[styles.buttonText, { color: theme.onAccent }]}>✓ Yes</Text>
               </Pressable>
               <Pressable
                 onPress={() => void advance(phase.graded, false, true)}
                 style={[styles.button, styles.flex, { backgroundColor: theme.error }]}
                 accessibilityRole="button"
               >
-                <Text style={styles.buttonText}>✕ No</Text>
+                <Text style={[styles.buttonText, { color: theme.onAccent }]}>✕ No</Text>
               </Pressable>
             </View>
           </View>
@@ -287,7 +287,7 @@ function Intro({ theme, onBegin }: { theme: Theme; onBegin: () => void }): React
         style={[styles.button, styles.wide, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Begin</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Begin</Text>
       </Pressable>
     </View>
   );
@@ -353,7 +353,7 @@ function Result({
         style={[styles.button, styles.wide, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Take it again</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Take it again</Text>
       </Pressable>
       <Pressable onPress={onHome} style={[styles.appeal, styles.wide, { borderColor: theme.border }]}>
         <Text style={[styles.appealText, { color: theme.accent }]}>Back to today</Text>
@@ -375,7 +375,7 @@ const styles = StyleSheet.create({
   wide: { alignSelf: 'stretch', marginTop: 10 },
   appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center' },
   appealText: { fontSize: 15, fontWeight: '700' },
-  buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  buttonText: { fontSize: 16, fontWeight: '700' },
   row: { flexDirection: 'row', gap: 10 },
   flex: { flex: 1 },
   note: { fontSize: 13, lineHeight: 19 },
