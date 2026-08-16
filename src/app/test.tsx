@@ -22,6 +22,7 @@ import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/s
 import { useSessionService } from '../ui/AppProvider';
 import { RevealCard } from '../ui/components/RevealCard';
 import { Stripes } from '../ui/components/Stripes';
+import { SpeakButton } from '../ui/components/SpeakButton';
 import { Colors, type Theme } from '../ui/theme/colors';
 
 type Phase =
@@ -176,6 +177,7 @@ export default function FinalTest(): React.ReactElement {
           {question.requiredCount > 1 ? ` · name ${question.requiredCount}` : ''}
         </Text>
         <Text style={[styles.prompt, { color: theme.text }]}>{question.prompt}</Text>
+        <SpeakButton text={question.prompt} theme={theme} />
 
         {phase.kind === 'answering' ? (
           <View style={styles.block}>

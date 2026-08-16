@@ -120,9 +120,14 @@ export default function Today(): React.ReactElement {
         </Link>
       )}
 
-      <Link href="/test" style={[styles.secondary, { borderColor: theme.border }]}>
-        <Text style={[styles.secondaryText, { color: theme.accent }]}>Take the Final Test</Text>
-      </Link>
+      <View style={styles.secondaryRow}>
+        <Link href="/test" style={[styles.secondary, { borderColor: theme.border }]}>
+          <Text style={[styles.secondaryText, { color: theme.accent }]}>Final Test</Text>
+        </Link>
+        <Link href="/progress" style={[styles.secondary, { borderColor: theme.border }]}>
+          <Text style={[styles.secondaryText, { color: theme.accent }]}>Progress</Text>
+        </Link>
+      </View>
 
       <Text style={[styles.hint, { color: theme.textSecondary }]}>
         Answers are typed, never multiple choice.
@@ -150,7 +155,8 @@ const styles = StyleSheet.create({
   ctaText: { color: '#FFFFFF', fontSize: 17, fontWeight: '700' },
   doneTitle: { fontSize: 21, fontWeight: '700', marginTop: 6 },
   doneBody: { fontSize: 14, textAlign: 'center' },
-  secondary: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 22, marginTop: 4 },
+  secondaryRow: { flexDirection: 'row', gap: 10, marginTop: 4 },
+  secondary: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 22 },
   secondaryText: { fontSize: 15, fontWeight: '700' },
   hint: { fontSize: 12, marginTop: 8, textAlign: 'center' },
   disclosure: { fontSize: 11, textAlign: 'center', lineHeight: 15, marginTop: 2, opacity: 0.8 },

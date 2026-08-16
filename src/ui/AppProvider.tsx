@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
+import type { Repositories } from '../data/repositories';
 import { createSqliteRepositories } from '../data/sqlite/repositories';
 import { openDatabase } from '../data/sqlite/db';
 import { SessionService } from '../services/sessionService';
@@ -17,6 +18,7 @@ import { Colors } from './theme/colors';
 
 interface AppValue {
   service: SessionService;
+  repos: Repositories;
 }
 
 const AppContext = createContext<AppValue | undefined>(undefined);
@@ -25,6 +27,13 @@ export function useSessionService(): SessionService {
   const value = useContext(AppContext);
   if (!value) throw new Error('useSessionService must be used inside AppProvider');
   return value.service;
+}
+
+/** For read-only views that build their own service over the same storage. */
+export function useRepositories(): Repositories {
+  const value = useContext(AppContext);
+  if (!value) throw new Error('useRepositories must be used inside AppProvider');
+  return value.repos;
 }
 
 type Status =
@@ -54,7 +63,9 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
         // what an unconfigured web build does. Fail loudly instead.
         const db = await withTimeout(openDatabase(), 10_000, 'Opening the database timed out');
         const repos = createSqliteRepositories(db);
-        if (!cancelled) setStatus({ phase: 'ready', value: { service: new SessionService(repos) } });
+        if (!cancelled) {
+          setStatus({ phase: 'ready', value: { service: new SessionService(repos), repos } });
+        }
       } catch (error) {
         // Surfaced rather than swallowed: a failed migration means no progress
         // can be saved, and silently continuing would lose the user's work.
