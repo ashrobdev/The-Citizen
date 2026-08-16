@@ -18,6 +18,7 @@ import type { Question, QuestionId } from '../domain/questions/types';
 import type { SessionRecord } from '../data/repositories';
 import { gradeResponse, type GradedAnswer } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
+import { RevealCard } from '../ui/components/RevealCard';
 import { Colors, type Theme } from '../ui/theme/colors';
 
 type Phase =
@@ -38,6 +39,7 @@ export default function Session(): React.ReactElement {
   const [inputs, setInputs] = useState<string[]>(['']);
   const [phase, setPhase] = useState<Phase>({ kind: 'answering' });
   const [focusPicks, setFocusPicks] = useState<string[]>([]);
+  const [savedFocus, setSavedFocus] = useState<string[]>([]);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -65,7 +67,18 @@ export default function Session(): React.ReactElement {
     setInputs(Array.from({ length: question.requiredCount }, () => ''));
     setPhase({ kind: 'answering' });
     setFocusPicks([]);
-  }, [question?.id]);
+
+    // Load any answers this user previously chose to memorise, so a repeat
+    // miss leads with their own picks rather than the full list again.
+    let cancelled = false;
+    void (async () => {
+      const saved = await service.focusAnswersFor(question.id);
+      if (!cancelled) setSavedFocus(saved);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [question?.id, service]);
 
   const answeredCount = total - queue.length;
 
@@ -148,11 +161,12 @@ export default function Session(): React.ReactElement {
         ) : null}
 
         {phase.kind === 'revealed' ? (
-          <Reveal
+          <RevealCard
             question={question}
             graded={phase.graded}
             finalCorrect={phase.finalCorrect}
-            focusPicks={focusPicks}
+            savedFocusIds={savedFocus}
+            pendingPicks={focusPicks}
             onTogglePick={(id) =>
               setFocusPicks((prev) =>
                 prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id],
@@ -160,7 +174,11 @@ export default function Session(): React.ReactElement {
             }
             onAppeal={() => setPhase({ ...phase, finalCorrect: true })}
             onNext={() =>
-              void advance(phase.graded, phase.finalCorrect, phase.finalCorrect !== phase.graded.correct)
+              void advance(
+                phase.graded,
+                phase.finalCorrect,
+                phase.finalCorrect !== phase.graded.correct,
+              )
             }
             theme={theme}
           />
@@ -248,100 +266,6 @@ function SelfAttest({
   );
 }
 
-function Reveal({
-  question,
-  graded,
-  finalCorrect,
-  focusPicks,
-  onTogglePick,
-  onAppeal,
-  onNext,
-  theme,
-}: {
-  question: Question;
-  graded: GradedAnswer;
-  finalCorrect: boolean;
-  focusPicks: string[];
-  onTogglePick: (id: string) => void;
-  onAppeal: () => void;
-  onNext: () => void;
-  theme: Theme;
-}): React.ReactElement {
-  const multiple = question.answers.length > 1;
-
-  return (
-    <View style={styles.block}>
-      {/* Never colour alone: icon and label always accompany the verdict. */}
-      <Text
-        style={[styles.verdict, { color: finalCorrect ? theme.success : theme.error }]}
-        accessibilityLiveRegion="polite"
-      >
-        {finalCorrect ? '✓  Correct' : '✕  Not quite'}
-      </Text>
-
-      {graded.multi ? (
-        <Text style={[styles.sub, { color: theme.textSecondary }]}>
-          {graded.multi.matchedCount} of {graded.multi.requiredCount} matched
-        </Text>
-      ) : null}
-
-      {!finalCorrect ? (
-        <>
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>
-            {multiple ? 'Accepted answers' : 'Accepted answer'}
-          </Text>
-          {multiple ? (
-            <Text style={[styles.sub, { color: theme.textSecondary }]}>
-              Tap the ones you want to remember. They’ll be shown first next time.
-            </Text>
-          ) : null}
-
-          {question.answers.map((a) => {
-            const picked = focusPicks.includes(a.id);
-            return (
-              <Pressable
-                key={a.id}
-                onPress={multiple ? () => onTogglePick(a.id) : undefined}
-                style={[
-                  styles.answer,
-                  {
-                    borderColor: picked ? theme.accent : theme.border,
-                    backgroundColor: picked ? theme.surface : 'transparent',
-                  },
-                ]}
-                accessibilityRole={multiple ? 'checkbox' : 'text'}
-                accessibilityState={multiple ? { checked: picked } : undefined}
-              >
-                <Text style={[styles.answerText, { color: theme.text }]}>
-                  {picked ? '★  ' : ''}
-                  {a.display}
-                </Text>
-              </Pressable>
-            );
-          })}
-
-          <Pressable
-            onPress={onAppeal}
-            style={[styles.appeal, { borderColor: theme.border }]}
-            accessibilityRole="button"
-          >
-            <Text style={[styles.appealText, { color: theme.accent }]}>
-              I actually got this right
-            </Text>
-          </Pressable>
-        </>
-      ) : null}
-
-      <Pressable
-        onPress={onNext}
-        style={[styles.button, { backgroundColor: theme.accent }]}
-        accessibilityRole="button"
-      >
-        <Text style={styles.buttonText}>Next</Text>
-      </Pressable>
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
@@ -354,13 +278,6 @@ const styles = StyleSheet.create({
   buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
   row: { flexDirection: 'row', gap: 10 },
   flex: { flex: 1 },
-  verdict: { fontSize: 21, fontWeight: '800' },
-  sub: { fontSize: 13, lineHeight: 18 },
-  sectionTitle: { fontSize: 15, fontWeight: '700', marginTop: 4 },
-  answer: { borderWidth: 1.5, borderRadius: 10, paddingHorizontal: 13, paddingVertical: 12, minHeight: 44, justifyContent: 'center' },
-  answerText: { fontSize: 15, lineHeight: 21 },
-  appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center', marginTop: 2 },
-  appealText: { fontSize: 15, fontWeight: '700' },
   attestNote: { fontSize: 13, lineHeight: 19 },
   attestQuestion: { fontSize: 17, fontWeight: '700', marginTop: 2 },
 });

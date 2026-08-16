@@ -16,7 +16,12 @@ module.exports = {
       // src/services and src/data are equally free of React Native imports —
       // services depend on repository interfaces, and tests supply the
       // in-memory implementations — so the whole session flow runs here too.
-      roots: ['<rootDir>/src/domain', '<rootDir>/src/services', '<rootDir>/src/data'],
+      roots: [
+        '<rootDir>/src/domain',
+        '<rootDir>/src/services',
+        '<rootDir>/src/data',
+        '<rootDir>/src/ui/components',
+      ],
       testMatch: ['**/*.test.ts'],
       moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',

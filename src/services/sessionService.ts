@@ -1,6 +1,7 @@
 import { gradeSingle, type MatchResult } from '../domain/grading/grader';
 import { gradeMulti, segmentAnswers, type MultiResult } from '../domain/grading/multi';
 import type { InputMode } from '../domain/grading/normalize';
+import { drawFinalTest } from '../domain/finaltest/spec';
 import { ALL_QUESTION_IDS, getQuestion } from '../domain/questions/bank';
 import type { Question, QuestionId } from '../domain/questions/types';
 import { DAILY_QUESTION_COUNT } from '../domain/scheduling/config';
@@ -209,6 +210,41 @@ export class SessionService {
     const correctCount = attempts.filter((a) => a.finalCorrect).length;
     await this.repos.sessions.complete(sessionId, now.getTime(), correctCount);
     return true;
+  }
+
+  /**
+   * Starts a fresh Final Test.
+   *
+   * Always a new session — the test is meant to be retaken, and resuming a
+   * half-finished one would let a user shop for a better draw.
+   *
+   * The session is recorded with kind 'final_test', which is what keeps it out
+   * of `completedDailyDayKeys()` and therefore out of the streak. That
+   * isolation is structural rather than a conditional somebody can forget.
+   */
+  async startFinalTest(now: Date = new Date()): Promise<SessionRecord> {
+    const session: SessionRecord = {
+      id: uuid(),
+      kind: 'final_test',
+      dayKey: toDayKey(now),
+      programDay: await this.currentProgramDay(),
+      questionIds: drawFinalTest(ALL_QUESTION_IDS, now.getTime()),
+      startedAt: now.getTime(),
+      correctCount: 0,
+    };
+    await this.repos.sessions.create(session);
+    return session;
+  }
+
+  /** Finalises a Final Test, however it ended. */
+  async finishFinalTest(sessionId: string, now: Date = new Date()): Promise<void> {
+    const attempts = await this.repos.attempts.listBySession(sessionId);
+    const correct = attempts.filter((a) => a.finalCorrect).length;
+    await this.repos.sessions.complete(sessionId, now.getTime(), correct);
+  }
+
+  async finalTestsTaken(): Promise<number> {
+    return this.repos.sessions.countCompleted('final_test');
   }
 
   async focusAnswersFor(questionId: QuestionId): Promise<string[]> {

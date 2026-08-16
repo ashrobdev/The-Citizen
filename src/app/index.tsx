@@ -110,6 +110,10 @@ export default function Today(): React.ReactElement {
         </Link>
       )}
 
+      <Link href="/test" style={[styles.secondary, { borderColor: theme.border }]}>
+        <Text style={[styles.secondaryText, { color: theme.accent }]}>Take the Final Test</Text>
+      </Link>
+
       <Text style={[styles.hint, { color: theme.textSecondary }]}>
         Answers are typed, never multiple choice.
       </Text>
@@ -130,5 +134,7 @@ const styles = StyleSheet.create({
   ctaText: { color: '#FFFFFF', fontSize: 17, fontWeight: '700' },
   doneTitle: { fontSize: 21, fontWeight: '700', marginTop: 6 },
   doneBody: { fontSize: 14, textAlign: 'center' },
+  secondary: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 22, marginTop: 4 },
+  secondaryText: { fontSize: 15, fontWeight: '700' },
   hint: { fontSize: 12, marginTop: 8, textAlign: 'center' },
 });
