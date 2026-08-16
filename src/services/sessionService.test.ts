@@ -2,7 +2,7 @@ import { createMemoryRepositories } from '../data/memory/repositories';
 import { getQuestion } from '../domain/questions/bank';
 import { DAILY_QUESTION_COUNT } from '../domain/scheduling/config';
 
-import { SessionService, gradeResponse, isSelfAttest } from './sessionService';
+import { SessionService, gradeResponse, resolveQuestion } from './sessionService';
 
 const at = (iso: string): Date => new Date(iso);
 
@@ -27,36 +27,66 @@ async function playDay(
   await svc.completeSession(today.session.id, now);
 }
 
+const CA = { stateCode: 'CA', programStartDay: '2026-08-16', voiceEnabled: false };
+
+const grade = (id: number, input: string, profile = CA) => {
+  const q = getQuestion(id);
+  return gradeResponse(q, resolveQuestion(q, profile), input);
+};
+
 describe('gradeResponse', () => {
   it('grades a single-answer question through the cascade', () => {
-    const r = gradeResponse(getQuestion(2), 'the constitution');
+    const r = grade(2, 'the constitution');
     expect(r.correct).toBe(true);
     expect(r.match?.stage).toBe('token-set');
     expect(r.selfAttested).toBe(false);
   });
 
   it('grades a multi-answer question as all-or-nothing', () => {
-    const q = getQuestion(81);
-    expect(gradeResponse(q, 'Virginia, New York, Georgia, Delaware, Rhode Island').correct).toBe(
-      true,
-    );
-    const partial = gradeResponse(q, 'Virginia, New York');
+    expect(grade(81, 'Virginia, New York, Georgia, Delaware, Rhode Island').correct).toBe(true);
+    const partial = grade(81, 'Virginia, New York');
     expect(partial.correct).toBe(false);
     expect(partial.multi?.matchedCount).toBe(2);
   });
 
-  it('marks the eight dynamic questions self-attest, not wrong', () => {
-    // Until the officials dataset lands, these cannot be machine graded. The
-    // failure mode to avoid is silently marking every attempt incorrect.
-    for (const id of [23, 29, 30, 38, 39, 57, 61, 62]) {
+  it('grades dynamic questions once the officials data supplies a name', () => {
+    // State capital is a stable fact, so it grades for real.
+    expect(grade(62, 'Sacramento').correct).toBe(true);
+    expect(grade(62, 'Los Angeles').correct).toBe(false);
+  });
+
+  it('self-attests where no officeholder is known, rather than marking wrong', () => {
+    // Speaker and Chief Justice are intentionally unfilled — inventing a name
+    // would mislead someone preparing for an interview.
+    for (const id of [30, 57, 61]) {
+      expect(grade(id, 'anything at all').selfAttested).toBe(true);
+    }
+  });
+
+  it('self-attests every dynamic question when the user has no profile', () => {
+    for (const id of [23, 29, 61, 62]) {
       const q = getQuestion(id);
-      expect(isSelfAttest(q)).toBe(true);
-      expect(gradeResponse(q, 'anything at all').selfAttested).toBe(true);
+      expect(gradeResponse(q, resolveQuestion(q, undefined), 'x').selfAttested).toBe(true);
     }
   });
 
   it('does not treat static questions as self-attest', () => {
-    expect(isSelfAttest(getQuestion(1))).toBe(false);
+    const q = getQuestion(1);
+    expect(resolveQuestion(q, CA).selfAttest).toBe(false);
+  });
+});
+
+describe('profile', () => {
+  it('round-trips through the repository', async () => {
+    const svc = new SessionService(createMemoryRepositories());
+    expect(await svc.profile()).toBeUndefined();
+    await svc.saveProfile({ ...CA, district: '12' });
+    expect(await svc.profile()).toEqual({ ...CA, district: '12' });
+  });
+
+  it('exposes the officials data version for the disclosure line', () => {
+    const svc = new SessionService(createMemoryRepositories());
+    expect(svc.officialsDataVersion()).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 });
 

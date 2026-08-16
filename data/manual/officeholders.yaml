@@ -1,0 +1,38 @@
+# Officeholders that no maintained machine-readable dataset covers.
+#
+# Senators, representatives, the President and the Vice President are pulled
+# automatically from unitedstates/congress-legislators by
+# scripts/build-officials.ts. The roles below are not in that dataset and must
+# be filled in by hand.
+#
+# LEAVE AN ENTRY EMPTY IF YOU ARE NOT CERTAIN. An empty entry makes the app ask
+# the user "did you get it right?" and point them at uscis.gov, which is honest.
+# A wrong name is far worse: it silently tells someone the wrong answer while
+# they prepare for an interview.
+#
+# `reviewedOn` is checked by CI. If it falls more than 120 days behind, the
+# build warns — that cadence is what catches elections and appointments.
+#
+# Verify every value against uscis.gov/citizenship/testupdates, which is the
+# authority USCIS itself directs applicants to.
+
+reviewedOn: '2026-08-16'
+
+federal:
+  # Q30 — "What is the name of the Speaker of the House of Representatives now?"
+  speakerOfTheHouse:
+    answers: []
+
+  # Q57 — "Who is the Chief Justice of the United States now?"
+  chiefJustice:
+    answers: []
+
+# Q61 — "Who is the governor of your state now?"
+#
+# Keyed by USPS code. Add entries as `XX: ['Full Name', 'Surname']`.
+# The build script accepts partial coverage: any state missing here is asked as
+# a self-attested question rather than graded against a guess.
+#
+# D.C. is intentionally absent — it has no governor, and the app answers that
+# from data/static/jurisdictions.json.
+governors: {}

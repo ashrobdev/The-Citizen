@@ -2,6 +2,9 @@ import { gradeSingle, type MatchResult } from '../domain/grading/grader';
 import { gradeMulti, segmentAnswers, type MultiResult } from '../domain/grading/multi';
 import type { InputMode } from '../domain/grading/normalize';
 import { drawFinalTest } from '../domain/finaltest/spec';
+import officialsJson from '../../assets/data/officials.json';
+import { resolveDynamicQuestion, type ResolvedQuestion } from '../domain/officials/resolver';
+import type { OfficialsData } from '../domain/officials/schema';
 import { ALL_QUESTION_IDS, getQuestion } from '../domain/questions/bank';
 import type { Question, QuestionId } from '../domain/questions/types';
 import { DAILY_QUESTION_COUNT } from '../domain/scheduling/config';
@@ -10,7 +13,7 @@ import { rebuildAllStates } from '../domain/scheduling/projection';
 import { selectDailyQuestions } from '../domain/scheduling/selectDaily';
 import { computeStreak, type StreakState } from '../domain/scheduling/streak';
 import type { Attempt } from '../domain/scheduling/types';
-import type { Repositories, SessionRecord } from '../data/repositories';
+import type { Repositories, SessionRecord, UserProfile } from '../data/repositories';
 
 /**
  * Orchestrates a daily session: pick the questions, grade answers, append
@@ -20,15 +23,33 @@ import type { Repositories, SessionRecord } from '../data/repositories';
  * moves data between them and the repositories.
  */
 
+/** The officials dataset shipped with the app. */
+export const OFFICIALS = officialsJson as unknown as OfficialsData;
+
 /**
- * Questions whose answer depends on current officeholders cannot be graded
- * until the officials dataset lands in Phase 3. Rather than mark every attempt
- * wrong — or silently drop eight questions from the syllabus — they are asked
- * and self-attested: the user is shown what the answer depends on and states
- * whether they got it right. Faking a verdict here would be worse than asking.
+ * Resolves what a question should be graded against.
+ *
+ * Static questions carry their own answers. The eight dynamic ones are looked
+ * up from the officials dataset for the user's state and district; where no
+ * name is known — an unfilled role, a jurisdiction with no such office, or a
+ * user who has not told us where they live — the question is self-attested
+ * instead. Grading against a guess would mislead someone preparing for a real
+ * interview, so the app asks rather than pretends.
  */
-export function isSelfAttest(question: Question): boolean {
-  return question.kind !== 'static';
+export function resolveQuestion(
+  question: Question,
+  profile: UserProfile | undefined,
+): ResolvedQuestion {
+  if (question.kind === 'static') return { selfAttest: false, answers: question.answers };
+
+  const location =
+    profile === undefined
+      ? undefined
+      : profile.district === undefined
+        ? { stateCode: profile.stateCode }
+        : { stateCode: profile.stateCode, district: profile.district };
+
+  return resolveDynamicQuestion(question, OFFICIALS, location);
 }
 
 export interface GradedAnswer {
@@ -39,20 +60,28 @@ export interface GradedAnswer {
   /** Present for machine-graded multi-answer questions. */
   multi?: MultiResult;
   selfAttested: boolean;
+  /** Explanation shown alongside a self-attested question. */
+  note?: string;
 }
 
-/** Grades a raw response without persisting anything. */
+/** Grades a raw response against already-resolved answers. Persists nothing. */
 export function gradeResponse(
   question: Question,
+  resolved: ResolvedQuestion,
   input: string,
   mode: InputMode = 'text',
 ): GradedAnswer {
-  if (isSelfAttest(question)) {
-    return { questionId: question.id, correct: false, selfAttested: true };
+  if (resolved.selfAttest || resolved.answers.length === 0) {
+    return {
+      questionId: question.id,
+      correct: false,
+      selfAttested: true,
+      ...(resolved.note !== undefined ? { note: resolved.note } : {}),
+    };
   }
 
   if (question.requiredCount > 1) {
-    const multi = gradeMulti(segmentAnswers(input), question.answers, question.requiredCount, {
+    const multi = gradeMulti(segmentAnswers(input), resolved.answers, question.requiredCount, {
       mode,
     });
     return {
@@ -63,7 +92,7 @@ export function gradeResponse(
     };
   }
 
-  const match = gradeSingle(input, question.answers, { mode });
+  const match = gradeSingle(input, resolved.answers, { mode });
   return {
     questionId: question.id,
     correct: match.verdict === 'correct',
@@ -245,6 +274,19 @@ export class SessionService {
 
   async finalTestsTaken(): Promise<number> {
     return this.repos.sessions.countCompleted('final_test');
+  }
+
+  async profile(): Promise<UserProfile | undefined> {
+    return this.repos.profile.get();
+  }
+
+  async saveProfile(profile: UserProfile): Promise<void> {
+    await this.repos.profile.save(profile);
+  }
+
+  /** Date the shipped officials data was generated, for the disclosure line. */
+  officialsDataVersion(): string {
+    return OFFICIALS.dataVersion;
   }
 
   async focusAnswersFor(questionId: QuestionId): Promise<string[]> {

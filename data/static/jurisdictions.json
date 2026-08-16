@@ -1,0 +1,299 @@
+{
+  "_comment": [
+    "Jurisdiction names and capitals. Unlike officeholders these are stable",
+    "statutory facts, not election results, so they are safe to ship as data.",
+    "",
+    "D.C. has capital null: it is not a state and has no capital of its own,",
+    "which is the answer USCIS expects from D.C. residents for Q62.",
+    "Territories name their own capital.",
+    "apportionment: House seats per state from the 2020 census, fixed until 2030. Needed so the district picker lists every seat, including any currently vacant."
+  ],
+  "states": {
+    "AL": [
+      "Alabama",
+      "Montgomery"
+    ],
+    "AK": [
+      "Alaska",
+      "Juneau"
+    ],
+    "AZ": [
+      "Arizona",
+      "Phoenix"
+    ],
+    "AR": [
+      "Arkansas",
+      "Little Rock"
+    ],
+    "CA": [
+      "California",
+      "Sacramento"
+    ],
+    "CO": [
+      "Colorado",
+      "Denver"
+    ],
+    "CT": [
+      "Connecticut",
+      "Hartford"
+    ],
+    "DE": [
+      "Delaware",
+      "Dover"
+    ],
+    "FL": [
+      "Florida",
+      "Tallahassee"
+    ],
+    "GA": [
+      "Georgia",
+      "Atlanta"
+    ],
+    "HI": [
+      "Hawaii",
+      "Honolulu"
+    ],
+    "ID": [
+      "Idaho",
+      "Boise"
+    ],
+    "IL": [
+      "Illinois",
+      "Springfield"
+    ],
+    "IN": [
+      "Indiana",
+      "Indianapolis"
+    ],
+    "IA": [
+      "Iowa",
+      "Des Moines"
+    ],
+    "KS": [
+      "Kansas",
+      "Topeka"
+    ],
+    "KY": [
+      "Kentucky",
+      "Frankfort"
+    ],
+    "LA": [
+      "Louisiana",
+      "Baton Rouge"
+    ],
+    "ME": [
+      "Maine",
+      "Augusta"
+    ],
+    "MD": [
+      "Maryland",
+      "Annapolis"
+    ],
+    "MA": [
+      "Massachusetts",
+      "Boston"
+    ],
+    "MI": [
+      "Michigan",
+      "Lansing"
+    ],
+    "MN": [
+      "Minnesota",
+      "Saint Paul"
+    ],
+    "MS": [
+      "Mississippi",
+      "Jackson"
+    ],
+    "MO": [
+      "Missouri",
+      "Jefferson City"
+    ],
+    "MT": [
+      "Montana",
+      "Helena"
+    ],
+    "NE": [
+      "Nebraska",
+      "Lincoln"
+    ],
+    "NV": [
+      "Nevada",
+      "Carson City"
+    ],
+    "NH": [
+      "New Hampshire",
+      "Concord"
+    ],
+    "NJ": [
+      "New Jersey",
+      "Trenton"
+    ],
+    "NM": [
+      "New Mexico",
+      "Santa Fe"
+    ],
+    "NY": [
+      "New York",
+      "Albany"
+    ],
+    "NC": [
+      "North Carolina",
+      "Raleigh"
+    ],
+    "ND": [
+      "North Dakota",
+      "Bismarck"
+    ],
+    "OH": [
+      "Ohio",
+      "Columbus"
+    ],
+    "OK": [
+      "Oklahoma",
+      "Oklahoma City"
+    ],
+    "OR": [
+      "Oregon",
+      "Salem"
+    ],
+    "PA": [
+      "Pennsylvania",
+      "Harrisburg"
+    ],
+    "RI": [
+      "Rhode Island",
+      "Providence"
+    ],
+    "SC": [
+      "South Carolina",
+      "Columbia"
+    ],
+    "SD": [
+      "South Dakota",
+      "Pierre"
+    ],
+    "TN": [
+      "Tennessee",
+      "Nashville"
+    ],
+    "TX": [
+      "Texas",
+      "Austin"
+    ],
+    "UT": [
+      "Utah",
+      "Salt Lake City"
+    ],
+    "VT": [
+      "Vermont",
+      "Montpelier"
+    ],
+    "VA": [
+      "Virginia",
+      "Richmond"
+    ],
+    "WA": [
+      "Washington",
+      "Olympia"
+    ],
+    "WV": [
+      "West Virginia",
+      "Charleston"
+    ],
+    "WI": [
+      "Wisconsin",
+      "Madison"
+    ],
+    "WY": [
+      "Wyoming",
+      "Cheyenne"
+    ]
+  },
+  "district": {
+    "DC": [
+      "District of Columbia",
+      null
+    ]
+  },
+  "territories": {
+    "AS": [
+      "American Samoa",
+      "Pago Pago"
+    ],
+    "GU": [
+      "Guam",
+      "Hag\u00e5t\u00f1a"
+    ],
+    "MP": [
+      "Northern Mariana Islands",
+      "Saipan"
+    ],
+    "PR": [
+      "Puerto Rico",
+      "San Juan"
+    ],
+    "VI": [
+      "U.S. Virgin Islands",
+      "Charlotte Amalie"
+    ]
+  },
+  "notes": {
+    "dcGovernor": "District of Columbia residents should answer that D.C. does not have a governor.",
+    "dcCapital": "D.C. is not a state and does not have a capital.",
+    "noSenators": "This jurisdiction has no U.S. senators.",
+    "nonVotingRepresentation": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+  },
+  "apportionment": {
+    "AL": 7,
+    "AK": 1,
+    "AZ": 9,
+    "AR": 4,
+    "CA": 52,
+    "CO": 8,
+    "CT": 5,
+    "DE": 1,
+    "FL": 28,
+    "GA": 14,
+    "HI": 2,
+    "ID": 2,
+    "IL": 17,
+    "IN": 9,
+    "IA": 4,
+    "KS": 4,
+    "KY": 6,
+    "LA": 6,
+    "ME": 2,
+    "MD": 8,
+    "MA": 9,
+    "MI": 13,
+    "MN": 8,
+    "MS": 4,
+    "MO": 8,
+    "MT": 2,
+    "NE": 3,
+    "NV": 4,
+    "NH": 2,
+    "NJ": 12,
+    "NM": 3,
+    "NY": 26,
+    "NC": 14,
+    "ND": 1,
+    "OH": 15,
+    "OK": 5,
+    "OR": 6,
+    "PA": 17,
+    "RI": 2,
+    "SC": 7,
+    "SD": 1,
+    "TN": 9,
+    "TX": 38,
+    "UT": 4,
+    "VT": 1,
+    "VA": 11,
+    "WA": 10,
+    "WV": 2,
+    "WI": 8,
+    "WY": 1
+  }
+}

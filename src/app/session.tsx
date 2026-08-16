@@ -15,8 +15,8 @@ import {
 
 import { getQuestion } from '../domain/questions/bank';
 import type { Question, QuestionId } from '../domain/questions/types';
-import type { SessionRecord } from '../data/repositories';
-import { gradeResponse, type GradedAnswer } from '../services/sessionService';
+import type { SessionRecord, UserProfile } from '../data/repositories';
+import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
 import { RevealCard } from '../ui/components/RevealCard';
 import { Colors, type Theme } from '../ui/theme/colors';
@@ -40,6 +40,7 @@ export default function Session(): React.ReactElement {
   const [phase, setPhase] = useState<Phase>({ kind: 'answering' });
   const [focusPicks, setFocusPicks] = useState<string[]>([]);
   const [savedFocus, setSavedFocus] = useState<string[]>([]);
+  const [profile, setProfile] = useState<UserProfile | undefined>();
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -82,18 +83,29 @@ export default function Session(): React.ReactElement {
 
   const answeredCount = total - queue.length;
 
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const p = await service.profile();
+      if (!cancelled) setProfile(p);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [service]);
+
   const submit = useCallback(() => {
     if (!question) return;
     const joined = inputs.map((s) => s.trim()).filter((s) => s.length > 0).join(', ');
     if (joined.length === 0) return;
 
-    const graded = gradeResponse(question, joined, 'text');
+    const graded = gradeResponse(question, resolveQuestion(question, profile), joined, 'text');
     if (graded.selfAttested) {
       setPhase({ kind: 'self-attest', graded });
     } else {
       setPhase({ kind: 'revealed', graded, finalCorrect: graded.correct });
     }
-  }, [question, inputs]);
+  }, [question, inputs, profile]);
 
   const advance = useCallback(
     async (graded: GradedAnswer, finalCorrect: boolean, selfGraded: boolean) => {
@@ -156,6 +168,7 @@ export default function Session(): React.ReactElement {
         {phase.kind === 'self-attest' ? (
           <SelfAttest
             theme={theme}
+            note={phase.graded.note}
             onAnswer={(correct) => void advance(phase.graded, correct, true)}
           />
         ) : null}
@@ -234,16 +247,18 @@ function AnswerFields({
 
 function SelfAttest({
   theme,
+  note,
   onAnswer,
 }: {
   theme: Theme;
+  note: string | undefined;
   onAnswer: (correct: boolean) => void;
 }): React.ReactElement {
   return (
     <View style={styles.block}>
       <Text style={[styles.attestNote, { color: theme.textSecondary }]}>
-        This answer depends on who currently holds the office, so it can’t be checked
-        automatically yet. Verify it at uscis.gov/citizenship/testupdates.
+        {note ??
+          'This answer depends on who currently holds the office, and we don’t have a verified name for it. Check uscis.gov/citizenship/testupdates.'}
       </Text>
       <Text style={[styles.attestQuestion, { color: theme.text }]}>Did you get it right?</Text>
       <View style={styles.row}>

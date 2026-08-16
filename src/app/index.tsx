@@ -1,4 +1,4 @@
-import { Link, Stack, useFocusEffect } from 'expo-router';
+import { Link, Stack, useFocusEffect, useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
@@ -14,10 +14,12 @@ interface View_ {
   answered: number;
   total: number;
   complete: boolean;
+  hasProfile: boolean;
 }
 
 export default function Today(): React.ReactElement {
   const service = useSessionService();
+  const router = useRouter();
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
   const [state, setState] = useState<View_ | undefined>();
@@ -28,9 +30,17 @@ export default function Today(): React.ReactElement {
     useCallback(() => {
       let cancelled = false;
       (async () => {
+        const profile = await service.profile();
+        if (cancelled) return;
+        if (!profile) {
+          // First run: we need a state before four of the questions mean anything.
+          router.replace('/onboarding');
+          return;
+        }
         const today = await service.startOrResumeToday();
         if (cancelled) return;
         setState({
+          hasProfile: true,
           programDay: today.programDay,
           streak: today.streak,
           answered: new Set(today.answeredQuestionIds).size,
@@ -41,7 +51,7 @@ export default function Today(): React.ReactElement {
       return () => {
         cancelled = true;
       };
-    }, [service]),
+    }, [service, router]),
   );
 
   if (!state) {
@@ -117,6 +127,12 @@ export default function Today(): React.ReactElement {
       <Text style={[styles.hint, { color: theme.textSecondary }]}>
         Answers are typed, never multiple choice.
       </Text>
+      {/* USCIS is the authority on who currently holds office; the app must
+          never present possibly-stale officeholder data as definitive. */}
+      <Text style={[styles.disclosure, { color: theme.textSecondary }]}>
+        Officials data as of {service.officialsDataVersion()} — always verify at
+        uscis.gov/citizenship/testupdates
+      </Text>
     </View>
   );
 }
@@ -137,4 +153,5 @@ const styles = StyleSheet.create({
   secondary: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 22, marginTop: 4 },
   secondaryText: { fontSize: 15, fontWeight: '700' },
   hint: { fontSize: 12, marginTop: 8, textAlign: 'center' },
+  disclosure: { fontSize: 11, textAlign: 'center', lineHeight: 15, marginTop: 2, opacity: 0.8 },
 });

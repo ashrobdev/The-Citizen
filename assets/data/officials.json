@@ -1,0 +1,4393 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-08-16",
+  "generatedAt": "2026-08-16T19:02:34.827Z",
+  "sources": [
+    {
+      "name": "unitedstates/congress-legislators (legislators-current)",
+      "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml",
+      "retrievedAt": "2026-08-16"
+    },
+    {
+      "name": "unitedstates/congress-legislators (executive)",
+      "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/executive.yaml",
+      "retrievedAt": "2026-08-16"
+    },
+    {
+      "name": "data/manual/officeholders.yaml",
+      "reviewedOn": "2026-08-16"
+    },
+    {
+      "name": "data/static/jurisdictions.json (capitals)"
+    }
+  ],
+  "federal": {
+    "president": {
+      "answers": [
+        "Donald Trump",
+        "Trump"
+      ]
+    },
+    "vicePresident": {
+      "answers": [
+        "J.D. Vance",
+        "James David Vance",
+        "Vance"
+      ]
+    },
+    "speakerOfTheHouse": {
+      "answers": []
+    },
+    "chiefJustice": {
+      "answers": []
+    }
+  },
+  "jurisdictions": {
+    "AL": {
+      "name": "Alabama",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Montgomery"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Katie Boyd Britt",
+            "Katie Britt",
+            "Britt"
+          ]
+        },
+        {
+          "answers": [
+            "Tommy Tuberville",
+            "Tuberville"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Barry Moore",
+            "Moore"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Shomari Figures",
+            "Figures"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Mike Rogers",
+            "Rogers"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Robert B. Aderholt",
+            "Robert Aderholt",
+            "Aderholt"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Dale W. Strong",
+            "Dale Strong",
+            "Strong"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Gary J. Palmer",
+            "Gary Palmer",
+            "Palmer"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Terri A. Sewell",
+            "Terri Sewell",
+            "Sewell"
+          ]
+        }
+      }
+    },
+    "AK": {
+      "name": "Alaska",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Juneau"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Dan Sullivan",
+            "Sullivan"
+          ]
+        },
+        {
+          "answers": [
+            "Lisa Murkowski",
+            "Murkowski"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Nicholas J. Begich III",
+            "Nicholas Begich",
+            "Begich"
+          ]
+        }
+      }
+    },
+    "AZ": {
+      "name": "Arizona",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Phoenix"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Mark Kelly",
+            "Kelly"
+          ]
+        },
+        {
+          "answers": [
+            "Ruben Gallego",
+            "Gallego"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "David Schweikert",
+            "Schweikert"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Elijah Crane",
+            "Eli Crane",
+            "Crane"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Yassamin Ansari",
+            "Ansari"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Greg Stanton",
+            "Stanton"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Andy Biggs",
+            "Biggs"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Juan Ciscomani",
+            "Ciscomani"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Adelita S. Grijalva",
+            "Adelita Grijalva",
+            "Grijalva"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Abraham J. Hamadeh",
+            "Abraham Hamadeh",
+            "Hamadeh"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Paul A. Gosar",
+            "Paul Gosar",
+            "Gosar"
+          ]
+        }
+      }
+    },
+    "AR": {
+      "name": "Arkansas",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Little Rock"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John Boozman",
+            "Boozman"
+          ]
+        },
+        {
+          "answers": [
+            "Tom Cotton",
+            "Cotton"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Eric A. \"Rick\" Crawford",
+            "Eric Crawford",
+            "Crawford",
+            "Rick Crawford"
+          ]
+        },
+        "2": {
+          "answers": [
+            "J. French Hill",
+            "J. Hill",
+            "Hill"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Steve Womack",
+            "Womack"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Bruce Westerman",
+            "Westerman"
+          ]
+        }
+      }
+    },
+    "CA": {
+      "name": "California",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Sacramento"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Adam B. Schiff",
+            "Adam Schiff",
+            "Schiff"
+          ]
+        },
+        {
+          "answers": [
+            "Alex Padilla",
+            "Alejandro Padilla",
+            "Padilla"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "James Gallagher",
+            "Gallagher"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Jared Huffman",
+            "Huffman"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Kevin Kiley",
+            "Kiley"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Mike Thompson",
+            "Thompson"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Tom McClintock",
+            "McClintock"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Ami Bera",
+            "Bera"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Doris O. Matsui",
+            "Doris Matsui",
+            "Matsui"
+          ]
+        },
+        "8": {
+          "answers": [
+            "John Garamendi",
+            "Garamendi"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Josh Harder",
+            "Harder"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Mark DeSaulnier",
+            "DeSaulnier"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Nancy Pelosi",
+            "Pelosi"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Lateefah Simon",
+            "Simon"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Adam Gray",
+            "Gray"
+          ]
+        },
+        "14": {
+          "answers": [],
+          "vacant": true
+        },
+        "15": {
+          "answers": [
+            "Kevin Mullin",
+            "Mullin"
+          ]
+        },
+        "16": {
+          "answers": [
+            "Sam T. Liccardo",
+            "Sam Liccardo",
+            "Liccardo"
+          ]
+        },
+        "17": {
+          "answers": [
+            "Ro Khanna",
+            "Khanna"
+          ]
+        },
+        "18": {
+          "answers": [
+            "Zoe Lofgren",
+            "Lofgren"
+          ]
+        },
+        "19": {
+          "answers": [
+            "Jimmy Panetta",
+            "Panetta"
+          ]
+        },
+        "20": {
+          "answers": [
+            "Vince Fong",
+            "Fong"
+          ]
+        },
+        "21": {
+          "answers": [
+            "Jim Costa",
+            "Costa"
+          ]
+        },
+        "22": {
+          "answers": [
+            "David G. Valadao",
+            "David Valadao",
+            "Valadao"
+          ]
+        },
+        "23": {
+          "answers": [
+            "Jay Obernolte",
+            "Obernolte"
+          ]
+        },
+        "24": {
+          "answers": [
+            "Salud O. Carbajal",
+            "Salud Carbajal",
+            "Carbajal"
+          ]
+        },
+        "25": {
+          "answers": [
+            "Raul Ruiz",
+            "Ruiz"
+          ]
+        },
+        "26": {
+          "answers": [
+            "Julia Brownley",
+            "Brownley"
+          ]
+        },
+        "27": {
+          "answers": [
+            "George Whitesides",
+            "Whitesides"
+          ]
+        },
+        "28": {
+          "answers": [
+            "Judy Chu",
+            "Chu"
+          ]
+        },
+        "29": {
+          "answers": [
+            "Luz M. Rivas",
+            "Luz Rivas",
+            "Rivas"
+          ]
+        },
+        "30": {
+          "answers": [
+            "Laura Friedman",
+            "Friedman"
+          ]
+        },
+        "31": {
+          "answers": [
+            "Gilbert Ray Cisneros, Jr.",
+            "Gilbert Cisneros",
+            "Cisneros"
+          ]
+        },
+        "32": {
+          "answers": [
+            "Brad Sherman",
+            "Sherman"
+          ]
+        },
+        "33": {
+          "answers": [
+            "Pete Aguilar",
+            "Aguilar"
+          ]
+        },
+        "34": {
+          "answers": [
+            "Jimmy Gomez",
+            "Gomez"
+          ]
+        },
+        "35": {
+          "answers": [
+            "Norma J. Torres",
+            "Norma Torres",
+            "Torres"
+          ]
+        },
+        "36": {
+          "answers": [
+            "Ted Lieu",
+            "Lieu"
+          ]
+        },
+        "37": {
+          "answers": [
+            "Sydney Kamlager-Dove",
+            "Kamlager-Dove"
+          ]
+        },
+        "38": {
+          "answers": [
+            "Linda T. Sánchez",
+            "Linda Sánchez",
+            "Sánchez"
+          ]
+        },
+        "39": {
+          "answers": [
+            "Mark Takano",
+            "Takano"
+          ]
+        },
+        "40": {
+          "answers": [
+            "Young Kim",
+            "Kim"
+          ]
+        },
+        "41": {
+          "answers": [
+            "Ken Calvert",
+            "Calvert"
+          ]
+        },
+        "42": {
+          "answers": [
+            "Robert Garcia",
+            "Garcia"
+          ]
+        },
+        "43": {
+          "answers": [
+            "Maxine Waters",
+            "Waters"
+          ]
+        },
+        "44": {
+          "answers": [
+            "Nanette Diaz Barragán",
+            "Nanette Barragán",
+            "Barragán"
+          ]
+        },
+        "45": {
+          "answers": [
+            "Derek Tran",
+            "Tran"
+          ]
+        },
+        "46": {
+          "answers": [
+            "J. Luis Correa",
+            "J. Correa",
+            "Correa"
+          ]
+        },
+        "47": {
+          "answers": [
+            "Dave Min",
+            "Min"
+          ]
+        },
+        "48": {
+          "answers": [
+            "Darrell Issa",
+            "Issa"
+          ]
+        },
+        "49": {
+          "answers": [
+            "Mike Levin",
+            "Levin"
+          ]
+        },
+        "50": {
+          "answers": [
+            "Scott H. Peters",
+            "Scott Peters",
+            "Peters"
+          ]
+        },
+        "51": {
+          "answers": [
+            "Sara Jacobs",
+            "Jacobs"
+          ]
+        },
+        "52": {
+          "answers": [
+            "Juan Vargas",
+            "Vargas"
+          ]
+        }
+      }
+    },
+    "CO": {
+      "name": "Colorado",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Denver"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John W. Hickenlooper",
+            "John Hickenlooper",
+            "Hickenlooper"
+          ]
+        },
+        {
+          "answers": [
+            "Michael F. Bennet",
+            "Michael Bennet",
+            "Bennet"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Diana DeGette",
+            "DeGette"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Joe Neguse",
+            "Neguse"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Jeff Hurd",
+            "Hurd"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Lauren Boebert",
+            "Boebert"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Jeff Crank",
+            "Crank"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Jason Crow",
+            "Crow"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Brittany Pettersen",
+            "Pettersen"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Gabe Evans",
+            "Evans"
+          ]
+        }
+      }
+    },
+    "CT": {
+      "name": "Connecticut",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Hartford"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Christopher Murphy",
+            "Murphy"
+          ]
+        },
+        {
+          "answers": [
+            "Richard Blumenthal",
+            "Blumenthal"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "John B. Larson",
+            "John Larson",
+            "Larson"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Joe Courtney",
+            "Courtney"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Rosa L. DeLauro",
+            "Rosa DeLauro",
+            "DeLauro"
+          ]
+        },
+        "4": {
+          "answers": [
+            "James A. Himes",
+            "James Himes",
+            "Himes",
+            "Jim Himes"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Jahana Hayes",
+            "Hayes"
+          ]
+        }
+      }
+    },
+    "DE": {
+      "name": "Delaware",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Dover"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Christopher A. Coons",
+            "Christopher Coons",
+            "Coons"
+          ]
+        },
+        {
+          "answers": [
+            "Lisa Blunt Rochester",
+            "Blunt Rochester"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Sarah McBride",
+            "McBride"
+          ]
+        }
+      }
+    },
+    "FL": {
+      "name": "Florida",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Tallahassee"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Ashley Moody",
+            "Moody"
+          ]
+        },
+        {
+          "answers": [
+            "Rick Scott",
+            "Scott"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Jimmy Patronis",
+            "Patronis"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Neal P. Dunn",
+            "Neal Dunn",
+            "Dunn"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Kat Cammack",
+            "Katherine Cammack",
+            "Cammack"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Aaron Bean",
+            "Bean"
+          ]
+        },
+        "5": {
+          "answers": [
+            "John H. Rutherford",
+            "John Rutherford",
+            "Rutherford"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Randy Fine",
+            "Randall Fine",
+            "Fine"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Cory Mills",
+            "Mills"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Mike Haridopolos",
+            "Haridopolos"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Darren Soto",
+            "Soto"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Maxwell Frost",
+            "Frost"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Daniel Webster",
+            "Webster"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Gus M. Bilirakis",
+            "Gus Bilirakis",
+            "Bilirakis"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Anna Paulina Luna",
+            "Anna Luna",
+            "Luna"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Kathy Castor",
+            "Castor"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Laurel M. Lee",
+            "Laurel Lee",
+            "Lee"
+          ]
+        },
+        "16": {
+          "answers": [
+            "Vern Buchanan",
+            "Buchanan"
+          ]
+        },
+        "17": {
+          "answers": [
+            "W. Gregory Steube",
+            "W. Steube",
+            "Steube"
+          ]
+        },
+        "18": {
+          "answers": [
+            "Scott Franklin",
+            "C. Franklin",
+            "Franklin"
+          ]
+        },
+        "19": {
+          "answers": [
+            "Byron Donalds",
+            "Donalds"
+          ]
+        },
+        "20": {
+          "answers": [],
+          "vacant": true
+        },
+        "21": {
+          "answers": [
+            "Brian J. Mast",
+            "Brian Mast",
+            "Mast"
+          ]
+        },
+        "22": {
+          "answers": [
+            "Lois Frankel",
+            "Frankel"
+          ]
+        },
+        "23": {
+          "answers": [
+            "Jared Moskowitz",
+            "Moskowitz"
+          ]
+        },
+        "24": {
+          "answers": [
+            "Frederica S. Wilson",
+            "Frederica Wilson",
+            "Wilson"
+          ]
+        },
+        "25": {
+          "answers": [
+            "Debbie Wasserman Schultz",
+            "Wasserman Schultz"
+          ]
+        },
+        "26": {
+          "answers": [
+            "Mario Diaz-Balart",
+            "Diaz-Balart"
+          ]
+        },
+        "27": {
+          "answers": [
+            "Maria Elvira Salazar",
+            "Maria Salazar",
+            "Salazar"
+          ]
+        },
+        "28": {
+          "answers": [
+            "Carlos A. Gimenez",
+            "Carlos Gimenez",
+            "Gimenez"
+          ]
+        }
+      }
+    },
+    "GA": {
+      "name": "Georgia",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Atlanta"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jon Ossoff",
+            "Ossoff"
+          ]
+        },
+        {
+          "answers": [
+            "Raphael G. Warnock",
+            "Raphael Warnock",
+            "Warnock"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Earl L. \"Buddy\" Carter",
+            "Earl Carter",
+            "Carter",
+            "Buddy Carter"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Sanford D. Bishop, Jr.",
+            "Sanford Bishop",
+            "Bishop"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Brian Jack",
+            "Jack"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Henry C. \"Hank\" Johnson, Jr.",
+            "Henry Johnson",
+            "Johnson",
+            "Hank Johnson"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Nikema Williams",
+            "Williams"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Lucy McBath",
+            "McBath"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Richard McCormick",
+            "Rich McCormick",
+            "McCormick"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Austin Scott",
+            "Scott"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Andrew S. Clyde",
+            "Andrew Clyde",
+            "Clyde"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Mike Collins",
+            "Collins"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Barry Loudermilk",
+            "Loudermilk"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Rick W. Allen",
+            "Rick Allen",
+            "Allen"
+          ]
+        },
+        "13": {
+          "answers": [],
+          "vacant": true
+        },
+        "14": {
+          "answers": [
+            "Clay Fuller",
+            "Fuller"
+          ]
+        }
+      }
+    },
+    "HI": {
+      "name": "Hawaii",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Honolulu"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Brian Schatz",
+            "Schatz"
+          ]
+        },
+        {
+          "answers": [
+            "Mazie K. Hirono",
+            "Mazie Hirono",
+            "Hirono"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Ed Case",
+            "Case"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Jill N. Tokuda",
+            "Jill Tokuda",
+            "Tokuda"
+          ]
+        }
+      }
+    },
+    "ID": {
+      "name": "Idaho",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Boise"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "James E. Risch",
+            "James Risch",
+            "Risch"
+          ]
+        },
+        {
+          "answers": [
+            "Mike Crapo",
+            "Michael Crapo",
+            "Crapo"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Russ Fulcher",
+            "Fulcher"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Michael K. Simpson",
+            "Michael Simpson",
+            "Simpson",
+            "Mike Simpson"
+          ]
+        }
+      }
+    },
+    "IL": {
+      "name": "Illinois",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Springfield"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Richard J. Durbin",
+            "Richard Durbin",
+            "Durbin"
+          ]
+        },
+        {
+          "answers": [
+            "Tammy Duckworth",
+            "Duckworth"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Jonathan L. Jackson",
+            "Jonathan Jackson",
+            "Jackson"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Robin L. Kelly",
+            "Robin Kelly",
+            "Kelly"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Delia C. Ramirez",
+            "Delia Ramirez",
+            "Ramirez"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Jesús G. \"Chuy\" García",
+            "Jesús García",
+            "García",
+            "Chuy García"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Mike Quigley",
+            "Quigley"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Sean Casten",
+            "Casten"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Danny K. Davis",
+            "Danny Davis",
+            "Davis"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Raja Krishnamoorthi",
+            "Krishnamoorthi"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Janice D. Schakowsky",
+            "Janice Schakowsky",
+            "Schakowsky",
+            "Jan Schakowsky"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Bradley Scott Schneider",
+            "Bradley Schneider",
+            "Schneider",
+            "Brad Schneider"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Bill Foster",
+            "Foster"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Mike Bost",
+            "Bost"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Nikki Budzinski",
+            "Nicole (Nikki) Budzinski",
+            "Budzinski"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Lauren Underwood",
+            "Underwood"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Mary E. Miller",
+            "Mary Miller",
+            "Miller"
+          ]
+        },
+        "16": {
+          "answers": [
+            "Darin LaHood",
+            "LaHood"
+          ]
+        },
+        "17": {
+          "answers": [
+            "Eric Sorensen",
+            "Sorensen"
+          ]
+        }
+      }
+    },
+    "IN": {
+      "name": "Indiana",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Indianapolis"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jim Banks",
+            "Banks"
+          ]
+        },
+        {
+          "answers": [
+            "Todd Young",
+            "Young"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Frank J. Mrvan",
+            "Frank Mrvan",
+            "Mrvan"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Rudy Yakym III",
+            "Rudy Yakym",
+            "Yakym"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Marlin A. Stutzman",
+            "Marlin Stutzman",
+            "Stutzman"
+          ]
+        },
+        "4": {
+          "answers": [
+            "James R. Baird",
+            "James Baird",
+            "Baird"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Victoria Spartz",
+            "Spartz"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Jefferson Shreve",
+            "Shreve"
+          ]
+        },
+        "7": {
+          "answers": [
+            "André Carson",
+            "Carson"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Mark B. Messmer",
+            "Mark Messmer",
+            "Messmer"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Erin Houchin",
+            "Houchin"
+          ]
+        }
+      }
+    },
+    "IA": {
+      "name": "Iowa",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Des Moines"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Chuck Grassley",
+            "Charles Grassley",
+            "Grassley"
+          ]
+        },
+        {
+          "answers": [
+            "Joni Ernst",
+            "Ernst"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Mariannette Miller-Meeks",
+            "Miller-Meeks"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Ashley Hinson",
+            "Hinson"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Zachary Nunn",
+            "Zachary (Zach) Nunn",
+            "Nunn"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Randy Feenstra",
+            "Feenstra"
+          ]
+        }
+      }
+    },
+    "KS": {
+      "name": "Kansas",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Topeka"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jerry Moran",
+            "Moran"
+          ]
+        },
+        {
+          "answers": [
+            "Roger Marshall",
+            "Marshall"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Tracey Mann",
+            "Mann"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Derek Schmidt",
+            "Schmidt"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Sharice Davids",
+            "Davids"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Ron Estes",
+            "Estes"
+          ]
+        }
+      }
+    },
+    "KY": {
+      "name": "Kentucky",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Frankfort"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Mitch McConnell",
+            "McConnell"
+          ]
+        },
+        {
+          "answers": [
+            "Rand Paul",
+            "Paul"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "James Comer",
+            "Comer"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Brett Guthrie",
+            "Guthrie"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Morgan McGarvey",
+            "McGarvey"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Thomas Massie",
+            "Massie"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Harold Rogers",
+            "Rogers",
+            "Hal Rogers"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Andy Barr",
+            "Garland Barr",
+            "Barr"
+          ]
+        }
+      }
+    },
+    "LA": {
+      "name": "Louisiana",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Baton Rouge"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Bill Cassidy",
+            "Cassidy"
+          ]
+        },
+        {
+          "answers": [
+            "John Kennedy",
+            "Kennedy"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Steve Scalise",
+            "Scalise"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Troy A. Carter",
+            "Troy Carter",
+            "Carter"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Clay Higgins",
+            "Higgins"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Mike Johnson",
+            "Johnson"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Julia Letlow",
+            "Letlow"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Cleo Fields",
+            "Fields"
+          ]
+        }
+      }
+    },
+    "ME": {
+      "name": "Maine",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Augusta"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Angus S. King, Jr.",
+            "Angus King",
+            "King"
+          ]
+        },
+        {
+          "answers": [
+            "Susan M. Collins",
+            "Susan Collins",
+            "Collins"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Chellie Pingree",
+            "Pingree"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Jared F. Golden",
+            "Jared Golden",
+            "Golden"
+          ]
+        }
+      }
+    },
+    "MD": {
+      "name": "Maryland",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Annapolis"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Angela D. Alsobrooks",
+            "Angela Alsobrooks",
+            "Alsobrooks"
+          ]
+        },
+        {
+          "answers": [
+            "Chris Van Hollen",
+            "Van Hollen"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Andy Harris",
+            "Harris"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Johnny Olszewski, Jr.",
+            "Johnny Olszewski",
+            "Olszewski"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Sarah Elfreth",
+            "Elfreth"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Glenn Ivey",
+            "Ivey"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Steny H. Hoyer",
+            "Steny Hoyer",
+            "Hoyer"
+          ]
+        },
+        "6": {
+          "answers": [
+            "April McClain Delaney",
+            "McClain Delaney"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Kweisi Mfume",
+            "Mfume"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Jamie Raskin",
+            "Raskin"
+          ]
+        }
+      }
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Boston"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Edward J. Markey",
+            "Edward Markey",
+            "Markey",
+            "Ed Markey"
+          ]
+        },
+        {
+          "answers": [
+            "Elizabeth Warren",
+            "Warren"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Richard E. Neal",
+            "Richard Neal",
+            "Neal"
+          ]
+        },
+        "2": {
+          "answers": [
+            "James P. McGovern",
+            "James McGovern",
+            "McGovern",
+            "Jim McGovern"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Lori Trahan",
+            "Trahan"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Jake Auchincloss",
+            "Auchincloss"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Katherine M. Clark",
+            "Katherine Clark",
+            "Clark"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Seth Moulton",
+            "Moulton"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Ayanna Pressley",
+            "Pressley"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Stephen F. Lynch",
+            "Stephen Lynch",
+            "Lynch"
+          ]
+        },
+        "9": {
+          "answers": [
+            "William R. Keating",
+            "William Keating",
+            "Keating"
+          ]
+        }
+      }
+    },
+    "MI": {
+      "name": "Michigan",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Lansing"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Elissa Slotkin",
+            "Slotkin"
+          ]
+        },
+        {
+          "answers": [
+            "Gary C. Peters",
+            "Gary Peters",
+            "Peters"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Jack Bergman",
+            "Bergman"
+          ]
+        },
+        "2": {
+          "answers": [
+            "John R. Moolenaar",
+            "John Moolenaar",
+            "Moolenaar"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Hillary J. Scholten",
+            "Hillary Scholten",
+            "Scholten"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Bill Huizenga",
+            "Huizenga"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Tim Walberg",
+            "Walberg"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Debbie Dingell",
+            "Dingell"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Tom Barrett",
+            "Barrett"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Kristen McDonald Rivet",
+            "McDonald Rivet"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Lisa C. McClain",
+            "Lisa McClain",
+            "McClain"
+          ]
+        },
+        "10": {
+          "answers": [
+            "John James",
+            "James"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Haley M. Stevens",
+            "Haley Stevens",
+            "Stevens"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Rashida Tlaib",
+            "Tlaib"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Shri Thanedar",
+            "Thanedar"
+          ]
+        }
+      }
+    },
+    "MN": {
+      "name": "Minnesota",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Saint Paul"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Amy Klobuchar",
+            "Klobuchar"
+          ]
+        },
+        {
+          "answers": [
+            "Tina Smith",
+            "Smith"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Brad Finstad",
+            "Finstad"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Angie Craig",
+            "Craig"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Kelly Morrison",
+            "Morrison"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Betty McCollum",
+            "McCollum"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Ilhan Omar",
+            "Omar"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Tom Emmer",
+            "Emmer"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Michelle Fischbach",
+            "Fischbach"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Pete Stauber",
+            "Stauber"
+          ]
+        }
+      }
+    },
+    "MS": {
+      "name": "Mississippi",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Jackson"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Cindy Hyde-Smith",
+            "Hyde-Smith"
+          ]
+        },
+        {
+          "answers": [
+            "Roger F. Wicker",
+            "Roger Wicker",
+            "Wicker"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Trent Kelly",
+            "Kelly"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Bennie G. Thompson",
+            "Bennie Thompson",
+            "Thompson"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Michael Guest",
+            "Guest"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Mike Ezell",
+            "Ezell"
+          ]
+        }
+      }
+    },
+    "MO": {
+      "name": "Missouri",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Jefferson City"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Eric Schmitt",
+            "Schmitt"
+          ]
+        },
+        {
+          "answers": [
+            "Josh Hawley",
+            "Joshua Hawley",
+            "Hawley"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Wesley Bell",
+            "Bell"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Ann Wagner",
+            "Wagner"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Robert F. Onder, Jr.",
+            "Robert Onder",
+            "Onder"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Mark Alford",
+            "Alford"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Emanuel Cleaver",
+            "Cleaver"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Sam Graves",
+            "Graves"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Eric Burlison",
+            "Burlison"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Jason Smith",
+            "Smith"
+          ]
+        }
+      }
+    },
+    "MT": {
+      "name": "Montana",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Helena"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Steve Daines",
+            "Daines"
+          ]
+        },
+        {
+          "answers": [
+            "Tim Sheehy",
+            "Sheehy"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Ryan K. Zinke",
+            "Ryan Zinke",
+            "Zinke"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Troy Downing",
+            "Downing"
+          ]
+        }
+      }
+    },
+    "NE": {
+      "name": "Nebraska",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Lincoln"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Deb Fischer",
+            "Fischer"
+          ]
+        },
+        {
+          "answers": [
+            "Pete Ricketts",
+            "Ricketts"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Mike Flood",
+            "Flood"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Don Bacon",
+            "Bacon"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Adrian Smith",
+            "Smith"
+          ]
+        }
+      }
+    },
+    "NV": {
+      "name": "Nevada",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Carson City"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Catherine Cortez Masto",
+            "Cortez Masto"
+          ]
+        },
+        {
+          "answers": [
+            "Jacky Rosen",
+            "Rosen"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Dina Titus",
+            "Titus"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Mark E. Amodei",
+            "Mark Amodei",
+            "Amodei"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Susie Lee",
+            "Lee"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Steven Horsford",
+            "Horsford"
+          ]
+        }
+      }
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Concord"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jeanne Shaheen",
+            "Shaheen"
+          ]
+        },
+        {
+          "answers": [
+            "Margaret Wood Hassan",
+            "Margaret Hassan",
+            "Hassan",
+            "Maggie Hassan"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Chris Pappas",
+            "Pappas"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Maggie Goodlander",
+            "Goodlander"
+          ]
+        }
+      }
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Trenton"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Andy Kim",
+            "Kim"
+          ]
+        },
+        {
+          "answers": [
+            "Cory A. Booker",
+            "Cory Booker",
+            "Booker"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Donald Norcross",
+            "Norcross"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Jefferson Van Drew",
+            "Van Drew"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Herbert C. Conaway, Jr.",
+            "Herbert Conaway",
+            "Conaway"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Christopher H. Smith",
+            "Christopher Smith",
+            "Smith",
+            "Chris Smith"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Josh Gottheimer",
+            "Gottheimer"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Frank Pallone, Jr.",
+            "Frank Pallone",
+            "Pallone"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Thomas H. Kean, Jr.",
+            "Thomas Kean",
+            "Kean"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Robert Menendez",
+            "Menendez"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Nellie Pou",
+            "Pou"
+          ]
+        },
+        "10": {
+          "answers": [
+            "LaMonica McIver",
+            "McIver"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Analilia Mejia",
+            "Mejia"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Bonnie Watson Coleman",
+            "Watson Coleman"
+          ]
+        }
+      }
+    },
+    "NM": {
+      "name": "New Mexico",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Santa Fe"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Ben Ray Luján",
+            "Ben Luján",
+            "Luján"
+          ]
+        },
+        {
+          "answers": [
+            "Martin Heinrich",
+            "Heinrich"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Melanie A. Stansbury",
+            "Melanie Stansbury",
+            "Stansbury"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Gabe Vasquez",
+            "Gabriel (Gabe) Vasquez",
+            "Vasquez"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Teresa Leger Fernandez",
+            "Leger Fernandez"
+          ]
+        }
+      }
+    },
+    "NY": {
+      "name": "New York",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Albany"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Charles E. Schumer",
+            "Charles Schumer",
+            "Schumer",
+            "Chuck Schumer"
+          ]
+        },
+        {
+          "answers": [
+            "Kirsten E. Gillibrand",
+            "Kirsten Gillibrand",
+            "Gillibrand"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Nick LaLota",
+            "Nicolas LaLota",
+            "LaLota"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Andrew R. Garbarino",
+            "Andrew Garbarino",
+            "Garbarino"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Thomas R. Suozzi",
+            "Thomas Suozzi",
+            "Suozzi"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Laura Gillen",
+            "Gillen"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Gregory W. Meeks",
+            "Gregory Meeks",
+            "Meeks"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Grace Meng",
+            "Meng"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Nydia M. Velázquez",
+            "Nydia Velázquez",
+            "Velázquez"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Hakeem S. Jeffries",
+            "Hakeem Jeffries",
+            "Jeffries"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Yvette D. Clarke",
+            "Yvette Clarke",
+            "Clarke"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Daniel S. Goldman",
+            "Dan Goldman",
+            "Goldman"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Nicole Malliotakis",
+            "Malliotakis"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Jerrold Nadler",
+            "Nadler"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Adriano Espaillat",
+            "Espaillat"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Alexandria Ocasio-Cortez",
+            "Ocasio-Cortez"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Ritchie Torres",
+            "Torres"
+          ]
+        },
+        "16": {
+          "answers": [
+            "George Latimer",
+            "Latimer"
+          ]
+        },
+        "17": {
+          "answers": [
+            "Michael Lawler",
+            "Lawler"
+          ]
+        },
+        "18": {
+          "answers": [
+            "Patrick Ryan",
+            "Ryan"
+          ]
+        },
+        "19": {
+          "answers": [
+            "Josh Riley",
+            "Riley"
+          ]
+        },
+        "20": {
+          "answers": [
+            "Paul Tonko",
+            "Tonko"
+          ]
+        },
+        "21": {
+          "answers": [
+            "Elise M. Stefanik",
+            "Elise Stefanik",
+            "Stefanik"
+          ]
+        },
+        "22": {
+          "answers": [
+            "John W. Mannion",
+            "John Mannion",
+            "Mannion"
+          ]
+        },
+        "23": {
+          "answers": [
+            "Nicholas A. Langworthy",
+            "Nicholas Langworthy",
+            "Langworthy"
+          ]
+        },
+        "24": {
+          "answers": [
+            "Claudia Tenney",
+            "Tenney"
+          ]
+        },
+        "25": {
+          "answers": [
+            "Joseph D. Morelle",
+            "Joseph Morelle",
+            "Morelle"
+          ]
+        },
+        "26": {
+          "answers": [
+            "Timothy M. Kennedy",
+            "Timothy Kennedy",
+            "Kennedy"
+          ]
+        }
+      }
+    },
+    "NC": {
+      "name": "North Carolina",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Raleigh"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Ted Budd",
+            "Budd"
+          ]
+        },
+        {
+          "answers": [
+            "Thom Tillis",
+            "Tillis"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Donald G. Davis",
+            "Donald Davis",
+            "Davis"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Deborah K. Ross",
+            "Deborah Ross",
+            "Ross"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Gregory F. Murphy",
+            "Gregory Murphy",
+            "Murphy"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Valerie P. Foushee",
+            "Valerie Foushee",
+            "Foushee"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Virginia Foxx",
+            "Foxx"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Addison P. McDowell",
+            "Addison McDowell",
+            "McDowell"
+          ]
+        },
+        "7": {
+          "answers": [
+            "David Rouzer",
+            "Rouzer"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Mark Harris",
+            "Harris"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Richard Hudson",
+            "Hudson"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Pat Harrigan",
+            "Harrigan"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Chuck Edwards",
+            "Charles (Chuck) Edwards",
+            "Edwards"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Alma S. Adams",
+            "Alma Adams",
+            "Adams"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Brad Knott",
+            "Knott"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Tim Moore",
+            "Moore"
+          ]
+        }
+      }
+    },
+    "ND": {
+      "name": "North Dakota",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Bismarck"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John Hoeven",
+            "Hoeven"
+          ]
+        },
+        {
+          "answers": [
+            "Kevin Cramer",
+            "Cramer"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Julie Fedorchak",
+            "Fedorchak"
+          ]
+        }
+      }
+    },
+    "OH": {
+      "name": "Ohio",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Columbus"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Bernie Moreno",
+            "Moreno"
+          ]
+        },
+        {
+          "answers": [
+            "Jon Husted",
+            "Husted"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Greg Landsman",
+            "Landsman"
+          ]
+        },
+        "2": {
+          "answers": [
+            "David J. Taylor",
+            "David Taylor",
+            "Taylor"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Joyce Beatty",
+            "Beatty"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Jim Jordan",
+            "Jordan"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Robert E. Latta",
+            "Robert Latta",
+            "Latta"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Michael A. Rulli",
+            "Michael Rulli",
+            "Rulli"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Max L. Miller",
+            "Max Miller",
+            "Miller"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Warren Davidson",
+            "Davidson"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Marcy Kaptur",
+            "Kaptur"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Michael R. Turner",
+            "Michael Turner",
+            "Turner"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Shontel M. Brown",
+            "Shontel Brown",
+            "Brown"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Troy Balderson",
+            "Balderson"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Emilia Strong Sykes",
+            "Emilia Sykes",
+            "Sykes"
+          ]
+        },
+        "14": {
+          "answers": [
+            "David P. Joyce",
+            "David Joyce",
+            "Joyce"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Mike Carey",
+            "Carey"
+          ]
+        }
+      }
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Oklahoma City"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Alan Armstrong",
+            "Armstrong"
+          ]
+        },
+        {
+          "answers": [
+            "James Lankford",
+            "Lankford"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Kevin Hern",
+            "Hern"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Josh Brecheen",
+            "Brecheen"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Frank D. Lucas",
+            "Frank Lucas",
+            "Lucas"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Tom Cole",
+            "Cole"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Stephanie I. Bice",
+            "Stephanie Bice",
+            "Bice"
+          ]
+        }
+      }
+    },
+    "OR": {
+      "name": "Oregon",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Salem"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jeff Merkley",
+            "Merkley"
+          ]
+        },
+        {
+          "answers": [
+            "Ron Wyden",
+            "Wyden"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Suzanne Bonamici",
+            "Bonamici"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Cliff Bentz",
+            "Bentz"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Maxine Dexter",
+            "Dexter"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Val T. Hoyle",
+            "Valerie Hoyle",
+            "Hoyle"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Janelle S. Bynum",
+            "Janelle Bynum",
+            "Bynum"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Andrea Salinas",
+            "Salinas"
+          ]
+        }
+      }
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Harrisburg"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "David McCormick",
+            "Dave McCormick",
+            "McCormick"
+          ]
+        },
+        {
+          "answers": [
+            "John Fetterman",
+            "Fetterman"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Brian K. Fitzpatrick",
+            "Brian Fitzpatrick",
+            "Fitzpatrick"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Brendan F. Boyle",
+            "Brendan Boyle",
+            "Boyle"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Dwight Evans",
+            "Evans"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Madeleine Dean",
+            "Dean"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Mary Gay Scanlon",
+            "Mary Scanlon",
+            "Scanlon"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Chrissy Houlahan",
+            "Houlahan"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Ryan Mackenzie",
+            "Mackenzie"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Robert P. Bresnahan, Jr.",
+            "Robert Bresnahan",
+            "Bresnahan"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Daniel Meuser",
+            "Meuser"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Scott Perry",
+            "Perry"
+          ]
+        },
+        "11": {
+          "answers": [
+            "Lloyd Smucker",
+            "Smucker"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Summer L. Lee",
+            "Summer Lee",
+            "Lee"
+          ]
+        },
+        "13": {
+          "answers": [
+            "John Joyce",
+            "Joyce"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Guy Reschenthaler",
+            "Reschenthaler"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Glenn Thompson",
+            "Thompson"
+          ]
+        },
+        "16": {
+          "answers": [
+            "Mike Kelly",
+            "Kelly"
+          ]
+        },
+        "17": {
+          "answers": [
+            "Christopher R. Deluzio",
+            "Chris Deluzio",
+            "Deluzio"
+          ]
+        }
+      }
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Providence"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Jack Reed",
+            "John Reed",
+            "Reed"
+          ]
+        },
+        {
+          "answers": [
+            "Sheldon Whitehouse",
+            "Whitehouse"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Gabe Amo",
+            "Amo"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Seth Magaziner",
+            "Magaziner"
+          ]
+        }
+      }
+    },
+    "SC": {
+      "name": "South Carolina",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Columbia"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Darline Graham",
+            "Darline Graham Nordone",
+            "Graham Nordone"
+          ]
+        },
+        {
+          "answers": [
+            "Tim Scott",
+            "Scott"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Nancy Mace",
+            "Mace"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Joe Wilson",
+            "Wilson"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Sheri Biggs",
+            "Biggs"
+          ]
+        },
+        "4": {
+          "answers": [
+            "William R. Timmons IV",
+            "William Timmons",
+            "Timmons"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Ralph Norman",
+            "Norman"
+          ]
+        },
+        "6": {
+          "answers": [
+            "James E. Clyburn",
+            "James Clyburn",
+            "Clyburn",
+            "Jim Clyburn"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Russell Fry",
+            "Fry"
+          ]
+        }
+      }
+    },
+    "SD": {
+      "name": "South Dakota",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Pierre"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John Thune",
+            "Thune"
+          ]
+        },
+        {
+          "answers": [
+            "Mike Rounds",
+            "Rounds"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Dusty Johnson",
+            "Johnson"
+          ]
+        }
+      }
+    },
+    "TN": {
+      "name": "Tennessee",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Nashville"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Bill Hagerty",
+            "Hagerty"
+          ]
+        },
+        {
+          "answers": [
+            "Marsha Blackburn",
+            "Blackburn"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Diana Harshbarger",
+            "Harshbarger"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Tim Burchett",
+            "Burchett"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Charles J. \"Chuck\" Fleischmann",
+            "Charles Fleischmann",
+            "Fleischmann",
+            "Chuck Fleischmann"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Scott DesJarlais",
+            "DesJarlais"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Andrew Ogles",
+            "Ogles"
+          ]
+        },
+        "6": {
+          "answers": [
+            "John W. Rose",
+            "John Rose",
+            "Rose"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Matt Van Epps",
+            "Van Epps"
+          ]
+        },
+        "8": {
+          "answers": [
+            "David Kustoff",
+            "Kustoff"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Steve Cohen",
+            "Cohen"
+          ]
+        }
+      }
+    },
+    "TX": {
+      "name": "Texas",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Austin"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John Cornyn",
+            "Cornyn"
+          ]
+        },
+        {
+          "answers": [
+            "Ted Cruz",
+            "Cruz"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Nathaniel Moran",
+            "Moran"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Dan Crenshaw",
+            "Crenshaw"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Keith Self",
+            "Self"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Pat Fallon",
+            "Patrick Fallon",
+            "Fallon"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Lance Gooden",
+            "Gooden"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Jake Ellzey",
+            "Ellzey"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Lizzie Fletcher",
+            "Fletcher"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Morgan Luttrell",
+            "Luttrell"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Al Green",
+            "Green"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Michael T. McCaul",
+            "Michael McCaul",
+            "McCaul"
+          ]
+        },
+        "11": {
+          "answers": [
+            "August Pfluger",
+            "Pfluger"
+          ]
+        },
+        "12": {
+          "answers": [
+            "Craig A. Goldman",
+            "Craig Goldman",
+            "Goldman"
+          ]
+        },
+        "13": {
+          "answers": [
+            "Ronny Jackson",
+            "Jackson"
+          ]
+        },
+        "14": {
+          "answers": [
+            "Randy K. Weber, Sr.",
+            "Randy Weber",
+            "Weber"
+          ]
+        },
+        "15": {
+          "answers": [
+            "Monica De La Cruz",
+            "Mónica De La Cruz",
+            "De La Cruz"
+          ]
+        },
+        "16": {
+          "answers": [
+            "Veronica Escobar",
+            "Escobar"
+          ]
+        },
+        "17": {
+          "answers": [
+            "Pete Sessions",
+            "Sessions"
+          ]
+        },
+        "18": {
+          "answers": [
+            "Christian D. Menefee",
+            "Christian Menefee",
+            "Menefee"
+          ]
+        },
+        "19": {
+          "answers": [
+            "Jodey C. Arrington",
+            "Jodey Arrington",
+            "Arrington"
+          ]
+        },
+        "20": {
+          "answers": [
+            "Joaquin Castro",
+            "Castro"
+          ]
+        },
+        "21": {
+          "answers": [
+            "Chip Roy",
+            "Roy"
+          ]
+        },
+        "22": {
+          "answers": [
+            "Troy E. Nehls",
+            "Troy Nehls",
+            "Nehls"
+          ]
+        },
+        "23": {
+          "answers": [],
+          "vacant": true
+        },
+        "24": {
+          "answers": [
+            "Beth Van Duyne",
+            "Van Duyne"
+          ]
+        },
+        "25": {
+          "answers": [
+            "Roger Williams",
+            "Williams"
+          ]
+        },
+        "26": {
+          "answers": [
+            "Brandon Gill",
+            "Gill"
+          ]
+        },
+        "27": {
+          "answers": [
+            "Michael Cloud",
+            "Cloud"
+          ]
+        },
+        "28": {
+          "answers": [
+            "Henry Cuellar",
+            "Cuellar"
+          ]
+        },
+        "29": {
+          "answers": [
+            "Sylvia R. Garcia",
+            "Sylvia Garcia",
+            "Garcia"
+          ]
+        },
+        "30": {
+          "answers": [
+            "Jasmine Crockett",
+            "Crockett"
+          ]
+        },
+        "31": {
+          "answers": [
+            "John R. Carter",
+            "John Carter",
+            "Carter"
+          ]
+        },
+        "32": {
+          "answers": [
+            "Julie Johnson",
+            "Johnson"
+          ]
+        },
+        "33": {
+          "answers": [
+            "Marc A. Veasey",
+            "Marc Veasey",
+            "Veasey"
+          ]
+        },
+        "34": {
+          "answers": [
+            "Vicente Gonzalez",
+            "Gonzalez"
+          ]
+        },
+        "35": {
+          "answers": [
+            "Greg Casar",
+            "Gregorio Casar",
+            "Casar"
+          ]
+        },
+        "36": {
+          "answers": [
+            "Brian Babin",
+            "Babin"
+          ]
+        },
+        "37": {
+          "answers": [
+            "Lloyd Doggett",
+            "Doggett"
+          ]
+        },
+        "38": {
+          "answers": [
+            "Wesley Hunt",
+            "Hunt"
+          ]
+        }
+      }
+    },
+    "UT": {
+      "name": "Utah",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Salt Lake City"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "John R. Curtis",
+            "John Curtis",
+            "Curtis"
+          ]
+        },
+        {
+          "answers": [
+            "Mike Lee",
+            "Lee"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Blake D. Moore",
+            "Blake Moore",
+            "Moore"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Celeste Maloy",
+            "Maloy"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Mike Kennedy",
+            "Kennedy"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Burgess Owens",
+            "Clarence Owens",
+            "Owens"
+          ]
+        }
+      }
+    },
+    "VT": {
+      "name": "Vermont",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Montpelier"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Bernard Sanders",
+            "Sanders",
+            "Bernie Sanders"
+          ]
+        },
+        {
+          "answers": [
+            "Peter Welch",
+            "Welch"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Becca Balint",
+            "Balint"
+          ]
+        }
+      }
+    },
+    "VA": {
+      "name": "Virginia",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Richmond"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Mark R. Warner",
+            "Mark Warner",
+            "Warner"
+          ]
+        },
+        {
+          "answers": [
+            "Tim Kaine",
+            "Timothy Kaine",
+            "Kaine"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Robert J. Wittman",
+            "Robert Wittman",
+            "Wittman"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Jennifer A. Kiggans",
+            "Jennifer Kiggans",
+            "Kiggans"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Robert C. \"Bobby\" Scott",
+            "Robert Scott",
+            "Scott",
+            "Bobby Scott"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Jennifer L. McClellan",
+            "Jennifer McClellan",
+            "McClellan"
+          ]
+        },
+        "5": {
+          "answers": [
+            "John J. McGuire III",
+            "John McGuire",
+            "McGuire"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Ben Cline",
+            "Cline"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Eugene Simon Vindman",
+            "Eugene Vindman",
+            "Vindman"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Donald S. Beyer, Jr.",
+            "Donald Beyer",
+            "Beyer"
+          ]
+        },
+        "9": {
+          "answers": [
+            "H. Morgan Griffith",
+            "H. Griffith",
+            "Griffith"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Suhas Subramanyam",
+            "Subramanyam"
+          ]
+        },
+        "11": {
+          "answers": [
+            "James R. Walkinshaw",
+            "James Walkinshaw",
+            "Walkinshaw"
+          ]
+        }
+      }
+    },
+    "WA": {
+      "name": "Washington",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Olympia"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Maria Cantwell",
+            "Cantwell"
+          ]
+        },
+        {
+          "answers": [
+            "Patty Murray",
+            "Murray"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Suzan K. DelBene",
+            "Suzan DelBene",
+            "DelBene"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Rick Larsen",
+            "Larsen"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Marie Gluesenkamp Perez",
+            "Gluesenkamp Perez"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Dan Newhouse",
+            "Newhouse"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Michael Baumgartner",
+            "Baumgartner"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Emily Randall",
+            "Randall"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Pramila Jayapal",
+            "Jayapal"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Kim Schrier",
+            "Schrier"
+          ]
+        },
+        "9": {
+          "answers": [
+            "Adam Smith",
+            "Smith"
+          ]
+        },
+        "10": {
+          "answers": [
+            "Marilyn Strickland",
+            "Strickland"
+          ]
+        }
+      }
+    },
+    "WV": {
+      "name": "West Virginia",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Charleston"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "James C. Justice",
+            "Jim Justice",
+            "Justice"
+          ]
+        },
+        {
+          "answers": [
+            "Shelley Moore Capito",
+            "Shelley Capito",
+            "Capito"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Carol D. Miller",
+            "Carol Miller",
+            "Miller"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Riley M. Moore",
+            "Riley Moore",
+            "Moore"
+          ]
+        }
+      }
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Madison"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Ron Johnson",
+            "Johnson"
+          ]
+        },
+        {
+          "answers": [
+            "Tammy Baldwin",
+            "Baldwin"
+          ]
+        }
+      ],
+      "districts": {
+        "1": {
+          "answers": [
+            "Bryan Steil",
+            "Steil"
+          ]
+        },
+        "2": {
+          "answers": [
+            "Mark Pocan",
+            "Pocan"
+          ]
+        },
+        "3": {
+          "answers": [
+            "Derrick Van Orden",
+            "Van Orden"
+          ]
+        },
+        "4": {
+          "answers": [
+            "Gwen Moore",
+            "Moore"
+          ]
+        },
+        "5": {
+          "answers": [
+            "Scott Fitzgerald",
+            "Fitzgerald"
+          ]
+        },
+        "6": {
+          "answers": [
+            "Glenn Grothman",
+            "Grothman"
+          ]
+        },
+        "7": {
+          "answers": [
+            "Thomas P. Tiffany",
+            "Thomas Tiffany",
+            "Tiffany"
+          ]
+        },
+        "8": {
+          "answers": [
+            "Tony Wied",
+            "Wied"
+          ]
+        }
+      }
+    },
+    "WY": {
+      "name": "Wyoming",
+      "type": "state",
+      "capital": {
+        "answers": [
+          "Cheyenne"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [
+        {
+          "answers": [
+            "Cynthia M. Lummis",
+            "Cynthia Lummis",
+            "Lummis"
+          ]
+        },
+        {
+          "answers": [
+            "John Barrasso",
+            "Barrasso"
+          ]
+        }
+      ],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Harriet M. Hageman",
+            "Harriet Hageman",
+            "Hageman"
+          ]
+        }
+      }
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "type": "district",
+      "capital": null,
+      "governor": null,
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Eleanor Holmes Norton",
+            "Eleanor Norton",
+            "Norton"
+          ]
+        }
+      },
+      "governorNote": "District of Columbia residents should answer that D.C. does not have a governor.",
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    },
+    "AS": {
+      "name": "American Samoa",
+      "type": "territory",
+      "capital": {
+        "answers": [
+          "Pago Pago"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Aumua Amata Coleman Radewagen",
+            "Aumua Amata Radewagen",
+            "Radewagen"
+          ]
+        }
+      },
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    },
+    "GU": {
+      "name": "Guam",
+      "type": "territory",
+      "capital": {
+        "answers": [
+          "Hagåtña"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "James C. Moylan",
+            "James (Jim) Moylan",
+            "Moylan"
+          ]
+        }
+      },
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    },
+    "MP": {
+      "name": "Northern Mariana Islands",
+      "type": "territory",
+      "capital": {
+        "answers": [
+          "Saipan"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Kimberlyn King-Hinds",
+            "King-Hinds"
+          ]
+        }
+      },
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    },
+    "PR": {
+      "name": "Puerto Rico",
+      "type": "territory",
+      "capital": {
+        "answers": [
+          "San Juan"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Pablo José Hernández",
+            "Pablo José Hernández Rivera",
+            "Hernández Rivera"
+          ]
+        }
+      },
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    },
+    "VI": {
+      "name": "U.S. Virgin Islands",
+      "type": "territory",
+      "capital": {
+        "answers": [
+          "Charlotte Amalie"
+        ]
+      },
+      "governor": {
+        "answers": []
+      },
+      "senators": [],
+      "districts": {
+        "AL": {
+          "answers": [
+            "Stacey E. Plaskett",
+            "Stacey Plaskett",
+            "Plaskett"
+          ]
+        }
+      },
+      "senatorNote": "This jurisdiction has no U.S. senators.",
+      "representationNote": "This jurisdiction has a non-voting Delegate or Resident Commissioner rather than a voting representative. Naming them, or saying the territory has no voting representative, is acceptable."
+    }
+  }
+}
