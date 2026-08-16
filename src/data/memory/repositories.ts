@@ -2,6 +2,7 @@ import type { QuestionId } from '../../domain/questions/types';
 import type { Attempt, DayKey, SessionKind } from '../../domain/scheduling/types';
 import type {
   AttemptRepository,
+  KvRepository,
   FocusAnswerRepository,
   ProfileRepository,
   Repositories,
@@ -107,11 +108,25 @@ class MemoryProfile implements ProfileRepository {
   }
 }
 
+class MemoryKv implements KvRepository {
+  private readonly rows = new Map<string, string>();
+
+  async get(key: string): Promise<string | undefined> {
+    const v = this.rows.get(key);
+    return v === undefined || v.length === 0 ? undefined : v;
+  }
+
+  async set(key: string, value: string): Promise<void> {
+    this.rows.set(key, value);
+  }
+}
+
 export function createMemoryRepositories(): Repositories {
   return {
     attempts: new MemoryAttempts(),
     sessions: new MemorySessions(),
     focusAnswers: new MemoryFocusAnswers(),
     profile: new MemoryProfile(),
+    kv: new MemoryKv(),
   };
 }

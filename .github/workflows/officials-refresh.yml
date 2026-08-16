@@ -1,0 +1,70 @@
+name: Refresh officials data
+
+# Senators and representatives change with every election, resignation and
+# appointment. This regenerates the dataset from the maintained public source
+# and opens a PR — deliberately NOT a direct push, because a human should see
+# every officeholder change before it reaches someone studying for an interview.
+
+on:
+  schedule:
+    # Weekly, Monday 06:00 UTC. Congressional vacancies and swearings-in happen
+    # often enough that monthly would leave the app stale for weeks.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Rebuild officials.json
+        id: build
+        run: |
+          npm run build:officials 2>&1 | tee /tmp/build.log
+          {
+            echo 'report<<EOF'
+            cat /tmp/build.log
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      # The generated file must still satisfy every invariant — 100 senators,
+      # 435 apportioned seats, two senators per state — before a PR is opened.
+      - name: Validate
+        run: npx jest src/domain/officials --ci
+
+      - name: Open a pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/officials-refresh
+          delete-branch: true
+          title: 'Refresh officials data'
+          commit-message: 'Refresh officials data from congress-legislators'
+          add-paths: assets/data/officials.json
+          body: |
+            Automated refresh of `assets/data/officials.json` from
+            [unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators).
+
+            ```
+            ${{ steps.build.outputs.report }}
+            ```
+
+            **Before merging, check the diff for names you do not recognise.**
+            This data tells people what to say in a naturalization interview, so
+            a wrong name is worse than a missing one.
+
+            Roles this cannot fill — the Speaker, the Chief Justice and state
+            governors — live in `data/manual/officeholders.yaml` and still need
+            updating by hand against
+            [uscis.gov/citizenship/testupdates](https://www.uscis.gov/citizenship/testupdates).

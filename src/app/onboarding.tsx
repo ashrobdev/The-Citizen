@@ -13,6 +13,7 @@ import {
 import { toDayKey } from '../domain/scheduling/dayKey';
 import { OFFICIALS } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
+import { Mascot } from '../ui/components/Mascot';
 import { Stripes } from '../ui/components/Stripes';
 import { Colors } from '../ui/theme/colors';
 
@@ -75,6 +76,7 @@ export default function Onboarding(): React.ReactElement {
       <View style={[styles.container, { backgroundColor: theme.background }]}>
         <Stack.Screen options={{ title: 'Welcome', headerBackVisible: false }} />
         <View style={styles.intro}>
+          <Mascot size="medium" />
           <Stripes width={90} />
           <Text style={[styles.title, { color: theme.text }]}>Where do you live?</Text>
           <Text style={[styles.body, { color: theme.textSecondary }]}>

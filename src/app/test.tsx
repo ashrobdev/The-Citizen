@@ -21,6 +21,7 @@ import type { Question } from '../domain/questions/types';
 import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
 import { RevealCard } from '../ui/components/RevealCard';
+import { Mascot } from '../ui/components/Mascot';
 import { Stripes } from '../ui/components/Stripes';
 import { SpeakButton } from '../ui/components/SpeakButton';
 import { Colors, type Theme } from '../ui/theme/colors';
@@ -271,6 +272,7 @@ function Intro({ theme, onBegin }: { theme: Theme; onBegin: () => void }): React
   return (
     <View style={[styles.centre, { backgroundColor: theme.background }]}>
       <Stack.Screen options={{ title: 'Final Test' }} />
+      <Mascot size="medium" />
       <Stripes width={100} />
       <Text style={[styles.introTitle, { color: theme.text }]}>Final Test</Text>
       <Text style={[styles.introBody, { color: theme.textSecondary }]}>
@@ -315,7 +317,7 @@ function Result({
 
       {passed ? (
         <>
-          <Text style={styles.celebrate}>★</Text>
+          <Mascot size="large" />
           <Stripes width={130} />
           <Text style={[styles.resultTitle, { color: theme.success }]}>You passed</Text>
           <Text style={[styles.resultBody, { color: theme.text }]}>
@@ -379,7 +381,6 @@ const styles = StyleSheet.create({
   attestQ: { fontSize: 17, fontWeight: '700' },
   introTitle: { fontSize: 30, fontWeight: '800' },
   introBody: { fontSize: 15, textAlign: 'center', lineHeight: 22 },
-  celebrate: { fontSize: 64, color: '#B22234' },
   resultTitle: { fontSize: 28, fontWeight: '800', marginTop: 4 },
   resultBody: { fontSize: 15, textAlign: 'center', lineHeight: 22 },
   missedList: { alignSelf: 'stretch', gap: 8, marginTop: 12 },

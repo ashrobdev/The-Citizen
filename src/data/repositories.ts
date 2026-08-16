@@ -69,9 +69,16 @@ export interface ProfileRepository {
   save(profile: UserProfile): Promise<void>;
 }
 
+/** Small key/value store for cached remote data and check timestamps. */
+export interface KvRepository {
+  get(key: string): Promise<string | undefined>;
+  set(key: string, value: string): Promise<void>;
+}
+
 export interface Repositories {
   attempts: AttemptRepository;
   sessions: SessionRepository;
   focusAnswers: FocusAnswerRepository;
   profile: ProfileRepository;
+  kv: KvRepository;
 }

@@ -4,6 +4,7 @@ import type { QuestionId } from '../../domain/questions/types';
 import type { Attempt, DayKey, SessionKind } from '../../domain/scheduling/types';
 import type {
   AttemptRepository,
+  KvRepository,
   FocusAnswerRepository,
   ProfileRepository,
   Repositories,
@@ -268,11 +269,34 @@ class SqliteProfile implements ProfileRepository {
   }
 }
 
+class SqliteKv implements KvRepository {
+  constructor(private readonly db: SQLite.SQLiteDatabase) {}
+
+  async get(key: string): Promise<string | undefined> {
+    const row = await this.db.getFirstAsync<{ value: string }>(
+      'SELECT value FROM kv WHERE key = ?',
+      key,
+    );
+    return row === null || row === undefined || row.value.length === 0 ? undefined : row.value;
+  }
+
+  async set(key: string, value: string): Promise<void> {
+    await this.db.runAsync(
+      `INSERT INTO kv (key, value, updated_at) VALUES (?, ?, ?)
+       ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at`,
+      key,
+      value,
+      Date.now(),
+    );
+  }
+}
+
 export function createSqliteRepositories(db: SQLite.SQLiteDatabase): Repositories {
   return {
     attempts: new SqliteAttempts(db),
     sessions: new SqliteSessions(db),
     focusAnswers: new SqliteFocusAnswers(db),
     profile: new SqliteProfile(db),
+    kv: new SqliteKv(db),
   };
 }

@@ -4,6 +4,7 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View, useColorScheme } 
 
 import type { StreakState } from '../domain/scheduling/streak';
 import { useSessionService } from '../ui/AppProvider';
+import { Mascot } from '../ui/components/Mascot';
 import { Stripes } from '../ui/components/Stripes';
 import { Colors } from '../ui/theme/colors';
 
@@ -39,6 +40,7 @@ export default function Summary(): React.ReactElement {
     <View style={[styles.container, { backgroundColor: theme.background }]}>
       <Stack.Screen options={{ title: 'Done', headerBackVisible: false }} />
 
+      <Mascot size="large" />
       <Stripes width={110} />
       <Text style={[styles.title, { color: theme.text }]}>Day complete</Text>
       <Text style={[styles.streak, { color: theme.accentAlt }]}>{streak.current}</Text>
