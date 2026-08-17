@@ -13,7 +13,7 @@ import * as SQLite from 'expo-sqlite';
  * reconciling divergent state.
  */
 
-const MIGRATIONS: ReadonlyArray<{ version: number; sql: string }> = [
+const MIGRATIONS: readonly { version: number; sql: string }[] = [
   {
     version: 1,
     sql: `

@@ -30,6 +30,12 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      # Added after the script sat broken for months: eslint was never actually
+      # installed, so `npm run lint` tried to bootstrap itself and failed. It
+      # caught a conditionally-called hook the first time it ran.
+      - name: Lint
+        run: npm run lint
+
       - name: Test
         run: npm test -- --ci
 

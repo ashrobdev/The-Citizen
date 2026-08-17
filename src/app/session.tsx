@@ -4,10 +4,8 @@ import {
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
   StyleSheet,
   Text,
-  View,
   useColorScheme,
 } from 'react-native';
 
@@ -18,10 +16,12 @@ import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/s
 import { useNotifications, useSessionService } from '../ui/AppProvider';
 import { AnswerInput } from '../ui/components/AnswerInput';
 import { RevealCard } from '../ui/components/RevealCard';
+import { Screen } from '../ui/components/Screen';
 import { SelfAttest } from '../ui/components/SelfAttest';
 import { SpeakButton } from '../ui/components/SpeakButton';
+import { haptics } from '../ui/haptics';
 import { Colors } from '../ui/theme/colors';
-import { Layout, Space, Type } from '../ui/theme/tokens';
+import { Space, Type } from '../ui/theme/tokens';
 
 type Phase =
   | { kind: 'answering' }
@@ -82,7 +82,9 @@ export default function Session(): React.ReactElement {
     return () => {
       cancelled = true;
     };
-  }, [question?.id, service]);
+    // `getQuestion` returns the same object from the bank's Map for a given id,
+    // so depending on the question is equivalent to depending on its id.
+  }, [question, service]);
 
   const answeredCount = total - queue.length;
 
@@ -106,6 +108,9 @@ export default function Session(): React.ReactElement {
     if (graded.selfAttested) {
       setPhase({ kind: 'self-attest', graded });
     } else {
+      // Warning, not error: "here is what it was", never "you failed".
+      if (graded.correct) haptics.success();
+      else haptics.warning();
       setPhase({ kind: 'revealed', graded, finalCorrect: graded.correct });
     }
   }, [question, inputs, profile]);
@@ -142,9 +147,9 @@ export default function Session(): React.ReactElement {
 
   if (!session || !question) {
     return (
-      <View style={[styles.centre, { backgroundColor: theme.background }]}>
+      <Screen centred>
         <ActivityIndicator color={theme.accent} />
-      </View>
+      </Screen>
     );
   }
 
@@ -154,7 +159,7 @@ export default function Session(): React.ReactElement {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <Stack.Screen options={{ title: `${answeredCount + 1} of ${total}` }} />
-      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+      <Screen scroll contentStyle={styles.scroll}>
         <Text style={[styles.number, { color: theme.textSecondary }]}>
           Question {question.id}
           {question.requiredCount > 1 ? ` · name ${question.requiredCount}` : ''}
@@ -204,14 +209,13 @@ export default function Session(): React.ReactElement {
             theme={theme}
           />
         ) : null}
-      </ScrollView>
+      </Screen>
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  scroll: { padding: Layout.screenPadding, gap: Space.md, paddingBottom: Space.xxxl },
+  scroll: { gap: Space.md },
   number: { ...Type.overline, textTransform: 'uppercase' },
   prompt: Type.question,
 });

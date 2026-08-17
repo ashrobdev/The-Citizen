@@ -1,22 +1,17 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  useColorScheme,
-} from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import { getQuestion } from '../../domain/questions/bank';
 import { ProgressService, type QuestionProgress } from '../../services/progressService';
 import { resolveQuestion } from '../../services/sessionService';
 import type { UserProfile } from '../../data/repositories';
 import { useRepositories, useSessionService } from '../../ui/AppProvider';
+import { PressableScale } from '../../ui/components/PressableScale';
+import { Screen } from '../../ui/components/Screen';
 import { SpeakButton } from '../../ui/components/SpeakButton';
 import { Colors } from '../../ui/theme/colors';
+import { HIT_TARGET, Radius, Space, Type } from '../../ui/theme/tokens';
 
 /**
  * One question in full: the prompt, every accepted answer, the user's chosen
@@ -57,9 +52,9 @@ export default function QuestionDetail(): React.ReactElement {
 
   if (!Number.isInteger(questionId) || questionId < 1 || questionId > 128) {
     return (
-      <View style={[styles.centre, { backgroundColor: theme.background }]}>
+      <Screen centred>
         <Text style={{ color: theme.text }}>No such question.</Text>
-      </View>
+      </Screen>
     );
   }
 
@@ -78,10 +73,7 @@ export default function QuestionDetail(): React.ReactElement {
   const selectable = answers.length > 1;
 
   return (
-    <ScrollView
-      style={{ backgroundColor: theme.background }}
-      contentContainerStyle={styles.scroll}
-    >
+    <Screen scroll contentStyle={styles.scroll}>
       <Stack.Screen options={{ title: `Question ${questionId}` }} />
 
       <Text style={[styles.prompt, { color: theme.text }]}>{question.prompt}</Text>
@@ -122,9 +114,13 @@ export default function QuestionDetail(): React.ReactElement {
           {answers.map((a) => {
             const starred = focusIds.includes(a.id);
             return (
-              <Pressable
+              <PressableScale
                 key={a.id}
                 onPress={selectable ? () => void toggle(a.id) : undefined}
+                // A single accepted answer is not a control: without this it
+                // still scaled and ticked under the finger with nothing to do.
+                disabled={!selectable}
+                haptic={selectable}
                 style={[
                   styles.answer,
                   {
@@ -139,30 +135,34 @@ export default function QuestionDetail(): React.ReactElement {
                   {starred ? '★  ' : ''}
                   {a.display}
                 </Text>
-              </Pressable>
+              </PressableScale>
             );
           })}
         </>
       )}
-    </ScrollView>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  centre: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
-  scroll: { padding: 20, gap: 11, paddingBottom: 60 },
-  prompt: { fontSize: 21, fontWeight: '700', lineHeight: 28 },
-  stats: { fontSize: 13 },
-  sectionTitle: { fontSize: 16, fontWeight: '700', marginTop: 10 },
-  note: { fontSize: 13, lineHeight: 19 },
-  noteBox: { borderWidth: 1.5, borderRadius: 10, padding: 13, marginTop: 6 },
+  scroll: { gap: Space.md },
+  prompt: Type.heading,
+  stats: Type.bodySmall,
+  sectionTitle: { ...Type.body, fontWeight: '700', marginTop: Space.sm },
+  note: Type.bodySmall,
+  noteBox: {
+    borderWidth: 1.5,
+    borderRadius: Radius.sm,
+    padding: Space.md,
+    marginTop: Space.xs,
+  },
   answer: {
     borderWidth: 1.5,
-    borderRadius: 10,
-    paddingHorizontal: 13,
-    paddingVertical: 12,
-    minHeight: 44,
+    borderRadius: Radius.sm,
+    paddingHorizontal: Space.md,
+    paddingVertical: Space.md,
+    minHeight: HIT_TARGET,
     justifyContent: 'center',
   },
-  answerText: { fontSize: 15, lineHeight: 21 },
+  answerText: Type.body,
 });

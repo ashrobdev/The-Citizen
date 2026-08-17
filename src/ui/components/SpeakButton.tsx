@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 import { speakQuestion, stopNarration } from '../../services/narration';
 import type { Theme } from '../theme/colors';
+import { Radius, Space, Type } from '../theme/tokens';
+import { PressableScale } from './PressableScale';
 
 /**
  * Reads a question aloud.
@@ -43,7 +45,7 @@ export function SpeakButton({
   };
 
   return (
-    <Pressable
+    <PressableScale
       onPress={toggle}
       style={[styles.button, { borderColor: speaking ? theme.accent : theme.border }]}
       accessibilityRole="button"
@@ -53,19 +55,19 @@ export function SpeakButton({
       <Text style={[styles.label, { color: theme.accent }]}>
         {speaking ? '■  Stop' : '▶  Hear it'}
       </Text>
-    </Pressable>
+    </PressableScale>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
     borderWidth: 1.5,
-    borderRadius: 20,
-    paddingVertical: 8,
-    paddingHorizontal: 14,
+    borderRadius: Radius.pill,
+    paddingVertical: Space.sm,
+    paddingHorizontal: Space.lg,
     alignSelf: 'flex-start',
     minHeight: 36,
     justifyContent: 'center',
   },
-  label: { fontSize: 14, fontWeight: '700' },
+  label: { ...Type.bodySmall, fontWeight: '700' },
 });

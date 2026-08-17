@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Linking, Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { Linking, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 import type { NotificationSettings, PermissionState } from '../../domain/notifications/plan';
 import {
@@ -10,6 +10,7 @@ import {
 import type { NotificationService } from '../../services/notifications/notificationService';
 import { HIT_TARGET, Radius, Space, Type } from '../theme/tokens';
 import type { Theme } from '../theme/colors';
+import { PressableScale } from './PressableScale';
 
 /**
  * Reminder controls.
@@ -23,8 +24,8 @@ import type { Theme } from '../theme/colors';
 const FIRST_HOUR = 6;
 const LAST_HOUR = 22;
 
-function timeSlots(): Array<{ hour: number; minute: number; label: string }> {
-  const out: Array<{ hour: number; minute: number; label: string }> = [];
+function timeSlots(): { hour: number; minute: number; label: string }[] {
+  const out: { hour: number; minute: number; label: string }[] = [];
   for (let hour = FIRST_HOUR; hour <= LAST_HOUR; hour++) {
     for (const minute of [0, 30]) {
       if (hour === LAST_HOUR && minute === 30) continue;
@@ -87,13 +88,13 @@ export function ReminderSettings({
         <Text style={[styles.status, { color: theme.textSecondary }]}>
           Reminders are turned off for this app in your device settings.
         </Text>
-        <Pressable
+        <PressableScale
           onPress={() => void Linking.openSettings()}
           style={[styles.button, { borderColor: theme.border }]}
           accessibilityRole="button"
         >
           <Text style={[styles.buttonText, { color: theme.accent }]}>Open device settings</Text>
-        </Pressable>
+        </PressableScale>
       </View>
     );
   }
@@ -104,13 +105,13 @@ export function ReminderSettings({
         <Text style={[styles.status, { color: theme.textSecondary }]}>
           A reminder so a busy day doesn’t cost you your streak.
         </Text>
-        <Pressable
+        <PressableScale
           onPress={() => void enable()}
           style={[styles.button, { backgroundColor: theme.accent, borderColor: theme.accent }]}
           accessibilityRole="button"
         >
           <Text style={[styles.buttonText, { color: theme.onAccent }]}>Turn on reminders</Text>
-        </Pressable>
+        </PressableScale>
       </View>
     );
   }
@@ -135,7 +136,7 @@ export function ReminderSettings({
             {SLOTS.map((slot) => {
               const selected = slot.hour === settings.hour && slot.minute === settings.minute;
               return (
-                <Pressable
+                <PressableScale
                   key={slot.label}
                   onPress={() => void update({ hour: slot.hour, minute: slot.minute })}
                   style={[
@@ -152,7 +153,7 @@ export function ReminderSettings({
                   <Text style={[styles.slotText, { color: selected ? theme.onAccent : theme.text }]}>
                     {slot.label}
                   </Text>
-                </Pressable>
+                </PressableScale>
               );
             })}
           </ScrollView>

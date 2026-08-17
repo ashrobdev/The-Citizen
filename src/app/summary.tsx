@@ -1,15 +1,18 @@
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, useColorScheme } from 'react-native';
 
 import type { StreakState } from '../domain/scheduling/streak';
 import { useNotifications, useSessionService } from '../ui/AppProvider';
 import { Mascot } from '../ui/components/Mascot';
 import { ReminderPrompt } from '../ui/components/ReminderPrompt';
 import { Confetti } from '../ui/components/Confetti';
+import { PressableScale } from '../ui/components/PressableScale';
+import { Screen } from '../ui/components/Screen';
 import { Stripes } from '../ui/components/Stripes';
 import { haptics } from '../ui/haptics';
 import { Colors } from '../ui/theme/colors';
+import { Radius, Space, Type } from '../ui/theme/tokens';
 
 export default function Summary(): React.ReactElement {
   const service = useSessionService();
@@ -26,10 +29,15 @@ export default function Summary(): React.ReactElement {
       const s = await service.streak();
       if (cancelled) return;
       setStreak(s);
-      haptics.success();
       // Confetti is reserved for milestones. Ninety identical bursts would make
       // the app a toy; a burst at seven days still means something.
-      if (s.current > 0 && s.current % 7 === 0) setCelebrate(true);
+      const milestone = s.current > 0 && s.current % 7 === 0;
+      if (milestone) {
+        haptics.celebrate();
+        setCelebrate(true);
+      } else {
+        haptics.success();
+      }
     })();
     return () => {
       cancelled = true;
@@ -38,16 +46,16 @@ export default function Summary(): React.ReactElement {
 
   if (!streak) {
     return (
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <Screen centred>
         <ActivityIndicator color={theme.accent} />
-      </View>
+      </Screen>
     );
   }
 
   const earnedFreeze = streak.freezesHeld > 0;
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
+    <Screen centred contentStyle={styles.container}>
       <Stack.Screen options={{ title: 'Done', headerBackVisible: false }} />
 
       {celebrate ? <Confetti onDone={() => setCelebrate(false)} /> : null}
@@ -77,23 +85,30 @@ export default function Summary(): React.ReactElement {
         onResolved={() => undefined}
       />
 
-      <Pressable
+      <PressableScale
         onPress={() => router.replace('/')}
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
         <Text style={[styles.buttonText, { color: theme.onAccent }]}>Done</Text>
-      </Pressable>
-    </View>
+      </PressableScale>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 8 },
-  title: { fontSize: 25, fontWeight: '700', marginTop: 8 },
+  container: { gap: Space.sm },
+  title: { ...Type.title, marginTop: Space.sm },
+  // Off-scale deliberately: the streak count is the one piece of display type
+  // in the app and Type.display is sized for headings, not a single numeral.
   streak: { fontSize: 76, fontWeight: '800', letterSpacing: -2 },
-  unit: { fontSize: 16, marginTop: -8 },
-  note: { fontSize: 13, textAlign: 'center', marginTop: 6 },
-  button: { paddingVertical: 15, paddingHorizontal: 44, borderRadius: 14, marginTop: 22 },
-  buttonText: { fontSize: 16, fontWeight: '700' },
+  unit: { ...Type.body, marginTop: -Space.sm },
+  note: { ...Type.bodySmall, textAlign: 'center', marginTop: Space.xs },
+  button: {
+    paddingVertical: Space.lg,
+    paddingHorizontal: Space.xxxl,
+    borderRadius: Radius.lg,
+    marginTop: Space.xl,
+  },
+  buttonText: Type.button,
 });
