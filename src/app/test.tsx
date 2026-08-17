@@ -8,7 +8,6 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
   useColorScheme,
 } from 'react-native';
@@ -20,7 +19,9 @@ import { getQuestion } from '../domain/questions/bank';
 import type { Question } from '../domain/questions/types';
 import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
+import { AnswerInput } from '../ui/components/AnswerInput';
 import { RevealCard } from '../ui/components/RevealCard';
+import { SelfAttest } from '../ui/components/SelfAttest';
 import { Mascot } from '../ui/components/Mascot';
 import { Stripes } from '../ui/components/Stripes';
 import { SpeakButton } from '../ui/components/SpeakButton';
@@ -181,63 +182,22 @@ export default function FinalTest(): React.ReactElement {
         <SpeakButton text={question.prompt} theme={theme} />
 
         {phase.kind === 'answering' ? (
-          <View style={styles.block}>
-            {inputs.map((value, i) => (
-              <TextInput
-                key={i}
-                value={value}
-                onChangeText={(t) => setInputs(inputs.map((v, j) => (i === j ? t : v)))}
-                placeholder={
-                  question.requiredCount > 1
-                    ? `Answer ${i + 1} of ${question.requiredCount}`
-                    : 'Your answer'
-                }
-                placeholderTextColor={theme.textSecondary}
-                style={[
-                  styles.input,
-                  { color: theme.text, borderColor: theme.border, backgroundColor: theme.surface },
-                ]}
-                autoCorrect={false}
-                autoCapitalize="none"
-                spellCheck={false}
-                onSubmitEditing={i === inputs.length - 1 ? submit : undefined}
-                accessibilityLabel={`Answer field ${i + 1}`}
-              />
-            ))}
-            <Pressable
-              onPress={submit}
-              style={[styles.button, { backgroundColor: theme.accent }]}
-              accessibilityRole="button"
-            >
-              <Text style={[styles.buttonText, { color: theme.onAccent }]}>Answer</Text>
-            </Pressable>
-          </View>
+          <AnswerInput
+            question={question}
+            inputs={inputs}
+            onChange={setInputs}
+            onSubmit={submit}
+            submitLabel="Answer"
+            theme={theme}
+          />
         ) : null}
 
         {phase.kind === 'self-attest' ? (
-          <View style={styles.block}>
-            <Text style={[styles.note, { color: theme.textSecondary }]}>
-              {phase.graded.note ??
-                'This depends on who currently holds the office, and we don’t have a verified name for it. Check uscis.gov/citizenship/testupdates.'}
-            </Text>
-            <Text style={[styles.attestQ, { color: theme.text }]}>Did you get it right?</Text>
-            <View style={styles.row}>
-              <Pressable
-                onPress={() => void advance(phase.graded, true, true)}
-                style={[styles.button, styles.flex, { backgroundColor: theme.success }]}
-                accessibilityRole="button"
-              >
-                <Text style={[styles.buttonText, { color: theme.onAccent }]}>✓ Yes</Text>
-              </Pressable>
-              <Pressable
-                onPress={() => void advance(phase.graded, false, true)}
-                style={[styles.button, styles.flex, { backgroundColor: theme.error }]}
-                accessibilityRole="button"
-              >
-                <Text style={[styles.buttonText, { color: theme.onAccent }]}>✕ No</Text>
-              </Pressable>
-            </View>
-          </View>
+          <SelfAttest
+            theme={theme}
+            note={phase.graded.note}
+            onAnswer={(correct) => void advance(phase.graded, correct, true)}
+          />
         ) : null}
 
         {phase.kind === 'revealed' ? (
@@ -369,17 +329,11 @@ const styles = StyleSheet.create({
   score: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
   number: { fontSize: 13, fontWeight: '600', letterSpacing: 0.4, textTransform: 'uppercase' },
   prompt: { fontSize: 23, fontWeight: '700', lineHeight: 30 },
-  block: { gap: 11, marginTop: 6 },
-  input: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 13, fontSize: 17 },
   button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
   wide: { alignSelf: 'stretch', marginTop: 10 },
   appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center' },
   appealText: { fontSize: 15, fontWeight: '700' },
   buttonText: { fontSize: 16, fontWeight: '700' },
-  row: { flexDirection: 'row', gap: 10 },
-  flex: { flex: 1 },
-  note: { fontSize: 13, lineHeight: 19 },
-  attestQ: { fontSize: 17, fontWeight: '700' },
   introTitle: { fontSize: 30, fontWeight: '800' },
   introBody: { fontSize: 15, textAlign: 'center', lineHeight: 22 },
   resultTitle: { fontSize: 28, fontWeight: '800', marginTop: 4 },

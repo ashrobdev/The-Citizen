@@ -77,7 +77,7 @@ export class NotificationService {
    */
   async sync(
     now: Date = new Date(),
-    officials?: { availableVersion?: string; bundledVersion?: string },
+    officials?: { availableVersion?: string; bundledVersion?: string; changeSummary?: string },
   ): Promise<void> {
     try {
       const [settings, permission, completedDays, notifiedVersion] = await Promise.all([

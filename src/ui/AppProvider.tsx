@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ActivityIndicator, AppState, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
+import { describeChanges, diffUserAnswers } from '../domain/officials/diff';
 import type { Repositories } from '../data/repositories';
 import { createSqliteRepositories } from '../data/sqlite/repositories';
 import { openDatabase } from '../data/sqlite/db';
@@ -117,14 +118,29 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
     if (syncing.current) return;
     syncing.current = true;
     try {
+      // Captured before the refresh: the notification is gated on what changed
+      // for this user, which needs the dataset they were studying against.
+      const previous = await value.officials.current();
       const result = await value.officials.refreshIfDue();
       const active = await value.officials.current();
       // Without this the app kept showing bundled data even after a successful
       // fetch — the updater was built, tested, and then never consulted.
       setActiveOfficials(active);
+
+      const profile = await value.repos.profile.get();
+      const location =
+        profile === undefined
+          ? undefined
+          : {
+              stateCode: profile.stateCode,
+              ...(profile.district !== undefined ? { district: profile.district } : {}),
+            };
+      const changes = diffUserAnswers(previous, active, location);
+
       await value.notifications.sync(new Date(), {
         availableVersion: active.dataVersion,
         bundledVersion: BUNDLED_OFFICIALS.dataVersion,
+        changeSummary: describeChanges(changes),
       });
       if (result.updated) {
         // Notified about this version; do not mention it again.

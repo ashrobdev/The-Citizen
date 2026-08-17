@@ -161,15 +161,27 @@ describe('the soft ask', () => {
 });
 
 describe('officials notification', () => {
+  const officials = {
+    availableVersion: '2026-09-01',
+    bundledVersion: '2026-08-16',
+    changeSummary: 'Your governor changed. Tap to review the new answers.',
+  };
+
   it('is planned once and then suppressed', async () => {
     const { service, platform } = build('granted');
-    const officials = { availableVersion: '2026-09-01', bundledVersion: '2026-08-16' };
 
     await service.sync(at('2026-08-16T14:00:00'), officials);
     expect(platform.items.some((i) => i.key === 'officials_updated:2026-09-01')).toBe(true);
 
     await service.markOfficialsNotified('2026-09-01');
     await service.sync(at('2026-08-16T14:05:00'), officials);
+    expect(platform.items.some((i) => i.key === 'officials_updated:2026-09-01')).toBe(false);
+  });
+
+  it('is not scheduled when the update changed nothing this user is graded on', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), { ...officials, changeSummary: '' });
     expect(platform.items.some((i) => i.key === 'officials_updated:2026-09-01')).toBe(false);
   });
 });

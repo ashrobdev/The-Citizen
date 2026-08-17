@@ -63,7 +63,17 @@ export interface NotificationInputs {
   completedDays: readonly DayKey[];
   streak: number;
   freezesHeld: number;
-  officials?: { availableVersion?: string; notifiedVersion?: string; bundledVersion?: string };
+  officials?: {
+    availableVersion?: string;
+    notifiedVersion?: string;
+    bundledVersion?: string;
+    /**
+     * Copy naming what changed in *this* user's answers, from
+     * `describeChanges` in `domain/officials/diff`. Absent or empty means the
+     * update touched nobody they are graded on, and nothing is scheduled.
+     */
+    changeSummary?: string;
+  };
   horizonDays?: number;
 }
 
@@ -213,9 +223,17 @@ export function planNotifications(input: NotificationInputs): PlannedNotificatio
   // Deferred to the next reminder slot: the app can only discover an update
   // while it is open, and a notification about something you are already
   // looking at is pointless.
+  //
+  // Gated on `changeSummary` rather than on the version alone. A refresh across
+  // 435 House seats changes something most weeks, and almost none of it is
+  // relevant to any one person — an alert that is usually noise gets muted,
+  // taking the one that matters with it. The caller decides what is relevant by
+  // diffing the answers this user would actually be graded against.
   const officials = input.officials;
   if (
     officials?.availableVersion !== undefined &&
+    officials.changeSummary !== undefined &&
+    officials.changeSummary.length > 0 &&
     officials.availableVersion !== officials.notifiedVersion &&
     (officials.bundledVersion === undefined ||
       officials.availableVersion > officials.bundledVersion)
@@ -225,7 +243,9 @@ export function planNotifications(input: NotificationInputs): PlannedNotificatio
     const nextSlot = instantForDayKey(addDays(today, 1), settings.hour, settings.minute);
     const fireAt = Math.max(soonest, Math.min(nextSlot, soonest + 24 * 3_600_000));
     const title = 'Officeholder answers updated';
-    const body = 'Your senators, representative or governor may have changed. Tap to review.';
+    // Names what changed, because now we know. The old copy hedged with "may
+    // have changed" precisely because it fired on any version bump.
+    const body = officials.changeSummary;
 
     out.push({
       key: `officials_updated:${version}`,
@@ -234,7 +254,7 @@ export function planNotifications(input: NotificationInputs): PlannedNotificatio
       title,
       body,
       route: '/settings',
-      hash: hashOf(['officials', version, fireAt]),
+      hash: hashOf(['officials', version, fireAt, body]),
     });
   }
 
