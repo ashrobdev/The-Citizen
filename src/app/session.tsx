@@ -4,11 +4,9 @@ import {
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
   useColorScheme,
 } from 'react-native';
@@ -18,9 +16,12 @@ import type { Question, QuestionId } from '../domain/questions/types';
 import type { SessionRecord, UserProfile } from '../data/repositories';
 import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
 import { useNotifications, useSessionService } from '../ui/AppProvider';
+import { AnswerInput } from '../ui/components/AnswerInput';
 import { RevealCard } from '../ui/components/RevealCard';
+import { SelfAttest } from '../ui/components/SelfAttest';
 import { SpeakButton } from '../ui/components/SpeakButton';
-import { Colors, type Theme } from '../ui/theme/colors';
+import { Colors } from '../ui/theme/colors';
+import { Layout, Space, Type } from '../ui/theme/tokens';
 
 type Phase =
   | { kind: 'answering' }
@@ -162,11 +163,12 @@ export default function Session(): React.ReactElement {
         <SpeakButton text={question.prompt} theme={theme} />
 
         {phase.kind === 'answering' ? (
-          <AnswerFields
+          <AnswerInput
             question={question}
             inputs={inputs}
             onChange={setInputs}
             onSubmit={submit}
+            submitLabel="Check"
             theme={theme}
           />
         ) : null}
@@ -207,98 +209,9 @@ export default function Session(): React.ReactElement {
   );
 }
 
-function AnswerFields({
-  question,
-  inputs,
-  onChange,
-  onSubmit,
-  theme,
-}: {
-  question: Question;
-  inputs: string[];
-  onChange: (v: string[]) => void;
-  onSubmit: () => void;
-  theme: Theme;
-}): React.ReactElement {
-  return (
-    <View style={styles.block}>
-      {inputs.map((value, i) => (
-        <TextInput
-          key={i}
-          value={value}
-          onChangeText={(t) => onChange(inputs.map((v, j) => (i === j ? t : v)))}
-          placeholder={question.requiredCount > 1 ? `Answer ${i + 1} of ${question.requiredCount}` : 'Your answer'}
-          placeholderTextColor={theme.textSecondary}
-          style={[styles.input, { color: theme.text, borderColor: theme.border, backgroundColor: theme.surface }]}
-          // Mobile autocorrect fights proper nouns relentlessly and would
-          // rewrite half the answers in this test.
-          autoCorrect={false}
-          autoCapitalize="none"
-          spellCheck={false}
-          returnKeyType={i === inputs.length - 1 ? 'done' : 'next'}
-          onSubmitEditing={i === inputs.length - 1 ? onSubmit : undefined}
-          accessibilityLabel={`Answer field ${i + 1}`}
-        />
-      ))}
-      <Pressable
-        onPress={onSubmit}
-        style={[styles.button, { backgroundColor: theme.accent }]}
-        accessibilityRole="button"
-      >
-        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Check</Text>
-      </Pressable>
-    </View>
-  );
-}
-
-function SelfAttest({
-  theme,
-  note,
-  onAnswer,
-}: {
-  theme: Theme;
-  note: string | undefined;
-  onAnswer: (correct: boolean) => void;
-}): React.ReactElement {
-  return (
-    <View style={styles.block}>
-      <Text style={[styles.attestNote, { color: theme.textSecondary }]}>
-        {note ??
-          'This answer depends on who currently holds the office, and we don’t have a verified name for it. Check uscis.gov/citizenship/testupdates.'}
-      </Text>
-      <Text style={[styles.attestQuestion, { color: theme.text }]}>Did you get it right?</Text>
-      <View style={styles.row}>
-        <Pressable
-          onPress={() => onAnswer(true)}
-          style={[styles.button, styles.flex, { backgroundColor: theme.success }]}
-          accessibilityRole="button"
-        >
-          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✓ Yes</Text>
-        </Pressable>
-        <Pressable
-          onPress={() => onAnswer(false)}
-          style={[styles.button, styles.flex, { backgroundColor: theme.error }]}
-          accessibilityRole="button"
-        >
-          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✕ No</Text>
-        </Pressable>
-      </View>
-    </View>
-  );
-}
-
-
 const styles = StyleSheet.create({
   centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  scroll: { padding: 22, gap: 14, paddingBottom: 60 },
-  number: { fontSize: 13, fontWeight: '600', letterSpacing: 0.4, textTransform: 'uppercase' },
-  prompt: { fontSize: 23, fontWeight: '700', lineHeight: 30 },
-  block: { gap: 11, marginTop: 6 },
-  input: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 13, fontSize: 17 },
-  button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  buttonText: { fontSize: 16, fontWeight: '700' },
-  row: { flexDirection: 'row', gap: 10 },
-  flex: { flex: 1 },
-  attestNote: { fontSize: 13, lineHeight: 19 },
-  attestQuestion: { fontSize: 17, fontWeight: '700', marginTop: 2 },
+  scroll: { padding: Layout.screenPadding, gap: Space.md, paddingBottom: Space.xxxl },
+  number: { ...Type.overline, textTransform: 'uppercase' },
+  prompt: Type.question,
 });

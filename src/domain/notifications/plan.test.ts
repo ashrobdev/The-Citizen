@@ -172,9 +172,14 @@ describe('streak at risk', () => {
 });
 
 describe('officials updated', () => {
-  const officials = { availableVersion: '2026-09-01', bundledVersion: '2026-08-16' };
+  const officials = {
+    availableVersion: '2026-09-01',
+    bundledVersion: '2026-08-16',
+    changeSummary: 'Your governor changed. Tap to review the new answers.',
+    firstSeenAt: NOW,
+  };
 
-  it('is planned once when newer data arrives', () => {
+  it('is planned once when newer data changes this user’s answers', () => {
     expect(kinds(base({ officials }))).toContain('officials_updated');
   });
 
@@ -184,13 +189,58 @@ describe('officials updated', () => {
   });
 
   it('is not planned for the data the app shipped with', () => {
-    const sameAsBundled = { availableVersion: '2026-08-16', bundledVersion: '2026-08-16' };
+    const sameAsBundled = { ...officials, availableVersion: '2026-08-16' };
     expect(kinds(base({ officials: sameAsBundled }))).not.toContain('officials_updated');
+  });
+
+  // The point of the gate: 435 House seats churn constantly, and an alert that
+  // is usually irrelevant gets muted, taking the relevant one with it.
+  it('is silent when the update touched nobody this user is graded on', () => {
+    const irrelevant = { ...officials, changeSummary: '' };
+    expect(kinds(base({ officials: irrelevant }))).not.toContain('officials_updated');
+  });
+
+  it('is silent when the caller supplied no diff at all', () => {
+    const { changeSummary: _omitted, ...noSummary } = officials;
+    expect(kinds(base({ officials: noSummary }))).not.toContain('officials_updated');
+  });
+
+  it('names what changed rather than hedging', () => {
+    const n = planNotifications(base({ officials })).find((x) => x.kind === 'officials_updated');
+    expect(n?.body).toBe(officials.changeSummary);
+    expect(n?.body).not.toMatch(/may have changed/i);
   });
 
   it('is deferred rather than firing while the user is in the app', () => {
     const n = planNotifications(base({ officials })).find((x) => x.kind === 'officials_updated');
     expect(n?.fireAt).toBeGreaterThan(NOW + 25 * 60_000);
+  });
+
+  // Anchoring the fire time on `now` moved it forward on every re-plan, so the
+  // notification was perpetually rescheduled and never actually arrived.
+  it('keeps the same fire time however often it is re-planned', () => {
+    const first = planNotifications(base({ officials })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    const later = planNotifications(base({ officials, now: NOW + 3 * 3_600_000 })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    expect(later?.fireAt).toBe(first?.fireAt);
+    expect(later?.hash).toBe(first?.hash);
+  });
+
+  it('drops out of the plan once its moment has passed', () => {
+    const planned = planNotifications(base({ officials })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    expect(kinds(base({ officials, now: planned!.fireAt + 1000 }))).not.toContain(
+      'officials_updated',
+    );
+  });
+
+  it('is silent when the caller supplied no first-seen anchor', () => {
+    const { firstSeenAt: _omitted, ...unanchored } = officials;
+    expect(kinds(base({ officials: unanchored }))).not.toContain('officials_updated');
   });
 });
 

@@ -161,15 +161,96 @@ describe('the soft ask', () => {
 });
 
 describe('officials notification', () => {
+  const officials = {
+    availableVersion: '2026-09-01',
+    bundledVersion: '2026-08-16',
+    changeSummary: 'Your governor changed. Tap to review the new answers.',
+  };
+
+  const KEY = 'officials_updated:2026-09-01';
+  const scheduled = (platform: { items: ScheduledItem[] }): boolean =>
+    platform.items.some((i) => i.key === KEY);
+
   it('is planned once and then suppressed', async () => {
     const { service, platform } = build('granted');
-    const officials = { availableVersion: '2026-09-01', bundledVersion: '2026-08-16' };
 
     await service.sync(at('2026-08-16T14:00:00'), officials);
-    expect(platform.items.some((i) => i.key === 'officials_updated:2026-09-01')).toBe(true);
+    expect(scheduled(platform)).toBe(true);
 
     await service.markOfficialsNotified('2026-09-01');
     await service.sync(at('2026-08-16T14:05:00'), officials);
-    expect(platform.items.some((i) => i.key === 'officials_updated:2026-09-01')).toBe(false);
+    expect(scheduled(platform)).toBe(false);
+  });
+
+  it('is not scheduled when the update changed nothing this user is graded on', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), { ...officials, changeSummary: '' });
+    expect(scheduled(platform)).toBe(false);
+  });
+
+  // The lifecycle bug: it was scheduled, then destroyed before it could fire.
+  // Finishing a day calls sync() with no officials argument, and that used to
+  // drop the announcement from the plan so reconciliation cancelled it.
+  it('survives a sync that carries no officials argument', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), officials);
+    expect(scheduled(platform)).toBe(true);
+
+    await service.sync(at('2026-08-16T14:01:00'));
+    expect(scheduled(platform)).toBe(true);
+  });
+
+  it('survives a settings change, which re-syncs', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), officials);
+    await service.saveSettings(
+      { ...DEFAULT_NOTIFICATION_SETTINGS, hour: 9 },
+      at('2026-08-16T14:02:00'),
+    );
+    expect(scheduled(platform)).toBe(true);
+  });
+
+  it('keeps the same fire time across re-planning, rather than sliding forward', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), officials);
+    const first = platform.items.find((i) => i.key === KEY)?.hash;
+
+    await service.sync(at('2026-08-16T16:30:00'), officials);
+    await service.sync(at('2026-08-16T18:00:00'));
+    const later = platform.items.find((i) => i.key === KEY)?.hash;
+
+    // A changed hash would mean reconciliation cancelled and rescheduled it.
+    expect(later).toBe(first);
+  });
+
+  it('is retired once its moment has passed, and never planned again', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), officials);
+    expect(scheduled(platform)).toBe(true);
+
+    // Well past the announcement, which lands the following evening.
+    await service.sync(at('2026-08-18T21:00:00'), officials);
+    expect(scheduled(platform)).toBe(false);
+
+    // And a later refresh reporting the same version must not resurrect it.
+    await service.sync(at('2026-08-19T09:00:00'), officials);
+    expect(scheduled(platform)).toBe(false);
+  });
+
+  it('announces a genuinely newer version after an earlier one has been retired', async () => {
+    const { service, platform } = build('granted');
+
+    await service.sync(at('2026-08-16T14:00:00'), officials);
+    await service.sync(at('2026-08-18T21:00:00'), officials);
+    expect(scheduled(platform)).toBe(false);
+
+    const newer = { ...officials, availableVersion: '2026-10-01' };
+    await service.sync(at('2026-08-18T21:05:00'), newer);
+    expect(platform.items.some((i) => i.key === 'officials_updated:2026-10-01')).toBe(true);
   });
 });
