@@ -176,6 +176,7 @@ describe('officials updated', () => {
     availableVersion: '2026-09-01',
     bundledVersion: '2026-08-16',
     changeSummary: 'Your governor changed. Tap to review the new answers.',
+    firstSeenAt: NOW,
   };
 
   it('is planned once when newer data changes this user’s answers', () => {
@@ -213,6 +214,33 @@ describe('officials updated', () => {
   it('is deferred rather than firing while the user is in the app', () => {
     const n = planNotifications(base({ officials })).find((x) => x.kind === 'officials_updated');
     expect(n?.fireAt).toBeGreaterThan(NOW + 25 * 60_000);
+  });
+
+  // Anchoring the fire time on `now` moved it forward on every re-plan, so the
+  // notification was perpetually rescheduled and never actually arrived.
+  it('keeps the same fire time however often it is re-planned', () => {
+    const first = planNotifications(base({ officials })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    const later = planNotifications(base({ officials, now: NOW + 3 * 3_600_000 })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    expect(later?.fireAt).toBe(first?.fireAt);
+    expect(later?.hash).toBe(first?.hash);
+  });
+
+  it('drops out of the plan once its moment has passed', () => {
+    const planned = planNotifications(base({ officials })).find(
+      (x) => x.kind === 'officials_updated',
+    );
+    expect(kinds(base({ officials, now: planned!.fireAt + 1000 }))).not.toContain(
+      'officials_updated',
+    );
+  });
+
+  it('is silent when the caller supplied no first-seen anchor', () => {
+    const { firstSeenAt: _omitted, ...unanchored } = officials;
+    expect(kinds(base({ officials: unanchored }))).not.toContain('officials_updated');
   });
 });
 

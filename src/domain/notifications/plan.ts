@@ -73,6 +73,15 @@ export interface NotificationInputs {
      * update touched nobody they are graded on, and nothing is scheduled.
      */
     changeSummary?: string;
+    /**
+     * When this change was first observed, epoch millis.
+     *
+     * The fire time is derived from this rather than from `now` so that
+     * re-planning is idempotent. Anchoring on `now` moved the notification
+     * forward on every sync, so it was perpetually rescheduled and never
+     * arrived.
+     */
+    firstSeenAt?: number;
   };
   horizonDays?: number;
 }
@@ -106,6 +115,27 @@ export function instantForDayKey(dayKey: DayKey, hour: number, minute: number): 
   // An hour before 4am belongs to the following calendar date.
   if (hour < DAY_START_HOUR) d.setDate(d.getDate() + 1);
   return d.getTime();
+}
+
+/** Never fires inside this window of first noticing; the user is in the app right now. */
+const OFFICIALS_MIN_DELAY_MS = 30 * 60_000;
+
+/**
+ * When an officials announcement should arrive, from when it was first seen.
+ *
+ * A pure function of `firstSeenAt` and the reminder time — deliberately not of
+ * `now` — so every re-plan produces the same instant and reconciliation leaves
+ * the scheduled notification alone. Exported because the service needs the same
+ * answer to tell whether the announcement has already fired.
+ */
+export function officialsFireAt(firstSeenAt: number, settings: NotificationSettings): number {
+  const soonest = firstSeenAt + OFFICIALS_MIN_DELAY_MS;
+  const nextSlot = instantForDayKey(
+    addDays(toDayKey(new Date(firstSeenAt)), 1),
+    settings.hour,
+    settings.minute,
+  );
+  return Math.max(soonest, Math.min(nextSlot, soonest + 24 * 3_600_000));
 }
 
 function hashOf(parts: readonly (string | number)[]): string {
@@ -232,6 +262,7 @@ export function planNotifications(input: NotificationInputs): PlannedNotificatio
   const officials = input.officials;
   if (
     officials?.availableVersion !== undefined &&
+    officials.firstSeenAt !== undefined &&
     officials.changeSummary !== undefined &&
     officials.changeSummary.length > 0 &&
     officials.availableVersion !== officials.notifiedVersion &&
@@ -239,23 +270,26 @@ export function planNotifications(input: NotificationInputs): PlannedNotificatio
       officials.availableVersion > officials.bundledVersion)
   ) {
     const version = officials.availableVersion;
-    const soonest = now + 30 * 60_000;
-    const nextSlot = instantForDayKey(addDays(today, 1), settings.hour, settings.minute);
-    const fireAt = Math.max(soonest, Math.min(nextSlot, soonest + 24 * 3_600_000));
+    const fireAt = officialsFireAt(officials.firstSeenAt, settings);
     const title = 'Officeholder answers updated';
     // Names what changed, because now we know. The old copy hedged with "may
     // have changed" precisely because it fired on any version bump.
     const body = officials.changeSummary;
 
-    out.push({
-      key: `officials_updated:${version}`,
-      kind: 'officials_updated',
-      fireAt,
-      title,
-      body,
-      route: '/settings',
-      hash: hashOf(['officials', version, fireAt, body]),
-    });
+    // Once the moment has passed the notification has been delivered, so it
+    // drops out of the plan and reconciliation clears the stale entry. Planning
+    // it into the past would schedule something that can never arrive.
+    if (fireAt > now + MIN_LEAD_MS) {
+      out.push({
+        key: `officials_updated:${version}`,
+        kind: 'officials_updated',
+        fireAt,
+        title,
+        body,
+        route: '/settings',
+        hash: hashOf(['officials', version, fireAt, body]),
+      });
+    }
   }
 
   return out;

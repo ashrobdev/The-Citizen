@@ -121,7 +121,7 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
       // Captured before the refresh: the notification is gated on what changed
       // for this user, which needs the dataset they were studying against.
       const previous = await value.officials.current();
-      const result = await value.officials.refreshIfDue();
+      await value.officials.refreshIfDue();
       const active = await value.officials.current();
       // Without this the app kept showing bundled data even after a successful
       // fetch — the updater was built, tested, and then never consulted.
@@ -137,15 +137,14 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
             };
       const changes = diffUserAnswers(previous, active, location);
 
+      // The service holds this until the notification has actually fired, then
+      // retires it. Marking it notified here — at schedule time — is what used
+      // to cancel the announcement before it could arrive.
       await value.notifications.sync(new Date(), {
         availableVersion: active.dataVersion,
         bundledVersion: BUNDLED_OFFICIALS.dataVersion,
         changeSummary: describeChanges(changes),
       });
-      if (result.updated) {
-        // Notified about this version; do not mention it again.
-        await value.notifications.markOfficialsNotified(active.dataVersion);
-      }
     } catch {
       // Best effort — neither refreshing nor notifying may block the app.
     } finally {
