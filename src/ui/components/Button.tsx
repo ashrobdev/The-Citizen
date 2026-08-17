@@ -59,7 +59,7 @@ export function Button({
         style,
       ]}
     >
-      <Text style={[styles.label, { color: filled ? '#FFFFFF' : theme.accent }]}>{label}</Text>
+      <Text style={[styles.label, { color: filled ? theme.onAccent : theme.accent }]}>{label}</Text>
     </Pressable>
   );
 }

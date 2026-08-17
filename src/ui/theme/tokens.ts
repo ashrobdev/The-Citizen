@@ -46,6 +46,20 @@ export const Type = {
  */
 export const HIT_TARGET = 44;
 
+/** Animation durations. 0 under reduce-motion; see theme/motion.ts. */
+export const Duration = {
+  fast: 120,
+  base: 220,
+  slow: 420,
+  celebrate: 2200,
+} as const;
+
+export const Layout = {
+  screenPadding: 20,
+  /** Keeps text measure sane on tablets, which app.json enables. */
+  maxContentWidth: 560,
+} as const;
+
 /** Soft elevation for cards. Kept subtle — this is a study app, not a game. */
 export const Shadow = {
   card: {

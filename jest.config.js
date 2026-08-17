@@ -21,6 +21,7 @@ module.exports = {
         '<rootDir>/src/services',
         '<rootDir>/src/data',
         '<rootDir>/src/ui/components',
+        '<rootDir>/src/ui/theme',
       ],
       testMatch: ['**/*.test.ts'],
       moduleNameMapper: {

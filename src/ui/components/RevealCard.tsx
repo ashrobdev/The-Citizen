@@ -126,7 +126,7 @@ export function RevealCard({
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Next</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Next</Text>
       </Pressable>
     </View>
   );
@@ -149,5 +149,5 @@ const styles = StyleSheet.create({
   appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center', marginTop: 2 },
   appealText: { fontSize: 15, fontWeight: '700' },
   button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  buttonText: { fontSize: 16, fontWeight: '700' },
 });

@@ -1,24 +1,32 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from 'react-native';
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { ActivityIndicator, AppState, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import type { Repositories } from '../data/repositories';
 import { createSqliteRepositories } from '../data/sqlite/repositories';
 import { openDatabase } from '../data/sqlite/db';
-import { SessionService } from '../services/sessionService';
+import { NotificationService } from '../services/notifications/notificationService';
+import {
+  configureNotifications,
+  createExpoPlatform,
+  getPermission,
+} from '../services/notifications/expoPlatform';
+import { BUNDLED_OFFICIALS, OfficialsUpdater } from '../services/officialsUpdater';
+import { SessionService, setActiveOfficials } from '../services/sessionService';
 
 import { Colors } from './theme/colors';
 
 /**
- * Opens the database once and hands the session service to the tree.
+ * Opens the database once and hands the services to the tree.
  *
  * Plain React context rather than a state library: there is exactly one
- * long-lived value here and no cross-cutting subscriptions. A store can be
- * introduced if that stops being true.
+ * long-lived value here and no cross-cutting subscriptions.
  */
 
 interface AppValue {
   service: SessionService;
   repos: Repositories;
+  notifications: NotificationService;
+  officials: OfficialsUpdater;
 }
 
 const AppContext = createContext<AppValue | undefined>(undefined);
@@ -34,6 +42,12 @@ export function useRepositories(): Repositories {
   const value = useContext(AppContext);
   if (!value) throw new Error('useRepositories must be used inside AppProvider');
   return value.repos;
+}
+
+export function useNotifications(): NotificationService {
+  const value = useContext(AppContext);
+  if (!value) throw new Error('useNotifications must be used inside AppProvider');
+  return value.notifications;
 }
 
 type Status =
@@ -52,6 +66,12 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
   const [status, setStatus] = useState<Status>({ phase: 'loading' });
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
+  const ready = status.phase === 'ready' ? status.value : undefined;
+  const syncing = useRef(false);
+
+  useEffect(() => {
+    configureNotifications();
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -59,13 +79,20 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
     (async () => {
       try {
         // A database open that never settles would leave the app on its
-        // loading state forever with nothing to diagnose — which is exactly
-        // what an unconfigured web build does. Fail loudly instead.
+        // loading state forever with nothing to diagnose. Fail loudly instead.
         const db = await withTimeout(openDatabase(), 10_000, 'Opening the database timed out');
         const repos = createSqliteRepositories(db);
-        if (!cancelled) {
-          setStatus({ phase: 'ready', value: { service: new SessionService(repos), repos } });
-        }
+        if (cancelled) return;
+
+        setStatus({
+          phase: 'ready',
+          value: {
+            service: new SessionService(repos),
+            repos,
+            notifications: new NotificationService(repos, createExpoPlatform(), getPermission),
+            officials: new OfficialsUpdater(repos.kv),
+          },
+        });
       } catch (error) {
         // Surfaced rather than swallowed: a failed migration means no progress
         // can be saved, and silently continuing would lose the user's work.
@@ -78,6 +105,49 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
       cancelled = true;
     };
   }, []);
+
+  /**
+   * Refreshes officials data and re-plans notifications.
+   *
+   * Runs on launch and whenever the app comes back to the foreground, which is
+   * what refills the rolling notification window, re-anchors it after a
+   * timezone change, and picks up permission granted in system Settings.
+   */
+  const refresh = useCallback(async (value: AppValue) => {
+    if (syncing.current) return;
+    syncing.current = true;
+    try {
+      const result = await value.officials.refreshIfDue();
+      const active = await value.officials.current();
+      // Without this the app kept showing bundled data even after a successful
+      // fetch — the updater was built, tested, and then never consulted.
+      setActiveOfficials(active);
+      await value.notifications.sync(new Date(), {
+        availableVersion: active.dataVersion,
+        bundledVersion: BUNDLED_OFFICIALS.dataVersion,
+      });
+      if (result.updated) {
+        // Notified about this version; do not mention it again.
+        await value.notifications.markOfficialsNotified(active.dataVersion);
+      }
+    } catch {
+      // Best effort — neither refreshing nor notifying may block the app.
+    } finally {
+      syncing.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    void refresh(ready);
+
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') void refresh(ready);
+    });
+    return () => {
+      sub.remove();
+    };
+  }, [ready, refresh]);
 
   if (status.phase === 'loading') {
     return (

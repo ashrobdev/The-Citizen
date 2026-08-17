@@ -17,7 +17,7 @@ import { getQuestion } from '../domain/questions/bank';
 import type { Question, QuestionId } from '../domain/questions/types';
 import type { SessionRecord, UserProfile } from '../data/repositories';
 import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
-import { useSessionService } from '../ui/AppProvider';
+import { useNotifications, useSessionService } from '../ui/AppProvider';
 import { RevealCard } from '../ui/components/RevealCard';
 import { SpeakButton } from '../ui/components/SpeakButton';
 import { Colors, type Theme } from '../ui/theme/colors';
@@ -31,6 +31,7 @@ type Phase =
 
 export default function Session(): React.ReactElement {
   const service = useSessionService();
+  const notifications = useNotifications();
   const router = useRouter();
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
@@ -127,12 +128,15 @@ export default function Session(): React.ReactElement {
       const rest = queue.slice(1);
       if (rest.length === 0) {
         await service.completeSession(session.id);
+        // Re-plan immediately: today's reminder and tonight's streak nudge must
+        // stop the moment the day is done, not at the next app launch.
+        await notifications.sync();
         router.replace('/summary');
         return;
       }
       setQueue(rest);
     },
-    [service, session, question, queue, focusPicks, router],
+    [service, notifications, session, question, queue, focusPicks, router],
   );
 
   if (!session || !question) {
@@ -241,7 +245,7 @@ function AnswerFields({
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
-        <Text style={styles.buttonText}>Check</Text>
+        <Text style={[styles.buttonText, { color: theme.onAccent }]}>Check</Text>
       </Pressable>
     </View>
   );
@@ -269,14 +273,14 @@ function SelfAttest({
           style={[styles.button, styles.flex, { backgroundColor: theme.success }]}
           accessibilityRole="button"
         >
-          <Text style={styles.buttonText}>✓ Yes</Text>
+          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✓ Yes</Text>
         </Pressable>
         <Pressable
           onPress={() => onAnswer(false)}
           style={[styles.button, styles.flex, { backgroundColor: theme.error }]}
           accessibilityRole="button"
         >
-          <Text style={styles.buttonText}>✕ No</Text>
+          <Text style={[styles.buttonText, { color: theme.onAccent }]}>✕ No</Text>
         </Pressable>
       </View>
     </View>
@@ -292,7 +296,7 @@ const styles = StyleSheet.create({
   block: { gap: 11, marginTop: 6 },
   input: { borderWidth: 1.5, borderRadius: 12, paddingHorizontal: 14, paddingVertical: 13, fontSize: 17 },
   button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  buttonText: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  buttonText: { fontSize: 16, fontWeight: '700' },
   row: { flexDirection: 'row', gap: 10 },
   flex: { flex: 1 },
   attestNote: { fontSize: 13, lineHeight: 19 },

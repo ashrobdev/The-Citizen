@@ -10,10 +10,10 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import { getQuestion } from '../domain/questions/bank';
-import { ProgressService, type ProgressSummary, type Strength } from '../services/progressService';
-import { useRepositories } from '../ui/AppProvider';
-import { Colors, type Theme } from '../ui/theme/colors';
+import { getQuestion } from '../../domain/questions/bank';
+import { ProgressService, type ProgressSummary, type Strength } from '../../services/progressService';
+import { useRepositories } from '../../ui/AppProvider';
+import { Colors, type Theme } from '../../ui/theme/colors';
 
 const STRENGTH_LABEL: Record<Strength, string> = {
   mastered: 'Mastered',
@@ -126,7 +126,7 @@ export default function Progress(): React.ReactElement {
             <Text
               style={[
                 styles.cellText,
-                { color: p.strength === 'unseen' ? theme.textSecondary : '#FFFFFF' },
+                { color: p.strength === 'unseen' ? theme.textSecondary : theme.onAccent },
               ]}
             >
               {p.questionId}
