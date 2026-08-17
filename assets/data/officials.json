@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "2026-08-16",
-  "generatedAt": "2026-08-16T20:27:45.022Z",
+  "dataVersion": "2026-08-17",
+  "generatedAt": "2026-08-17T06:53:20.582Z",
   "sources": [
     {
       "name": "unitedstates/congress-legislators (legislators-current)",
       "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-08-17"
     },
     {
       "name": "unitedstates/congress-legislators (executive)",
       "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/executive.yaml",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-08-17"
     },
     {
       "name": "data/manual/officeholders.yaml",
@@ -23,7 +23,7 @@
     {
       "name": "Wikidata (governors, Speaker, Chief Justice)",
       "url": "https://query.wikidata.org/",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-08-17"
     }
   ],
   "federal": {
