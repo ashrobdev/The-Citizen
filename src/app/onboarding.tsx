@@ -1,21 +1,16 @@
 import { Stack, useRouter } from 'expo-router';
 import { useMemo, useState } from 'react';
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  useColorScheme,
-} from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, View, useColorScheme } from 'react-native';
 
 import { toDayKey } from '../domain/scheduling/dayKey';
 import { OFFICIALS } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
 import { Mascot } from '../ui/components/Mascot';
+import { PressableScale } from '../ui/components/PressableScale';
+import { Screen } from '../ui/components/Screen';
 import { Stripes } from '../ui/components/Stripes';
 import { Colors } from '../ui/theme/colors';
+import { HIT_TARGET, Radius, Space, Type } from '../ui/theme/tokens';
 
 /**
  * Asks where the user lives, which four of the 128 questions depend on.
@@ -73,7 +68,7 @@ export default function Onboarding(): React.ReactElement {
 
   if (step === 'state') {
     return (
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <Screen contentStyle={styles.container}>
         <Stack.Screen options={{ title: 'Welcome', headerBackVisible: false }} />
         <View style={styles.intro}>
           <Mascot pose="greeting" size="medium" />
@@ -100,7 +95,7 @@ export default function Onboarding(): React.ReactElement {
 
         <ScrollView style={styles.list} keyboardShouldPersistTaps="handled">
           {filtered.map((j) => (
-            <Pressable
+            <PressableScale
               key={j.code}
               onPress={() => {
                 setStateCode(j.code);
@@ -111,10 +106,10 @@ export default function Onboarding(): React.ReactElement {
             >
               <Text style={[styles.rowText, { color: theme.text }]}>{j.name}</Text>
               <Text style={[styles.rowCode, { color: theme.textSecondary }]}>{j.code}</Text>
-            </Pressable>
+            </PressableScale>
           ))}
         </ScrollView>
-      </View>
+      </Screen>
     );
   }
 
@@ -122,7 +117,7 @@ export default function Onboarding(): React.ReactElement {
   const atLargeOnly = districts.length === 1 && districts[0] === 'AL';
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
+    <Screen contentStyle={styles.container}>
       <Stack.Screen options={{ title: jurisdiction?.name ?? 'District' }} />
       <View style={styles.intro}>
         <Text style={[styles.title, { color: theme.text }]}>
@@ -137,7 +132,7 @@ export default function Onboarding(): React.ReactElement {
 
       <ScrollView style={styles.list} contentContainerStyle={styles.districtGrid}>
         {districts.map((d) => (
-          <Pressable
+          <PressableScale
             key={d}
             onPress={() => void finish(d)}
             style={[styles.district, { borderColor: theme.border }]}
@@ -147,55 +142,65 @@ export default function Onboarding(): React.ReactElement {
             <Text style={[styles.districtText, { color: theme.text }]}>
               {d === 'AL' ? 'At-large' : d}
             </Text>
-          </Pressable>
+          </PressableScale>
         ))}
       </ScrollView>
 
-      <Pressable
+      <PressableScale
         onPress={() => void finish()}
         style={[styles.skip, { borderColor: theme.border }]}
         accessibilityRole="button"
       >
         <Text style={[styles.skipText, { color: theme.accent }]}>I’m not sure — skip</Text>
-      </Pressable>
-    </View>
+      </PressableScale>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, gap: 12 },
-  intro: { gap: 8, alignItems: 'center', marginTop: 8 },
-  title: { fontSize: 25, fontWeight: '800', textAlign: 'center' },
-  body: { fontSize: 14, textAlign: 'center', lineHeight: 20 },
+  container: { gap: Space.md },
+  intro: { gap: Space.sm, alignItems: 'center', marginTop: Space.sm },
+  title: { ...Type.title, textAlign: 'center' },
+  body: { ...Type.bodySmall, textAlign: 'center' },
   search: {
     borderWidth: 1.5,
-    borderRadius: 12,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
+    borderRadius: Radius.md,
+    paddingHorizontal: Space.lg,
+    paddingVertical: Space.md,
     fontSize: 16,
   },
   list: { flex: 1 },
   row: {
     borderBottomWidth: 1,
-    paddingVertical: 14,
-    paddingHorizontal: 4,
+    paddingVertical: Space.lg,
+    paddingHorizontal: Space.xs,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    minHeight: 44,
+    minHeight: HIT_TARGET,
   },
-  rowText: { fontSize: 16 },
-  rowCode: { fontSize: 13, fontWeight: '700' },
-  districtGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingVertical: 8 },
+  rowText: Type.body,
+  rowCode: { ...Type.bodySmall, fontWeight: '700' },
+  districtGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: Space.sm,
+    paddingVertical: Space.sm,
+  },
   district: {
     borderWidth: 1.5,
-    borderRadius: 10,
+    borderRadius: Radius.sm,
     minWidth: 56,
-    minHeight: 44,
+    minHeight: HIT_TARGET,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 12,
+    paddingHorizontal: Space.md,
   },
-  districtText: { fontSize: 16, fontWeight: '600' },
-  skip: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center' },
-  skipText: { fontSize: 15, fontWeight: '700' },
+  districtText: { ...Type.body, fontWeight: '600' },
+  skip: {
+    borderWidth: 1.5,
+    borderRadius: Radius.md,
+    paddingVertical: Space.lg,
+    alignItems: 'center',
+  },
+  skipText: { ...Type.body, fontWeight: '700' },
 });

@@ -18,15 +18,14 @@ const SUPPORTED = Platform.OS !== 'web';
  * `useLastNotificationResponse` covers the cold-start case as well as taps
  * while the app is running, which a plain listener does not.
  */
-export function useNotificationRouting(): void {
-  // Hooks cannot be called conditionally, so the guard is on the value.
-  const response = SUPPORTED ? Notifications.useLastNotificationResponse() : null;
+function useNativeNotificationRouting(): void {
+  const response = Notifications.useLastNotificationResponse();
   const router = useRouter();
   const service = useSessionService();
   const handled = useRef<string | undefined>(undefined);
 
   useEffect(() => {
-    if (!SUPPORTED || !response) return;
+    if (!response) return;
 
     const id = response.notification.request.identifier;
     if (handled.current === id) return;
@@ -46,3 +45,20 @@ export function useNotificationRouting(): void {
     })();
   }, [response, router, service]);
 }
+
+function useNoNotificationRouting(): void {
+  // Web: nothing to route from.
+}
+
+/**
+ * Picked once at module load rather than per render.
+ *
+ * The previous form called `useLastNotificationResponse()` inside a ternary,
+ * which is a conditional hook call — it happened to be safe because the guard
+ * is a module constant, but it is exactly the shape the rule exists to catch.
+ * Selecting the implementation here keeps every hook call unconditional inside
+ * whichever function is used.
+ */
+export const useNotificationRouting: () => void = SUPPORTED
+  ? useNativeNotificationRouting
+  : useNoNotificationRouting;

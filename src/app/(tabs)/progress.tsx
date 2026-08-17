@@ -1,19 +1,14 @@
 import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
-import {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  useColorScheme,
-} from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import { getQuestion } from '../../domain/questions/bank';
 import { ProgressService, type ProgressSummary, type Strength } from '../../services/progressService';
 import { useRepositories } from '../../ui/AppProvider';
+import { PressableScale } from '../../ui/components/PressableScale';
+import { Screen } from '../../ui/components/Screen';
 import { Colors, type Theme } from '../../ui/theme/colors';
+import { HIT_TARGET, Radius, Space, Type } from '../../ui/theme/tokens';
 
 const STRENGTH_LABEL: Record<Strength, string> = {
   mastered: 'Mastered',
@@ -58,19 +53,16 @@ export default function Progress(): React.ReactElement {
 
   if (!summary) {
     return (
-      <View style={[styles.centre, { backgroundColor: theme.background }]}>
+      <Screen centred>
         <ActivityIndicator color={theme.accent} />
-      </View>
+      </Screen>
     );
   }
 
   const pct = Math.round((summary.mastered / summary.total) * 100);
 
   return (
-    <ScrollView
-      style={{ backgroundColor: theme.background }}
-      contentContainerStyle={styles.scroll}
-    >
+    <Screen scroll contentStyle={styles.scroll}>
       <Stack.Screen options={{ title: 'Progress' }} />
 
       <Text style={[styles.headline, { color: theme.text }]}>
@@ -107,17 +99,25 @@ export default function Progress(): React.ReactElement {
         ))}
       </View>
 
-      {/* All 128 at a glance. Tapping opens the question. */}
+      {/*
+        All 128 at a glance. Tapping opens the question.
+
+        Plain Pressable with an opacity callback rather than PressableScale:
+        that would put 128 Reanimated shared values and animated styles in one
+        scrolling view, which is a real cost for feedback nobody studies. The
+        press is still visible.
+      */}
       <View style={styles.grid}>
         {summary.perQuestion.map((p) => (
           <Pressable
             key={p.questionId}
             onPress={() => router.push(`/question/${p.questionId}`)}
-            style={[
+            style={({ pressed }) => [
               styles.cell,
               {
                 backgroundColor: strengthColor(p.strength, theme),
                 borderColor: p.strength === 'unseen' ? theme.border : 'transparent',
+                opacity: pressed ? 0.6 : 1,
               },
             ]}
             accessibilityRole="button"
@@ -161,7 +161,7 @@ export default function Progress(): React.ReactElement {
             The ones you miss most. They already come round sooner in your daily questions.
           </Text>
           {summary.weakest.map((w) => (
-            <Pressable
+            <PressableScale
               key={w.questionId}
               onPress={() => router.push(`/question/${w.questionId}`)}
               style={[styles.weakRow, { borderColor: theme.border }]}
@@ -174,48 +174,50 @@ export default function Progress(): React.ReactElement {
               <Text style={[styles.weakScore, { color: theme.textSecondary }]}>
                 {w.correct}/{w.asked}
               </Text>
-            </Pressable>
+            </PressableScale>
           ))}
         </>
       ) : null}
-    </ScrollView>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  centre: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  scroll: { padding: 20, gap: 10, paddingBottom: 60 },
-  headline: { fontSize: 32, fontWeight: '800' },
-  headlineUnit: { fontSize: 16, fontWeight: '500' },
-  sub: { fontSize: 13, lineHeight: 18 },
-  legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 12, marginTop: 6 },
-  legendItem: { flexDirection: 'row', alignItems: 'center', gap: 5 },
+  scroll: { gap: Space.sm },
+  headline: Type.title,
+  headlineUnit: { ...Type.body, fontWeight: '500' },
+  sub: Type.bodySmall,
+  legend: { flexDirection: 'row', flexWrap: 'wrap', gap: Space.md, marginTop: Space.xs },
+  legendItem: { flexDirection: 'row', alignItems: 'center', gap: Space.xs },
   swatch: { width: 12, height: 12, borderRadius: 3, borderWidth: 1 },
-  legendText: { fontSize: 12 },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 5, marginTop: 10 },
+  legendText: Type.caption,
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: Space.xs, marginTop: Space.sm },
+  // The grid is a dense overview, not a control surface — 128 cells at the 44pt
+  // minimum would be four screens of scrolling. The same questions are reachable
+  // at full size from "Worth revising" and from the daily session.
   cell: {
     width: 30,
     height: 30,
-    borderRadius: 6,
+    borderRadius: Radius.sm,
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   cellText: { fontSize: 11, fontWeight: '700' },
-  sectionTitle: { fontSize: 17, fontWeight: '700', marginTop: 18 },
-  sectionRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 7 },
-  sectionLabel: { fontSize: 15 },
-  sectionCount: { fontSize: 15, fontWeight: '700' },
+  sectionTitle: { ...Type.heading, marginTop: Space.lg },
+  sectionRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: Space.sm },
+  sectionLabel: Type.body,
+  sectionCount: { ...Type.body, fontWeight: '700' },
   weakRow: {
     borderWidth: 1.5,
-    borderRadius: 10,
-    padding: 12,
+    borderRadius: Radius.sm,
+    padding: Space.md,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
-    minHeight: 44,
+    gap: Space.sm,
+    minHeight: HIT_TARGET,
   },
-  weakNum: { fontSize: 12, fontWeight: '800', width: 38 },
-  weakText: { fontSize: 14, flex: 1, lineHeight: 19 },
-  weakScore: { fontSize: 12, fontWeight: '700' },
+  weakNum: { ...Type.caption, fontWeight: '800', width: 38 },
+  weakText: { ...Type.bodySmall, flex: 1 },
+  weakScore: { ...Type.caption, fontWeight: '700' },
 });

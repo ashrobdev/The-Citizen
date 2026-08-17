@@ -1,8 +1,10 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import type { Question } from '../../domain/questions/types';
 import type { GradedAnswer } from '../../services/sessionService';
 import type { Theme } from '../theme/colors';
+import { HIT_TARGET, Radius, Space, Type } from '../theme/tokens';
+import { PressableScale } from './PressableScale';
 import { layoutAnswers } from './revealLayout';
 
 /**
@@ -41,9 +43,13 @@ export function RevealCard({
   const { saved, others, hasSaved } = layoutAnswers(question.answers, savedFocusIds);
 
   const renderAnswer = (answerId: string, display: string, starred: boolean) => (
-    <Pressable
+    <PressableScale
       key={answerId}
       onPress={selectable ? () => onTogglePick(answerId) : undefined}
+      // A lone accepted answer is not a control; without this it scaled and
+      // ticked under the finger with nothing to toggle.
+      disabled={!selectable}
+      haptic={selectable}
       style={[
         styles.answer,
         {
@@ -58,7 +64,7 @@ export function RevealCard({
         {starred ? '★  ' : ''}
         {display}
       </Text>
-    </Pressable>
+    </PressableScale>
   );
 
   return (
@@ -109,7 +115,7 @@ export function RevealCard({
 
           {others.map((a) => renderAnswer(a.id, a.display, pendingPicks.includes(a.id)))}
 
-          <Pressable
+          <PressableScale
             onPress={onAppeal}
             style={[styles.appeal, { borderColor: theme.border }]}
             accessibilityRole="button"
@@ -117,37 +123,43 @@ export function RevealCard({
             <Text style={[styles.appealText, { color: theme.accent }]}>
               I actually got this right
             </Text>
-          </Pressable>
+          </PressableScale>
         </>
       ) : null}
 
-      <Pressable
+      <PressableScale
         onPress={onNext}
         style={[styles.button, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
         <Text style={[styles.buttonText, { color: theme.onAccent }]}>Next</Text>
-      </Pressable>
+      </PressableScale>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  block: { gap: 11, marginTop: 6 },
-  verdict: { fontSize: 21, fontWeight: '800' },
-  sub: { fontSize: 13, lineHeight: 18 },
-  sectionTitle: { fontSize: 15, fontWeight: '700', marginTop: 4 },
+  block: { gap: Space.md, marginTop: Space.xs },
+  verdict: { ...Type.heading, fontWeight: '800' },
+  sub: Type.bodySmall,
+  sectionTitle: { ...Type.body, fontWeight: '700', marginTop: Space.xs },
   answer: {
     borderWidth: 1.5,
-    borderRadius: 10,
-    paddingHorizontal: 13,
-    paddingVertical: 12,
-    minHeight: 44,
+    borderRadius: Radius.sm,
+    paddingHorizontal: Space.md,
+    paddingVertical: Space.md,
+    minHeight: HIT_TARGET,
     justifyContent: 'center',
   },
-  answerText: { fontSize: 15, lineHeight: 21 },
-  appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center', marginTop: 2 },
-  appealText: { fontSize: 15, fontWeight: '700' },
-  button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  buttonText: { fontSize: 16, fontWeight: '700' },
+  answerText: Type.body,
+  appeal: {
+    borderWidth: 1.5,
+    borderRadius: Radius.md,
+    paddingVertical: Space.lg,
+    alignItems: 'center',
+    marginTop: 2,
+  },
+  appealText: { ...Type.body, fontWeight: '700' },
+  button: { paddingVertical: Space.lg, borderRadius: Radius.md, alignItems: 'center' },
+  buttonText: Type.button,
 });

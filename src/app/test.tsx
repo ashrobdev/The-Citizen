@@ -4,8 +4,6 @@ import {
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
-  Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -20,12 +18,16 @@ import type { Question } from '../domain/questions/types';
 import { gradeResponse, resolveQuestion, type GradedAnswer } from '../services/sessionService';
 import { useSessionService } from '../ui/AppProvider';
 import { AnswerInput } from '../ui/components/AnswerInput';
+import { PressableScale } from '../ui/components/PressableScale';
 import { RevealCard } from '../ui/components/RevealCard';
+import { Screen } from '../ui/components/Screen';
 import { SelfAttest } from '../ui/components/SelfAttest';
 import { Mascot } from '../ui/components/Mascot';
 import { Stripes } from '../ui/components/Stripes';
 import { SpeakButton } from '../ui/components/SpeakButton';
+import { haptics } from '../ui/haptics';
 import { Colors, type Theme } from '../ui/theme/colors';
+import { Radius, Space, Type } from '../ui/theme/tokens';
 
 type Phase =
   | { kind: 'intro' }
@@ -68,7 +70,9 @@ export default function FinalTest(): React.ReactElement {
     return () => {
       cancelled = true;
     };
-  }, [question?.id, service]);
+    // `getQuestion` returns the same object from the bank's Map for a given id,
+    // so depending on the question is equivalent to depending on its id.
+  }, [question, service]);
 
   const begin = useCallback(async () => {
     const created = await service.startFinalTest();
@@ -96,6 +100,11 @@ export default function FinalTest(): React.ReactElement {
     const joined = inputs.map((s) => s.trim()).filter((s) => s.length > 0).join(', ');
     if (joined.length === 0) return;
     const graded = gradeResponse(question, resolveQuestion(question, profile), joined, 'text');
+    if (!graded.selfAttested) {
+      // Warning, not error: "here is what it was", never "you failed".
+      if (graded.correct) haptics.success();
+      else haptics.warning();
+    }
     setPhase(
       graded.selfAttested
         ? { kind: 'self-attest', graded }
@@ -129,7 +138,11 @@ export default function FinalTest(): React.ReactElement {
       // at twelve correct, or at nine wrong when a pass becomes impossible.
       if (isDecided(nextCorrect, nextWrong) || index + 1 >= session.questionIds.length) {
         await service.finishFinalTest(session.id);
-        setPhase({ kind: 'result', passed: testOutcome(nextCorrect, nextWrong) === 'passed' });
+        const passed = testOutcome(nextCorrect, nextWrong) === 'passed';
+        // The biggest moment in the app. A failed test gets nothing extra — the
+        // encouraging mascot carries it, and a buzz would read as a penalty.
+        if (passed) haptics.celebrate();
+        setPhase({ kind: 'result', passed });
         return;
       }
 
@@ -158,9 +171,9 @@ export default function FinalTest(): React.ReactElement {
 
   if (!session || !question) {
     return (
-      <View style={[styles.centre, { backgroundColor: theme.background }]}>
+      <Screen centred>
         <ActivityIndicator color={theme.accent} />
-      </View>
+      </Screen>
     );
   }
 
@@ -170,7 +183,7 @@ export default function FinalTest(): React.ReactElement {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <Stack.Screen options={{ title: 'Final Test' }} />
-      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+      <Screen scroll contentStyle={styles.scroll}>
         <Text style={[styles.score, { color: theme.textSecondary }]}>
           {correct} correct · need {FINAL_TEST_PASS_MARK} · {wrong} missed
         </Text>
@@ -223,14 +236,14 @@ export default function FinalTest(): React.ReactElement {
             theme={theme}
           />
         ) : null}
-      </ScrollView>
+      </Screen>
     </KeyboardAvoidingView>
   );
 }
 
 function Intro({ theme, onBegin }: { theme: Theme; onBegin: () => void }): React.ReactElement {
   return (
-    <View style={[styles.centre, { backgroundColor: theme.background }]}>
+    <Screen centred contentStyle={styles.centre}>
       <Stack.Screen options={{ title: 'Final Test' }} />
       <Mascot pose="pointing" size="medium" />
       <Stripes width={100} />
@@ -242,14 +255,14 @@ function Intro({ theme, onBegin }: { theme: Theme; onBegin: () => void }): React
       <Text style={[styles.introBody, { color: theme.textSecondary }]}>
         Take it as often as you like. It never affects your streak.
       </Text>
-      <Pressable
+      <PressableScale
         onPress={onBegin}
         style={[styles.button, styles.wide, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
         <Text style={[styles.buttonText, { color: theme.onAccent }]}>Begin</Text>
-      </Pressable>
-    </View>
+      </PressableScale>
+    </Screen>
   );
 }
 
@@ -269,10 +282,7 @@ function Result({
   onHome: () => void;
 }): React.ReactElement {
   return (
-    <ScrollView
-      contentContainerStyle={[styles.resultScroll, { backgroundColor: theme.background }]}
-      style={{ backgroundColor: theme.background }}
-    >
+    <Screen scroll centred contentStyle={styles.resultScroll}>
       <Stack.Screen options={{ title: passed ? 'Passed' : 'Not this time', headerBackVisible: false }} />
 
       {passed ? (
@@ -308,38 +318,47 @@ function Result({
         </View>
       ) : null}
 
-      <Pressable
+      <PressableScale
         onPress={onRetake}
         style={[styles.button, styles.wide, { backgroundColor: theme.accent }]}
         accessibilityRole="button"
       >
         <Text style={[styles.buttonText, { color: theme.onAccent }]}>Take it again</Text>
-      </Pressable>
-      <Pressable onPress={onHome} style={[styles.appeal, styles.wide, { borderColor: theme.border }]}>
+      </PressableScale>
+      <PressableScale
+        onPress={onHome}
+        style={[styles.appeal, styles.wide, { borderColor: theme.border }]}
+        accessibilityRole="button"
+      >
         <Text style={[styles.appealText, { color: theme.accent }]}>Back to today</Text>
-      </Pressable>
-    </ScrollView>
+      </PressableScale>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  centre: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 28, gap: 12 },
-  scroll: { padding: 22, gap: 12, paddingBottom: 60 },
-  resultScroll: { padding: 24, gap: 12, alignItems: 'center', paddingBottom: 60, flexGrow: 1, justifyContent: 'center' },
-  score: { fontSize: 13, fontWeight: '700', letterSpacing: 0.3 },
-  number: { fontSize: 13, fontWeight: '600', letterSpacing: 0.4, textTransform: 'uppercase' },
-  prompt: { fontSize: 23, fontWeight: '700', lineHeight: 30 },
-  button: { paddingVertical: 15, borderRadius: 12, alignItems: 'center' },
-  wide: { alignSelf: 'stretch', marginTop: 10 },
-  appeal: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 14, alignItems: 'center' },
-  appealText: { fontSize: 15, fontWeight: '700' },
-  buttonText: { fontSize: 16, fontWeight: '700' },
-  introTitle: { fontSize: 30, fontWeight: '800' },
-  introBody: { fontSize: 15, textAlign: 'center', lineHeight: 22 },
-  resultTitle: { fontSize: 28, fontWeight: '800', marginTop: 4 },
-  resultBody: { fontSize: 15, textAlign: 'center', lineHeight: 22 },
-  missedList: { alignSelf: 'stretch', gap: 8, marginTop: 12 },
-  missedItem: { borderWidth: 1.5, borderRadius: 10, padding: 12, gap: 3 },
-  missedNum: { fontSize: 12, fontWeight: '800' },
-  missedText: { fontSize: 14, lineHeight: 20 },
+  centre: { gap: Space.md },
+  scroll: { gap: Space.md },
+  resultScroll: { gap: Space.md, alignItems: 'center' },
+  score: { ...Type.bodySmall, fontWeight: '700', letterSpacing: 0.3 },
+  number: { ...Type.overline, textTransform: 'uppercase' },
+  prompt: Type.question,
+  button: { paddingVertical: Space.lg, borderRadius: Radius.md, alignItems: 'center' },
+  wide: { alignSelf: 'stretch', marginTop: Space.sm },
+  appeal: {
+    borderWidth: 1.5,
+    borderRadius: Radius.md,
+    paddingVertical: Space.lg,
+    alignItems: 'center',
+  },
+  appealText: { ...Type.body, fontWeight: '700' },
+  buttonText: Type.button,
+  introTitle: Type.title,
+  introBody: { ...Type.body, textAlign: 'center' },
+  resultTitle: { ...Type.title, marginTop: Space.xs },
+  resultBody: { ...Type.body, textAlign: 'center' },
+  missedList: { alignSelf: 'stretch', gap: Space.sm, marginTop: Space.md },
+  missedItem: { borderWidth: 1.5, borderRadius: Radius.sm, padding: Space.md, gap: 3 },
+  missedNum: { ...Type.caption, fontWeight: '800' },
+  missedText: Type.bodySmall,
 });

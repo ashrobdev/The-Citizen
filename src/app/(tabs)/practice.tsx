@@ -1,6 +1,5 @@
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { useFocusEffect } from 'expo-router';
 import { StyleSheet, Text, View, useColorScheme } from 'react-native';
 
 import { FINAL_TEST_LENGTH, FINAL_TEST_PASS_MARK } from '../../domain/scheduling/config';

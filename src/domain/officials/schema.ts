@@ -51,7 +51,7 @@ export interface OfficialsData {
   /** Monotonic ISO date. Newer wins; the app never downgrades. */
   dataVersion: string;
   generatedAt: string;
-  sources: Array<{ name: string; url?: string; retrievedAt?: string; reviewedOn?: string }>;
+  sources: { name: string; url?: string; retrievedAt?: string; reviewedOn?: string }[];
   federal: FederalOfficials;
   jurisdictions: Record<string, Jurisdiction>;
 }

@@ -1,34 +1,43 @@
 import * as Speech from 'expo-speech';
 import { Link, Stack } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
-import {
-  Linking,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  useColorScheme,
-} from 'react-native';
+import { Linking, StyleSheet, Switch, Text, View, useColorScheme } from 'react-native';
 
 import type { UserProfile } from '../../data/repositories';
 import { OFFICIALS } from '../../services/sessionService';
 import { bestEnglishVoice, refreshVoiceSelection, speakQuestion } from '../../services/narration';
-import { useNotifications, useSessionService } from '../../ui/AppProvider';
+import { useNotifications, useRepositories, useSessionService } from '../../ui/AppProvider';
+import { PressableScale } from '../../ui/components/PressableScale';
 import { ReminderSettings } from '../../ui/components/ReminderSettings';
+import { Screen } from '../../ui/components/Screen';
+import { HAPTICS_KEY, haptics } from '../../ui/haptics';
 import { Colors, type Theme } from '../../ui/theme/colors';
+import { HIT_TARGET, Radius, Space, Type } from '../../ui/theme/tokens';
 
 const SAMPLE = 'What is the supreme law of the land?';
 
 export default function Settings(): React.ReactElement {
   const service = useSessionService();
   const notifications = useNotifications();
+  const repos = useRepositories();
   const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
   const theme = Colors[scheme];
 
   const [profile, setProfile] = useState<UserProfile | undefined>();
   const [voice, setVoice] = useState<Speech.Voice | undefined>();
   const [loadingVoice, setLoadingVoice] = useState(true);
+  const [hapticsOn, setHapticsOn] = useState(haptics.isEnabled());
+
+  const toggleHaptics = useCallback(
+    (next: boolean) => {
+      setHapticsOn(next);
+      haptics.setEnabled(next);
+      // Fire once on the way on, so the setting demonstrates itself.
+      if (next) haptics.tap();
+      void repos.kv.set(HAPTICS_KEY, next ? 'on' : 'off');
+    },
+    [repos],
+  );
 
   const loadVoice = useCallback(async () => {
     setLoadingVoice(true);
@@ -52,7 +61,7 @@ export default function Settings(): React.ReactElement {
   const enhanced = voice?.quality === Speech.VoiceQuality.Enhanced;
 
   return (
-    <ScrollView style={{ backgroundColor: theme.background }} contentContainerStyle={styles.scroll}>
+    <Screen scroll contentStyle={styles.scroll}>
       <Stack.Screen options={{ title: 'Settings' }} />
 
       <Section title="Where you live" theme={theme}>
@@ -92,20 +101,20 @@ export default function Settings(): React.ReactElement {
         )}
 
         <View style={styles.row}>
-          <Pressable
+          <PressableScale
             onPress={() => void speakQuestion(SAMPLE)}
             style={[styles.button, styles.flex, { borderColor: theme.border }]}
             accessibilityRole="button"
           >
             <Text style={[styles.buttonText, { color: theme.accent }]}>▶ Hear a sample</Text>
-          </Pressable>
-          <Pressable
+          </PressableScale>
+          <PressableScale
             onPress={() => void loadVoice()}
             style={[styles.button, styles.flex, { borderColor: theme.border }]}
             accessibilityRole="button"
           >
             <Text style={[styles.buttonText, { color: theme.accent }]}>Re-check</Text>
-          </Pressable>
+          </PressableScale>
         </View>
 
         <Text style={[styles.hint, { color: theme.textSecondary }]}>
@@ -115,6 +124,24 @@ export default function Settings(): React.ReactElement {
 
       <Section title="Reminders" theme={theme}>
         <ReminderSettings notifications={notifications} theme={theme} />
+      </Section>
+
+      <Section title="Haptics" theme={theme}>
+        <View style={styles.toggleRow}>
+          <Text style={[styles.value, styles.flex, { color: theme.text }]}>
+            Vibration feedback
+          </Text>
+          <Switch
+            value={hapticsOn}
+            onValueChange={toggleHaptics}
+            trackColor={{ true: theme.accent, false: theme.border }}
+            accessibilityLabel="Vibration feedback"
+          />
+        </View>
+        <Text style={[styles.hint, { color: theme.textSecondary }]}>
+          A tap on every button, and a short buzz when an answer is marked. Independent of
+          Reduce Motion, which leaves haptics alone.
+        </Text>
       </Section>
 
       <Section title="Officials data" theme={theme}>
@@ -127,7 +154,7 @@ export default function Settings(): React.ReactElement {
           Wikidata. Every change is reviewed by a human before it reaches the app.{'\n\n'}
           Officeholders change. USCIS is the authority — always confirm before your interview.
         </Text>
-        <Pressable
+        <PressableScale
           onPress={() => void Linking.openURL('https://www.uscis.gov/citizenship/testupdates')}
           style={[styles.button, { borderColor: theme.border }]}
           accessibilityRole="link"
@@ -135,7 +162,7 @@ export default function Settings(): React.ReactElement {
           <Text style={[styles.buttonText, { color: theme.accent }]}>
             Open uscis.gov/citizenship/testupdates
           </Text>
-        </Pressable>
+        </PressableScale>
       </Section>
 
       <Section title="About" theme={theme}>
@@ -147,7 +174,7 @@ export default function Settings(): React.ReactElement {
           a guarantee of anything.
         </Text>
       </Section>
-    </ScrollView>
+    </Screen>
   );
 }
 
@@ -169,21 +196,22 @@ function Section({
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: 18, gap: 14, paddingBottom: 60 },
-  section: { borderWidth: 1.5, borderRadius: 14, padding: 16, gap: 9 },
-  sectionTitle: { fontSize: 17, fontWeight: '700' },
-  value: { fontSize: 16, fontWeight: '600' },
-  hint: { fontSize: 13, lineHeight: 19 },
-  row: { flexDirection: 'row', gap: 9 },
+  scroll: { gap: Space.md },
+  section: { borderWidth: 1.5, borderRadius: Radius.lg, padding: Space.lg, gap: Space.sm },
+  sectionTitle: Type.heading,
+  value: { ...Type.body, fontWeight: '600' },
+  hint: Type.bodySmall,
+  row: { flexDirection: 'row', gap: Space.sm },
+  toggleRow: { flexDirection: 'row', alignItems: 'center', gap: Space.md },
   flex: { flex: 1 },
   button: {
     borderWidth: 1.5,
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
+    borderRadius: Radius.sm,
+    paddingVertical: Space.md,
+    paddingHorizontal: Space.lg,
     alignItems: 'center',
-    minHeight: 44,
+    minHeight: HIT_TARGET,
     justifyContent: 'center',
   },
-  buttonText: { fontSize: 14, fontWeight: '700', textAlign: 'center' },
+  buttonText: { ...Type.bodySmall, fontWeight: '700', textAlign: 'center' },
 });

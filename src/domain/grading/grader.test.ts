@@ -139,7 +139,7 @@ describe('compound answers require every part', () => {
  * cross-contamination test pass is to keep adding exceptions until it means
  * nothing. These are cases where a USCIS officer would accept either phrasing.
  */
-const SHARED_ANSWER_ALLOWLIST: ReadonlyArray<readonly [number, number, string]> = [
+const SHARED_ANSWER_ALLOWLIST: readonly (readonly [number, number, string])[] = [
   // "Religious freedom" and "Freedom of religion" are the same right, printed
   // one way in the rights question and the other in the colonists question.
   [65, 73, 'religious freedom / freedom of religion are the same concept'],

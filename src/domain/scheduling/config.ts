@@ -46,10 +46,10 @@ export const PARTIAL_CREDIT_THRESHOLD = 0.5;
  * the 30-day target, leaving buffer for the backlog valve below. Days 1-2 are
  * necessarily all-new because there is nothing to review yet.
  */
-export const INTRODUCTION_CURVE: ReadonlyArray<{
+export const INTRODUCTION_CURVE: readonly {
   throughProgramDay: number;
   newPerDay: number;
-}> = [
+}[] = [
   { throughProgramDay: 2, newPerDay: 12 }, // 24
   { throughProgramDay: 6, newPerDay: 8 }, // +32 = 56
   { throughProgramDay: 14, newPerDay: 6 }, // +48 = 104

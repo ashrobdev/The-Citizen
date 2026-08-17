@@ -14,6 +14,7 @@ import {
 import { BUNDLED_OFFICIALS, OfficialsUpdater } from '../services/officialsUpdater';
 import { SessionService, setActiveOfficials } from '../services/sessionService';
 
+import { HAPTICS_KEY, haptics } from './haptics';
 import { Colors } from './theme/colors';
 
 /**
@@ -84,6 +85,10 @@ export function AppProvider({ children }: { children: ReactNode }): React.ReactE
         const db = await withTimeout(openDatabase(), 10_000, 'Opening the database timed out');
         const repos = createSqliteRepositories(db);
         if (cancelled) return;
+
+        // Read before the first screen paints, so the very first tap already
+        // respects the setting rather than buzzing once and then going quiet.
+        haptics.setEnabled((await repos.kv.get(HAPTICS_KEY)) !== 'off');
 
         setStatus({
           phase: 'ready',
