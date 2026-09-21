@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "2026-08-16",
-  "generatedAt": "2026-08-16T20:27:45.022Z",
+  "dataVersion": "2026-09-21",
+  "generatedAt": "2026-09-21T12:05:38.779Z",
   "sources": [
     {
       "name": "unitedstates/congress-legislators (legislators-current)",
       "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-09-21"
     },
     {
       "name": "unitedstates/congress-legislators (executive)",
       "url": "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/executive.yaml",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-09-21"
     },
     {
       "name": "data/manual/officeholders.yaml",
@@ -23,7 +23,7 @@
     {
       "name": "Wikidata (governors, Speaker, Chief Justice)",
       "url": "https://query.wikidata.org/",
-      "retrievedAt": "2026-08-16"
+      "retrievedAt": "2026-09-21"
     }
   ],
   "federal": {
@@ -430,8 +430,10 @@
           ]
         },
         "14": {
-          "answers": [],
-          "vacant": true
+          "answers": [
+            "Aisha Wahab",
+            "Wahab"
+          ]
         },
         "15": {
           "answers": [
@@ -1178,8 +1180,11 @@
           ]
         },
         "13": {
-          "answers": [],
-          "vacant": true
+          "answers": [
+            "Everton Blair Jr.",
+            "Everton Blair",
+            "Blair"
+          ]
         },
         "14": {
           "answers": [
